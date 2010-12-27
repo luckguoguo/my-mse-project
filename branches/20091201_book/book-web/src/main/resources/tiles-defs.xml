@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<!-- ======================================================= -->
+	<!-- Template definitions                                        -->
+	<!-- ======================================================= -->
+	<definition name="book.homepage" template="/WEB-INF/view/templates/template_homepage.ftl">
+		<put-attribute name="header" value="book.container.header" />
+		<put-attribute name="body" value="book.container.homebody" />
+		<put-attribute name="footer" value="book.container.footer" />
+	</definition>
+	
+	<definition name="book.2column" template="/WEB-INF/view/templates/template_2column.ftl">
+		<put-attribute name="header" value="book.container.header" />
+		<put-attribute name="leftbar" value="book.container.leftbar" />
+		<put-attribute name="body" value="book.container.body" />
+		<put-attribute name="footer" value="book.container.footer" />
+	</definition>
+	
+	<definition name="book.popup" template="/WEB-INF/view/templates/template_popup.ftl">
+		<put-attribute name="body" value="book.container.body" />
+	</definition>
+	
+	<!-- ======================================================= -->
+	<!-- Container definitions                                        -->
+	<!-- ======================================================= -->
+	<definition name="book.container.header" template="/WEB-INF/view/containers/header.ftl"/>
+	<definition name="book.container.leftbar" template="/WEB-INF/view/containers/leftbar.ftl"/>
+	<definition name="book.container.footer" template="/WEB-INF/view/containers/footer.ftl"/>
+	<definition name="book.container.homebody" template="/WEB-INF/view/containers/homebody.ftl"/>
+	<definition name="book.container.body" template="/WEB-INF/view/containers/body.ftl"/>
+	
+	<definition name="book.container.body.login" template="/WEB-INF/view/containers/login.ftl"/>
+	<definition name="book.container.body.welcome" template="/WEB-INF/view/containers/welcome.ftl"/>
+	
+	<definition name="book.container.body.books.list" template="/WEB-INF/view/containers/books/list.ftl"/>
+	<definition name="book.container.body.books.history" template="/WEB-INF/view/containers/books/history.ftl"/>
+	
+	<definition name="book.container.body.sales.daily.list" template="/WEB-INF/view/containers/sales/daily-list.ftl"/>
+	<definition name="book.container.body.sales.daily.books" template="/WEB-INF/view/containers/sales/daily-books.ftl"/>
+	
+	<definition name="book.container.body.orders.stock.list" template="/WEB-INF/view/containers/orders/stock-list.ftl"/>
+	<definition name="book.container.body.orders.stock.detail" template="/WEB-INF/view/containers/orders/stock-detail.ftl"/>
+	<definition name="book.container.body.orders.stock.message" template="/WEB-INF/view/containers/orders/stock-message.ftl"/>
+	
+	<definition name="book.container.body.orders.draw.list" template="/WEB-INF/view/containers/orders/draw-list.ftl"/>
+	<definition name="book.container.body.orders.draw.detail" template="/WEB-INF/view/containers/orders/draw-detail.ftl"/>
+	<definition name="book.container.body.orders.draw.form" template="/WEB-INF/view/containers/orders/draw-form.ftl"/>
+	<definition name="book.container.body.orders.draw.message" template="/WEB-INF/view/containers/orders/draw-message.ftl"/>
+	
+	<definition name="book.container.body.orders.quota.list" template="/WEB-INF/view/containers/orders/quota-list.ftl"/>
+	<definition name="book.container.body.orders.quota.detail" template="/WEB-INF/view/containers/orders/quota-detail.ftl"/>
+	<definition name="book.container.body.orders.quota.form" template="/WEB-INF/view/containers/orders/quota-form.ftl"/>
+	<definition name="book.container.body.orders.quota.message" template="/WEB-INF/view/containers/orders/quota-message.ftl"/>
+	
+	<!-- ======================================================= -->
+	<!-- Component definitions                                   -->
+	<!-- ======================================================= -->
+	
+	<!-- ======================================================= -->
+	<!-- Page definitions                                        -->
+	<!-- ======================================================= -->
+	<definition name="index" extends="book.homepage" />
+	<definition name="login" extends="book.homepage">
+		<put-attribute name="body" value="book.container.body.login" />
+	</definition>
+	<definition name="welcome" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.welcome" />
+	</definition>
+	<definition name="books/list" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.books.list" />
+	</definition>
+	<definition name="books/history" extends="book.popup">
+		<put-attribute name="body" value="book.container.body.books.history" />
+	</definition>
+	<definition name="sales/daily/list" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.sales.daily.list" />
+	</definition>
+	<definition name="sales/daily/books" extends="book.popup">
+		<put-attribute name="body" value="book.container.body.sales.daily.books" />
+	</definition>
+	<definition name="orders/stock/list" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.orders.stock.list" />
+	</definition>
+	<definition name="orders/stock/detail" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.orders.stock.detail" />
+	</definition>
+	<definition name="orders/stock/message" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.orders.stock.message" />
+	</definition>
+	<definition name="orders/draw/list" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.orders.draw.list" />
+	</definition>
+	<definition name="orders/draw/detail" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.orders.draw.detail" />
+	</definition>
+	<definition name="orders/draw/form" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.orders.draw.form" />
+	</definition>
+	<definition name="orders/draw/message" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.orders.draw.message" />
+	</definition>
+	<definition name="orders/quota/list" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.orders.quota.list" />
+	</definition>
+	<definition name="orders/quota/detail" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.orders.quota.detail" />
+	</definition>
+	<definition name="orders/quota/form" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.orders.quota.form" />
+	</definition>
+	<definition name="orders/quota/message" extends="book.2column">
+		<put-attribute name="body" value="book.container.body.orders.quota.message" />
+	</definition>
+	
+</tiles-definitions>

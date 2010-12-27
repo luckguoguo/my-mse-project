@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	
+	<t_store id="1" store_name="store1" status="OPEN" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+	<t_store id="2" store_name="store2" status="OPEN" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+  	
+  	<t_book id="1" isbn_no="1111-2222-11" book_name="book1" author="author1" publisher="publisher1" publish_date="2010-01-05" price="100.50" />
+  	<t_book id="2" isbn_no="1111-2222-22" book_name="book2" author="author2" publisher="publisher2" publish_date="2010-01-05" price="100.50" />
+  	<t_book id="3" isbn_no="1111-2222-33" book_name="book3" author="author3" publisher="publisher3" publish_date="2010-01-05" price="100.50" />
+  	
+  	<t_store_repository id="1" store_id="1" book_id="1" date="2010-01-05" num="20" />
+  	<t_store_repository id="2" store_id="1" book_id="2" date="2010-01-05" num="200" />
+  	<t_store_repository id="3" store_id="2" book_id="1" date="2010-01-05" num="50" />
+  	<t_store_repository id="4" store_id="2" book_id="2" date="2010-01-05" num="500" />
+  	
+</dataset>

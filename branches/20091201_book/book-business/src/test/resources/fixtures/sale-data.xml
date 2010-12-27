@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	
+	<t_store id="1" store_name="store1" status="OPEN" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+	<t_store id="2" store_name="store2" status="OPEN" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+  	
+  	<t_book id="1" isbn_no="1111-2222-11" book_name="book1" author="author1" publisher="publisher1" publish_date="2010-01-05" price="100.50" />
+  	<t_book id="2" isbn_no="1111-2222-22" book_name="book2" author="author2" publisher="publisher2" publish_date="2010-01-05" price="100.50" />
+  	<t_book id="3" isbn_no="1111-2222-33" book_name="book3" author="author3" publisher="publisher3" publish_date="2010-01-05" price="100.50" />
+  	
+  	<t_store_book_sell id="1" store_id="1" book_id="1" sale_date="2010-01-05" sale_num="10" sale_total="100.00" />
+  	<t_store_book_sell id="2" store_id="1" book_id="2" sale_date="2010-01-05" sale_num="20" sale_total="200.00" />
+  	<t_store_book_sell id="3" store_id="1" book_id="1" sale_date="2010-01-06" sale_num="10" sale_total="100.00" />
+  	<t_store_book_sell id="4" store_id="1" book_id="2" sale_date="2010-01-06" sale_num="20" sale_total="200.00" />
+  	<t_store_book_sell id="5" store_id="1" book_id="1" sale_date="2010-01-07" sale_num="10" sale_total="100.00" />
+  	<t_store_book_sell id="6" store_id="1" book_id="2" sale_date="2010-01-07" sale_num="20" sale_total="200.00" />
+  	
+  	<t_store_book_sell id="7" store_id="2" book_id="1" sale_date="2010-01-05" sale_num="100" sale_total="1000.00" />
+  	<t_store_book_sell id="8" store_id="2" book_id="2" sale_date="2010-01-05" sale_num="200" sale_total="2000.00" />
+  	<t_store_book_sell id="9" store_id="2" book_id="1" sale_date="2010-01-06" sale_num="100" sale_total="1000.00" />
+  	<t_store_book_sell id="10" store_id="2" book_id="2" sale_date="2010-01-06" sale_num="200" sale_total="2000.00" />
+  	<t_store_book_sell id="11" store_id="2" book_id="1" sale_date="2010-01-07" sale_num="100" sale_total="1000.00" />
+  	<t_store_book_sell id="12" store_id="2" book_id="2" sale_date="2010-01-07" sale_num="200" sale_total="2000.00" />
+  	
+</dataset>
