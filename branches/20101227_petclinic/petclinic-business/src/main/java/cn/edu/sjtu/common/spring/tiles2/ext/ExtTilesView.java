@@ -17,7 +17,7 @@ public class ExtTilesView extends TilesView {
 		this.exposeSpringMacroModel = exposeSpringMacroModel;
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected final void renderMergedOutputModel(Map model,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
