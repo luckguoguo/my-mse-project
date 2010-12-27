@@ -82,7 +82,7 @@ public class ResponseRenderUtiles {
 		render(response, JSON_TYPE, jsonString, headers);
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("rawtypes")
 	public static void renderJson(HttpServletResponse response, final Map map, final String... headers) {
 		String jsonString = JSONObject.fromObject(map).toString();
 		render(response, JSON_TYPE, jsonString, headers);
@@ -103,7 +103,7 @@ public class ResponseRenderUtiles {
 		render(response, JSON_TYPE, jsonString, headers);
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("rawtypes")
 	public static void renderJsonp(HttpServletResponse response, final String callbackName, final Map contentMap, final String... headers) {
 		String jsonParam = JSONObject.fromObject(contentMap).toString();
 

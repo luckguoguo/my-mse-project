@@ -40,7 +40,7 @@ public class HibernateDao<T, PK extends Serializable> extends SimpleHibernateDao
 		return findPage(page);
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Page<T> findPage(final Page<T> page, final String hql, final Object... values) {
 		Assert.notNull(page, "page cannot be null");
 
@@ -57,7 +57,7 @@ public class HibernateDao<T, PK extends Serializable> extends SimpleHibernateDao
 		return page;
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Page<T> findPage(final Page<T> page, final String hql, final Map<String, Object> values) {
 		Assert.notNull(page, "page cannot be null");
 
@@ -75,7 +75,7 @@ public class HibernateDao<T, PK extends Serializable> extends SimpleHibernateDao
 		return page;
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Page<T> findPage(final Page<T> page, final Criterion... criterions) {
 		Assert.notNull(page, "page cannot be null");
 
@@ -151,7 +151,7 @@ public class HibernateDao<T, PK extends Serializable> extends SimpleHibernateDao
 		}
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected int countCriteriaResult(final Criteria c) {
 		CriteriaImpl impl = (CriteriaImpl) c;
 
