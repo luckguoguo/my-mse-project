@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	
+	<t_store id="1" store_name="store1" status="OPEN" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+  	
+  	<t_book id="1" isbn_no="1111-2222-11" book_name="book1" author="author1" publisher="publisher1" publish_date="2010-01-05" price="100.50" />
+  	<t_book id="2" isbn_no="1111-2222-22" book_name="book2" author="author2" publisher="publisher2" publish_date="2010-01-05" price="100.50" />
+  	
+  	<t_store_repository id="1" store_id="1" book_id="1" date="2010-01-05" num="50" />
+  	
+  	<t_order01 id="1" order_no="1000010001" store_id="1" status="PENDING" sync_flag="WAITING" num="10" total_price="2000.00" order_date="2010-01-05 13:52:25" memo="memo1" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+  	<t_order01_detail id="1" order_id="1" book_id="1" num="5" price="200.00" />
+  	<t_order01_detail id="2" order_id="1" book_id="2" num="5" price="200.00" />
+  	<t_order01 id="2" order_no="1000010002" store_id="1" status="PENDING" sync_flag="WAITING" num="10" total_price="2000.00" order_date="2010-01-06 13:52:25" memo="memo1" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+  	<t_order01_detail id="3" order_id="2" book_id="1" num="5" price="200.00" />
+  	
+  	<t_order02 id="1" order_no="2000010001" store_id="1" status="PENDING" sync_flag="WAITING" num="10" total_price="2000.00" order_date="2010-01-05 13:52:25" memo="memo1" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+  	<t_order02_detail id="1" order_id="1" book_id="1" num="5" price="200.00" />
+  	<t_order02 id="2" order_no="2000010002" store_id="1" status="PENDING" sync_flag="WAITING" num="10" total_price="2000.00" order_date="2010-01-06 13:52:25" memo="memo1" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+  	<t_order02_detail id="3" order_id="2" book_id="1" num="5" price="200.00" />
+  	
+  	<t_order03 id="1" order_no="3000010001" store_id="1" status="PENDING" sync_flag="WAITING" num="10" total_price="2000.00" order_date="2010-01-05 13:52:25" memo="memo1" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+  	<t_order03_detail id="1" order_id="1" book_id="1" num="5" price="200.00" />
+  	<t_order03_detail id="2" order_id="1" book_id="2" num="5" price="200.00" />
+  	<t_order03 id="2" order_no="3000010002" store_id="1" status="PENDING" sync_flag="WAITING" num="10" total_price="2000.00" order_date="2010-01-06 13:52:25" memo="memo1" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+  	<t_order03_detail id="3" order_id="2" book_id="1" num="5" price="200.00" />
+
+</dataset>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  	<t_store id="1" store_name="store1" status="OPEN" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+  	<t_store id="2" store_name="store2" status="OPEN" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+  	<t_user id="1" login_name="jim" password="jim" name="jim.jiang" email="jim.jiang@digitas.com" status="ACTIVE" store_id="1" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+  	<t_user id="2" login_name="tj" password="tj" name="tang.j" email="tang.j@digitas.com" status="ACTIVE" store_id="2" create_by="admin" create_date="2010-01-05 13:52:25" modify_by="admin" modify_date="2010-01-05 13:52:25" />
+</dataset>
