@@ -15,7 +15,7 @@ public class ResponseHeaderFilter implements Filter {
 
 	private FilterConfig fc;
 
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings("unchecked")
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException,
 			ServletException {
 		HttpServletResponse response = (HttpServletResponse) res;
