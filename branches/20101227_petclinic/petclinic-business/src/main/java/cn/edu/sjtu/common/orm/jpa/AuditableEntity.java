@@ -10,50 +10,50 @@ import javax.persistence.TemporalType;
 @MappedSuperclass
 public class AuditableEntity extends IdEntity {
 
-	@Column(name = "create_date", updatable = false)
+	@Column(name = "created_date", updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date createTime;
+	protected Date createdTime;
 	
-	@Column(name = "create_by", updatable = false)
-	protected String createBy;
+	@Column(name = "created_by", updatable = false)
+	protected String createdBy;
 	
-	@Column(name = "modify_date")
+	@Column(name = "last_modified_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date lastModifyTime;
+	protected Date lastModifiedTime;
 	
-	@Column(name = "modify_by")
-	protected String lastModifyBy;
-	
-	public Date getCreateTime() {
-		return createTime;
+	@Column(name = "last_modified_by")
+	protected String lastModifiedBy;
+
+	public Date getCreatedTime() {
+		return createdTime;
 	}
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-	
-	public String getCreateBy() {
-		return createBy;
+	public void setCreatedTime(Date createdTime) {
+		this.createdTime = createdTime;
 	}
 
-	public void setCreateBy(String createBy) {
-		this.createBy = createBy;
+	public String getCreatedBy() {
+		return createdBy;
 	}
 
-	public Date getLastModifyTime() {
-		return lastModifyTime;
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
 
-	public void setLastModifyTime(Date lastModifyTime) {
-		this.lastModifyTime = lastModifyTime;
+	public Date getLastModifiedTime() {
+		return lastModifiedTime;
 	}
 
-	public String getLastModifyBy() {
-		return lastModifyBy;
+	public void setLastModifiedTime(Date lastModifiedTime) {
+		this.lastModifiedTime = lastModifiedTime;
 	}
 
-	public void setLastModifyBy(String lastModifyBy) {
-		this.lastModifyBy = lastModifyBy;
+	public String getLastModifiedBy() {
+		return lastModifiedBy;
+	}
+
+	public void setLastModifiedBy(String lastModifiedBy) {
+		this.lastModifiedBy = lastModifiedBy;
 	}
 	
 }
