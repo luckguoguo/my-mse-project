@@ -16,7 +16,7 @@ public class GenericEnumUserType {
     private static final String DEFAULT_IDENTIFIER_METHOD_NAME = "name";
     private static final String DEFAULT_VALUE_OF_METHOD_NAME = "valueOf";
 
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings("unchecked")
 	private Class<? extends Enum> enumClass;
     private Class<?> identifierType;
     private Method identifierMethod;
@@ -57,7 +57,7 @@ public class GenericEnumUserType {
         }
     }
 
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings("unchecked")
 	public Class returnedClass() {
         return enumClass;
     }

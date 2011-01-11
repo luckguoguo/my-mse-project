@@ -125,7 +125,7 @@ public abstract class AbstractJpaDaoSupport<T, PK extends Serializable> {
 		return query;
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings("unchecked")
 	public Page<T> findPage(final Page<T> page, final String jpql, final Object... values) {
 		Assert.notNull(page, "page cannot be null");
 
@@ -142,7 +142,7 @@ public abstract class AbstractJpaDaoSupport<T, PK extends Serializable> {
 		return page;
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings("unchecked")
 	public Page<T> findPage(final Page<T> page, final String jpql, final Map<String, Object> values) {
 		Assert.notNull(page, "page cannot be null");
 
