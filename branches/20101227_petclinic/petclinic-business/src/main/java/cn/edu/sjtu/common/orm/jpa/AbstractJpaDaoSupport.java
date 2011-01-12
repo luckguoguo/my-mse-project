@@ -26,7 +26,7 @@ public abstract class AbstractJpaDaoSupport<T, PK extends Serializable> {
 	
 	protected EntityManager entityManager;
 	
-	@PersistenceContext(unitName = "BookJPAPU")
+	@PersistenceContext(unitName = "PetClinicJPAPU")
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}

@@ -7,9 +7,11 @@ create database `petclinic` default character set utf8;
 
 use `petclinic`;
 
-drop table if exists tbl_admin_profile;
+drop table if exists tbl_administrator;
 
 drop table if exists tbl_appointment;
+
+drop index unique_index_name on tbl_clinic;
 
 drop table if exists tbl_clinic;
 
@@ -23,16 +25,18 @@ drop table if exists tbl_pet;
 
 drop table if exists tbl_pet_category;
 
-drop table if exists tbl_petowner_profile;
+drop table if exists tbl_petowner;
+
+drop index unique_index_username on tbl_user;
 
 drop table if exists tbl_user;
 
-drop table if exists tbl_vet_profile;
+drop table if exists tbl_veterinarian;
 
 /*==============================================================*/
-/* Table: tbl_admin_profile                                     */
+/* Table: tbl_administrator                                     */
 /*==============================================================*/
-create table tbl_admin_profile
+create table tbl_administrator
 (
    id                   int not null auto_increment,
    user_id              int,
@@ -49,6 +53,10 @@ create table tbl_appointment
    petowner_id          int,
    status               varchar(15),
    memo                 varchar(255),
+   created_date         datetime,
+   created_by           int,
+   last_modified_date   datetime,
+   last_modified_by     int,
    primary key (id)
 );
 
@@ -62,10 +70,24 @@ create table tbl_clinic
    introduction         varchar(2047),
    grade                smallint,
    address              varchar(255),
-   telephone            char(10),
+   telephone            varchar(31),
+   email                varchar(255),
    star                 smallint,
    management_password  varchar(255) not null,
+   status               varchar(15),
+   created_date         datetime,
+   created_by           int,
+   last_modified_date   datetime,
+   last_modified_by     int,
    primary key (id)
+);
+
+/*==============================================================*/
+/* Index: unique_index_name                                     */
+/*==============================================================*/
+create unique index unique_index_name on tbl_clinic
+(
+   name
 );
 
 /*==============================================================*/
@@ -88,8 +110,12 @@ create table tbl_diagnosis
 (
    id                   int not null auto_increment,
    interrogation_id     int,
-   vet_id               char(10),
+   vet_id               int,
    diagnosis            varchar(2000),
+   created_date         datetime,
+   created_by           int,
+   last_modified_date   datetime,
+   last_modified_by     int,
    primary key (id)
 );
 
@@ -104,6 +130,11 @@ create table tbl_interrogation
    start_date           datetime,
    symptom              varchar(2000),
    memo                 varchar(255),
+   status               varchar(15),
+   created_date         datetime,
+   created_by           int,
+   last_modified_date   datetime,
+   last_modified_by     int,
    primary key (id)
 );
 
@@ -134,9 +165,9 @@ create table tbl_pet_category
 );
 
 /*==============================================================*/
-/* Table: tbl_petowner_profile                                  */
+/* Table: tbl_petowner                                          */
 /*==============================================================*/
-create table tbl_petowner_profile
+create table tbl_petowner
 (
    id                   int not null auto_increment,
    user_id              int,
@@ -160,6 +191,7 @@ create table tbl_user
    email                varchar(255) not null,
    name                 varchar(31),
    gender               varchar(6),
+   status               varchar(15),
    created_date         datetime,
    created_by           int,
    last_modified_date   datetime,
@@ -168,16 +200,24 @@ create table tbl_user
 );
 
 /*==============================================================*/
-/* Table: tbl_vet_profile                                       */
+/* Index: unique_index_username                                 */
 /*==============================================================*/
-create table tbl_vet_profile
+create unique index unique_index_username on tbl_user
+(
+   username
+);
+
+/*==============================================================*/
+/* Table: tbl_veterinarian                                      */
+/*==============================================================*/
+create table tbl_veterinarian
 (
    id                   int not null auto_increment,
    user_id              int,
    clinic_id            int not null,
    title                varchar(31),
    introduction         varchar(255),
-   telephone            char(10),
+   telephone            varchar(31),
    birthdate            datetime,
    workingdate          datetime not null,
    primary key (id)
