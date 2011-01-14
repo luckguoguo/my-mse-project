@@ -15,14 +15,14 @@ public class AuditableEntity extends IdEntity {
 	protected Date createdTime;
 	
 	@Column(name = "created_by", updatable = false)
-	protected String createdBy;
+	protected Long createdBy;
 	
 	@Column(name = "last_modified_date")
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date lastModifiedTime;
 	
 	@Column(name = "last_modified_by")
-	protected String lastModifiedBy;
+	protected Long lastModifiedBy;
 
 	public Date getCreatedTime() {
 		return createdTime;
@@ -32,11 +32,11 @@ public class AuditableEntity extends IdEntity {
 		this.createdTime = createdTime;
 	}
 
-	public String getCreatedBy() {
+	public Long getCreatedBy() {
 		return createdBy;
 	}
 
-	public void setCreatedBy(String createdBy) {
+	public void setCreatedBy(Long createdBy) {
 		this.createdBy = createdBy;
 	}
 
@@ -48,11 +48,11 @@ public class AuditableEntity extends IdEntity {
 		this.lastModifiedTime = lastModifiedTime;
 	}
 
-	public String getLastModifiedBy() {
+	public Long getLastModifiedBy() {
 		return lastModifiedBy;
 	}
 
-	public void setLastModifiedBy(String lastModifiedBy) {
+	public void setLastModifiedBy(Long lastModifiedBy) {
 		this.lastModifiedBy = lastModifiedBy;
 	}
 	

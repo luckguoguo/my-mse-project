@@ -1,15 +1,23 @@
 package cn.edu.sjtu.petclinic.entity;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 import cn.edu.sjtu.common.orm.jpa.AuditableEntity;
 import cn.edu.sjtu.petclinic.enums.Gender;
 
-@MappedSuperclass
-public class User extends AuditableEntity {
+@Entity
+@Table(name = "tbl_user")
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "user_type", discriminatorType = DiscriminatorType.INTEGER)
+public abstract class User extends AuditableEntity {
 
 	public static enum Status {
 		ACTIVE, INACTIVE, PENDING;
