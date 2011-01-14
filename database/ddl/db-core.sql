@@ -38,8 +38,7 @@ drop table if exists tbl_veterinarian;
 /*==============================================================*/
 create table tbl_administrator
 (
-   id                   int not null auto_increment,
-   user_id              int,
+   id                   int not null,
    primary key (id)
 );
 
@@ -51,6 +50,7 @@ create table tbl_appointment
    id                   int not null auto_increment,
    outpatient_id        int,
    petowner_id          int,
+   serial_no            varchar(31),
    status               varchar(15),
    memo                 varchar(255),
    created_date         datetime,
@@ -148,8 +148,12 @@ create table tbl_pet
    category_id          int,
    name                 varchar(63) not null,
    gender               varchar(6),
-   birthdate            datetime,
+   birthdate            date,
    introduction         varchar(255),
+   created_date         datetime,
+   created_by           int,
+   last_modified_date   datetime,
+   last_modified_by     int,
    primary key (id)
 );
 
@@ -169,8 +173,7 @@ create table tbl_pet_category
 /*==============================================================*/
 create table tbl_petowner
 (
-   id                   int not null auto_increment,
-   user_id              int,
+   id                   int not null,
    id_card              varchar(18),
    birthdate            date,
    address              varchar(255),
@@ -192,6 +195,7 @@ create table tbl_user
    name                 varchar(31),
    gender               varchar(6),
    status               varchar(15),
+   user_type            smallint not null,
    created_date         datetime,
    created_by           int,
    last_modified_date   datetime,
@@ -212,14 +216,13 @@ create unique index unique_index_username on tbl_user
 /*==============================================================*/
 create table tbl_veterinarian
 (
-   id                   int not null auto_increment,
-   user_id              int,
+   id                   int not null,
    clinic_id            int not null,
    title                varchar(31),
    introduction         varchar(255),
    telephone            varchar(31),
-   birthdate            datetime,
-   workingdate          datetime not null,
+   birthdate            date,
+   workingdate          date not null,
    primary key (id)
 );
 
