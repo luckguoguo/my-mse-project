@@ -27,8 +27,8 @@ public class Appointment extends AuditableEntity {
 	private String memo;
 	
 	@ManyToOne
-	@JoinColumn(name = "outpatient_id")
-	private DailyOutpatient outpatient;
+	@JoinColumn(name = "daily_outpatient_id")
+	private DailyOutpatient dailyOutpatient;
 	
 	@ManyToOne
 	@JoinColumn(name = "petowner_id")
@@ -58,12 +58,12 @@ public class Appointment extends AuditableEntity {
 		this.memo = memo;
 	}
 
-	public DailyOutpatient getOutpatient() {
-		return outpatient;
+	public DailyOutpatient getDailyOutpatient() {
+		return dailyOutpatient;
 	}
 
-	public void setOutpatient(DailyOutpatient outpatient) {
-		this.outpatient = outpatient;
+	public void setDailyOutpatient(DailyOutpatient dailyOutpatient) {
+		this.dailyOutpatient = dailyOutpatient;
 	}
 
 	public PetOwner getPetOwner() {
@@ -73,5 +73,5 @@ public class Appointment extends AuditableEntity {
 	public void setPetOwner(PetOwner petOwner) {
 		this.petOwner = petOwner;
 	}
-	
+
 }

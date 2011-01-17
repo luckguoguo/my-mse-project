@@ -48,7 +48,7 @@ create table tbl_administrator
 create table tbl_appointment
 (
    id                   int not null auto_increment,
-   outpatient_id        int,
+   daily_outpatient_id  int,
    petowner_id          int,
    serial_no            varchar(31),
    status               varchar(15),
@@ -98,8 +98,12 @@ create table tbl_daily_outpatient
    id                   int not null auto_increment,
    vet_id               int,
    day                  date,
-   count_limit          int,
-   count_current        int,
+   count_limit          smallint,
+   count_actual         smallint,
+   created_date         datetime,
+   created_by           int,
+   last_modified_date   datetime,
+   last_modified_by     int,
    primary key (id)
 );
 

@@ -10,11 +10,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import cn.edu.sjtu.common.orm.jpa.IdEntity;
+import cn.edu.sjtu.common.orm.jpa.AuditableEntity;
 
 @Entity
 @Table(name = "tbl_daily_outpatient")
-public class DailyOutpatient extends IdEntity {
+public class DailyOutpatient extends AuditableEntity {
 
 	@Temporal(TemporalType.DATE)
 	private Date day;
@@ -22,8 +22,8 @@ public class DailyOutpatient extends IdEntity {
 	@Column(name = "count_limit")
 	private Integer countLimit;
 	
-	@Column(name = "count_current")
-	private Integer countCurrent;
+	@Column(name = "count_actual")
+	private Integer countActual;
 	
 	@ManyToOne
 	@JoinColumn(name = "vet_id")
@@ -45,12 +45,12 @@ public class DailyOutpatient extends IdEntity {
 		this.countLimit = countLimit;
 	}
 
-	public Integer getCountCurrent() {
-		return countCurrent;
+	public Integer getCountActual() {
+		return countActual;
 	}
 
-	public void setCountCurrent(Integer countCurrent) {
-		this.countCurrent = countCurrent;
+	public void setCountActual(Integer countActual) {
+		this.countActual = countActual;
 	}
 
 	public Veterinarian getVeterinarian() {
