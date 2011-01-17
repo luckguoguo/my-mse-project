@@ -185,6 +185,8 @@ public class TestJpaMappings extends SpringTxDaoTestCase {
 		assertEquals(1l, interrogation.getPet().getId());
 		assertNotNull(interrogation.getPetOwner());
 		assertEquals(3l, interrogation.getPetOwner().getId());
+		assertNotNull(interrogation.getVeterinarian());
+		assertEquals(2l, interrogation.getVeterinarian().getId());
 		assertEquals(1l, interrogation.getCreatedBy());
 		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), interrogation.getCreatedTime());
 		assertEquals(1l, interrogation.getLastModifiedBy());
