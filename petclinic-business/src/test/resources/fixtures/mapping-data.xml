@@ -36,8 +36,8 @@
 			birthdate="2011-01-01 10:00:00" introduction="intro1" 
 			created_by="1" created_date="2011-01-01 10:00:00" last_modified_by="1" last_modified_date="2011-01-01 10:00:00" />
 	
-	<tbl_interrogation id="1" pet_id="1" petowner_id="3" start_date="2011-01-01 10:00:00" 
-			symptom="symptom1" memo="memo1" status="NEW" 
+	<tbl_interrogation id="1" pet_id="1" petowner_id="3" vet_id="2"
+			start_date="2011-01-01 10:00:00" symptom="symptom1" memo="memo1" status="NEW" 
 			created_by="1" created_date="2011-01-01 10:00:00" last_modified_by="1" last_modified_date="2011-01-01 10:00:00" />
 			
 	<tbl_diagnosis id="1" interrogation_id="1" vet_id="2" diagnosis="diagnosis1" 

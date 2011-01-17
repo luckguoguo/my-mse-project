@@ -131,6 +131,7 @@ create table tbl_interrogation
    id                   int not null auto_increment,
    pet_id               int,
    petowner_id          int,
+   vet_id               int,
    start_date           datetime,
    symptom              varchar(2000),
    memo                 varchar(255),

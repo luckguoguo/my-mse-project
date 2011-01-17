@@ -40,6 +40,10 @@ public class Interrogation extends AuditableEntity {
 	@ManyToOne
 	@JoinColumn(name = "petowner_id")
 	private PetOwner petOwner;
+	
+	@ManyToOne
+	@JoinColumn(name = "vet_id")
+	private Veterinarian veterinarian;
 
 	public Date getStartDate() {
 		return startDate;
@@ -87,6 +91,14 @@ public class Interrogation extends AuditableEntity {
 
 	public void setPetOwner(PetOwner petOwner) {
 		this.petOwner = petOwner;
+	}
+
+	public Veterinarian getVeterinarian() {
+		return veterinarian;
+	}
+
+	public void setVeterinarian(Veterinarian veterinarian) {
+		this.veterinarian = veterinarian;
 	}
 	
 }
