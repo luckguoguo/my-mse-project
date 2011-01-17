@@ -9,7 +9,11 @@ import org.junit.Test;
 
 import cn.edu.sjtu.common.test.SpringTxDaoTestCase;
 import cn.edu.sjtu.petclinic.entity.Administrator;
+import cn.edu.sjtu.petclinic.entity.Appointment;
 import cn.edu.sjtu.petclinic.entity.Clinic;
+import cn.edu.sjtu.petclinic.entity.DailyOutpatient;
+import cn.edu.sjtu.petclinic.entity.Diagnosis;
+import cn.edu.sjtu.petclinic.entity.Interrogation;
 import cn.edu.sjtu.petclinic.entity.Pet;
 import cn.edu.sjtu.petclinic.entity.PetCategory;
 import cn.edu.sjtu.petclinic.entity.PetOwner;
@@ -30,6 +34,18 @@ public class TestJpaMappings extends SpringTxDaoTestCase {
 	
 	@Resource(name = "petDao")
 	PetJpaDao petDao;
+	
+	@Resource(name = "interrogationDao")
+	InterrogationJpaDao interrogationDao;
+	
+	@Resource(name = "diagnosisDao")
+	DiagnosisJpaDao diagnosisDao;
+	
+	@Resource(name = "dailyOutpatientDao")
+	DailyOutpatientJpaDao dailyOutpatientDao;
+	
+	@Resource(name = "appointmentDao")
+	AppointmentJpaDao appointmentDao;
 	
 	@Test
 	public void testGetClinic() throws ParseException {
@@ -153,6 +169,79 @@ public class TestJpaMappings extends SpringTxDaoTestCase {
 		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), pet.getCreatedTime());
 		assertEquals(1l, pet.getLastModifiedBy());
 		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), pet.getLastModifiedTime());
+	}
+	
+	@Test
+	public void testGetInterrogation() throws ParseException {
+		logger.debug("testGetInterrogation...");
+		Interrogation interrogation = interrogationDao.get(new Long(1));
+		assertNotNull(interrogation);
+		assertEquals(1l, interrogation.getId());
+		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), interrogation.getStartDate());
+		assertEquals("symptom1", interrogation.getSymptom());
+		assertEquals("memo1", interrogation.getMemo());
+		assertEquals(Interrogation.Status.NEW, interrogation.getStatus());
+		assertNotNull(interrogation.getPet());
+		assertEquals(1l, interrogation.getPet().getId());
+		assertNotNull(interrogation.getPetOwner());
+		assertEquals(3l, interrogation.getPetOwner().getId());
+		assertEquals(1l, interrogation.getCreatedBy());
+		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), interrogation.getCreatedTime());
+		assertEquals(1l, interrogation.getLastModifiedBy());
+		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), interrogation.getLastModifiedTime());
+	}
+	
+	@Test
+	public void testGetDiagnosis() throws ParseException {
+		logger.debug("testGetDiagnosis...");
+		Diagnosis diagnosis = diagnosisDao.get(new Long(1));
+		assertNotNull(diagnosis);
+		assertEquals(1l, diagnosis.getId());
+		assertEquals("diagnosis1", diagnosis.getDiagnosis());
+		assertNotNull(diagnosis.getInterrogation());
+		assertEquals(1l, diagnosis.getInterrogation().getId());
+		assertNotNull(diagnosis.getVeterinarian());
+		assertEquals(2l, diagnosis.getVeterinarian().getId());
+		assertEquals(1l, diagnosis.getCreatedBy());
+		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), diagnosis.getCreatedTime());
+		assertEquals(1l, diagnosis.getLastModifiedBy());
+		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), diagnosis.getLastModifiedTime());
+	}
+	
+	@Test
+	public void testGetDailyOutpatient() throws ParseException {
+		logger.debug("testGetDailyOutpatient...");
+		DailyOutpatient dailyOutpatient = dailyOutpatientDao.get(new Long(1));
+		assertNotNull(dailyOutpatient);
+		assertEquals(1l, dailyOutpatient.getId());
+		assertEquals(DateUtils.parseDate("2011-01-01", new String[] { "yyyy-MM-dd" }), dailyOutpatient.getDay());
+		assertEquals(10, dailyOutpatient.getCountLimit());
+		assertEquals(1, dailyOutpatient.getCountActual());
+		assertNotNull(dailyOutpatient.getVeterinarian());
+		assertEquals(2l, dailyOutpatient.getVeterinarian().getId());
+		assertEquals(1l, dailyOutpatient.getCreatedBy());
+		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), dailyOutpatient.getCreatedTime());
+		assertEquals(1l, dailyOutpatient.getLastModifiedBy());
+		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), dailyOutpatient.getLastModifiedTime());
+	}
+	
+	@Test
+	public void testGetAppointment() throws ParseException {
+		logger.debug("testGetAppointment...");
+		Appointment appointment = appointmentDao.get(new Long(1));
+		assertNotNull(appointment);
+		assertEquals(1l, appointment.getId());
+		assertEquals("serialno1", appointment.getSerialNo());
+		assertEquals(Appointment.Status.NEW, appointment.getStatus());
+		assertEquals("memo1", appointment.getMemo());
+		assertNotNull(appointment.getDailyOutpatient());
+		assertEquals(1l, appointment.getDailyOutpatient().getId());
+		assertNotNull(appointment.getPetOwner());
+		assertEquals(3l, appointment.getPetOwner().getId());
+		assertEquals(1l, appointment.getCreatedBy());
+		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), appointment.getCreatedTime());
+		assertEquals(1l, appointment.getLastModifiedBy());
+		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), appointment.getLastModifiedTime());
 	}
 	
 	@Override
