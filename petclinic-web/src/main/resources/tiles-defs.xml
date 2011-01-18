@@ -3,13 +3,34 @@
 <tiles-definitions>
 
 	<!-- ======================================================= -->
-	<!-- Template definitions                                        -->
+	<!-- Template definitions                                    -->
 	<!-- ======================================================= -->
-	<definition name=""></definition>
+	<definition name="admin.2column" template="/WEB-INF/view/templates/admin/template_2column.ftl">
+		<put-attribute name="header" value="admin.container.header" />
+		<put-attribute name="left" value="admin.container.left" />
+		<put-attribute name="body" value="admin.container.body" />
+		<put-attribute name="footer" value="admin.container.footer" />
+	</definition>
+	
+	<definition name="user.2column" template="/WEB-INF/view/templates/user/template_2column.ftl">
+		<put-attribute name="header" value="user.container.header" />
+		<put-attribute name="left" value="user.container.left" />
+		<put-attribute name="body" value="user.container.body" />
+		<put-attribute name="footer" value="user.container.footer" />
+	</definition>
 	
 	<!-- ======================================================= -->
-	<!-- Container definitions                                        -->
+	<!-- Container definitions                                   -->
 	<!-- ======================================================= -->
+	<definition name="admin.container.header" template="/WEB-INF/view/containers/admin/header.ftl"/>
+	<definition name="admin.container.left" template="/WEB-INF/view/containers/admin/left.ftl"/>
+	<definition name="admin.container.body" template="/WEB-INF/view/containers/admin/body.ftl"/>
+	<definition name="admin.container.footer" template="/WEB-INF/view/containers/admin/footer.ftl"/>
+	
+	<definition name="user.container.header" template="/WEB-INF/view/containers/user/header.ftl"/>
+	<definition name="user.container.left" template="/WEB-INF/view/containers/user/left.ftl"/>
+	<definition name="user.container.body" template="/WEB-INF/view/containers/user/body.ftl"/>
+	<definition name="user.container.footer" template="/WEB-INF/view/containers/user/footer.ftl"/>
 	
 	<!-- ======================================================= -->
 	<!-- Component definitions                                   -->
@@ -18,6 +39,10 @@
 	<!-- ======================================================= -->
 	<!-- Page definitions                                        -->
 	<!-- ======================================================= -->
+	<definition name="admin/login" extends="admin.2column">
+	</definition>
 	
+	<definition name="login" extends="user.2column">
+	</definition>
 	
 </tiles-definitions>

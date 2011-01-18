@@ -7,13 +7,18 @@ import cn.edu.sjtu.petclinic.entity.User;
 import cn.edu.sjtu.petclinic.entity.Veterinarian;
 import cn.edu.sjtu.petclinic.service.exception.InvalidClinicPasswordException;
 import cn.edu.sjtu.petclinic.service.exception.UserInvalidPasswordException;
+import cn.edu.sjtu.petclinic.service.exception.UserInvalidStatusException;
 import cn.edu.sjtu.petclinic.service.exception.UserNotExistsException;
 import cn.edu.sjtu.petclinic.service.exception.DuplicatedUsernameException;
 
 public interface UserService {
 
 	User authenticate(String username, String password) 
-			throws UserNotExistsException, UserInvalidPasswordException;
+			throws UserNotExistsException, UserInvalidPasswordException, UserInvalidStatusException;
+	
+	void updatePassword(User user, String originalPassword);
+	
+	String requestTempPassword(User user);
 	
 	void addVeterinarian(Veterinarian veterinarian, String clinicPassword) 
 			throws InvalidClinicPasswordException, DuplicatedUsernameException;
@@ -34,9 +39,5 @@ public interface UserService {
 	void updatePetOwner(PetOwner petOwner);
 	
 	PetOwner getPetOwner(Long id);
-	
-	void updatePassword(User user, String originalPassword);
-	
-	String requestTempPassword(User user);
 	
 }

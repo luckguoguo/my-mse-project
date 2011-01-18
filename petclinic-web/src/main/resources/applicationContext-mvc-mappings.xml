@@ -8,7 +8,6 @@
 	
 	<!-- <mvc:view-controller path="/" view-name="index" /> -->
 	<mvc:view-controller path="/" view-name="redirect:/login" />
-	
-	<mvc:view-controller path="/welcome" view-name="welcome" />
-	
+	<mvc:view-controller path="/admin" view-name="redirect:/adminLogin" />
+
 </beans>
