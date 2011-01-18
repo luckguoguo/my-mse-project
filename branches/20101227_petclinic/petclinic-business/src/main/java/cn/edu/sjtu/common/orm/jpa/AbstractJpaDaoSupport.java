@@ -80,7 +80,7 @@ public abstract class AbstractJpaDaoSupport<T, PK extends Serializable> {
 		try {
 			return (X) createQuery(jpql, values).getSingleResult();
 		} catch (PersistenceException e) {
-			logger.debug(e.getMessage(), e);
+			logger.debug(e.getMessage());
 			return null;
 		}
 	}
@@ -90,7 +90,7 @@ public abstract class AbstractJpaDaoSupport<T, PK extends Serializable> {
 		try {
 			return (X) createQuery(jpql, values).getSingleResult();
 		} catch (PersistenceException e) {
-			logger.debug(e.getMessage(), e);
+			logger.debug(e.getMessage());
 			return null;
 		}
 	}

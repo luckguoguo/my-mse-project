@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<tbl_clinic id="1" name="clinicName1" introduction="intro1" grade="1" address="address1" telephone="telephone1" 
+			email="email1" star="1" management_password="mgrPassword1" status="ACTIVE" 
+			created_by="1" created_date="2011-01-01 10:00:00" last_modified_by="1" last_modified_date="2011-01-01 10:00:00" />
+	<tbl_clinic id="2" name="clinicName2" introduction="intro2" grade="2" address="address2" telephone="telephone2" 
+			email="email2" star="2" management_password="mgrPassword2" status="INACTIVE" 
+			created_by="2" created_date="2011-01-02 10:00:00" last_modified_by="2" last_modified_date="2011-01-02 10:00:00" />
+	<tbl_clinic id="3" name="clinicName3" introduction="intro3" grade="3" address="address3" telephone="telephone3" 
+			email="email3" star="3" management_password="mgrPassword1" status="PENDING" 
+			created_by="3" created_date="2011-01-03 10:00:00" last_modified_by="3" last_modified_date="2011-01-03 10:00:00" />
+			
+	<tbl_user id="1" username="admin1" password="adminpwd1" temp_password="admintmppwd1" email="admin1@petclinic.com" 
+			name="adminname1" gender="MALE" status="ACTIVE" user_type="0" 
+			created_by="1" created_date="2011-01-01 10:00:00" last_modified_by="1" last_modified_date="2011-01-01 10:00:00" />
+	
+	<tbl_user id="2" username="vet1" password="vetpwd1" temp_password="vettmppwd1" email="vet1@petclinic.com" 
+			name="vetname1" gender="MALE" status="ACTIVE" user_type="1" 
+			created_by="1" created_date="2011-01-01 10:00:00" last_modified_by="1" last_modified_date="2011-01-01 10:00:00" />
+			
+	<tbl_user id="3" username="petowner1" password="petownerpwd1" temp_password="petownertmppwd1" email="petowner1@petclinic.com" 
+			name="petownername1" gender="FEMALE" status="ACTIVE" user_type="2" 
+			created_by="1" created_date="2011-01-01 10:00:00" last_modified_by="1" last_modified_date="2011-01-01 10:00:00" />
+	
+	<tbl_administrator id="1" />
+			
+	<tbl_veterinarian id="2" clinic_id="1" title="Dr." introduction="intro2" telephone="telephone2" 
+			birthdate="2011-01-01 10:00:00" workingdate="2011-01-01 10:00:00" />
+			
+	<tbl_petowner id="3" id_card="310000xxxxxx" birthdate="2011-01-01 10:00:00" address="address3" zipcode="200000" telephone="telephone3" />
+
+</dataset>
