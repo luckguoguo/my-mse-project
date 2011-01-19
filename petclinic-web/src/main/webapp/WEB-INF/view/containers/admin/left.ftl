@@ -1,3 +1,4 @@
+<#include "*/common/taglibs.ftl" parse=true encoding="UTF-8">
 <h2>Categories :</h2>
 <ul>
 <li><a href="#">World Politics</a></li> 

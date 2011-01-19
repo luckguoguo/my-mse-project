@@ -1,1 +1,2 @@
+<#include "*/common/taglibs.ftl" parse=true encoding="UTF-8">
 <a href="http://www.templatesold.com/" target="_blank">Website Templates</a> by <a href="http://www.free-css-templates.com/" target="_blank">Free CSS Templates</a>

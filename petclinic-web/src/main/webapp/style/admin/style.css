@@ -22,12 +22,12 @@ color: #111;
 
 #wrap {
 margin: 0 auto;
-width: 800px;
+width: 1024px;
 }
 
 #header {
 height: 110px;
-background: #fff url(images/header.jpg) no-repeat;
+background: #fff url(../../image/admin/header.jpg) no-repeat;
 
 }
 #header h1 { 
@@ -59,7 +59,7 @@ padding: 0 20px;
 
 .right {
 float: right;
-width: 570px;
+width: 794px;
 text-align: justify;
 padding-top: 20px;
 }

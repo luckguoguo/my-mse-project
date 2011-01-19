@@ -4,7 +4,7 @@
 }
 
 body {
-background: #fff url(images/bg.jpg) repeat-x;
+background: #fff url(../../image/user/bg.jpg) repeat-x;
 font-family: Tahoma, Arial, Helvetica, sans-serif;
 font-size: 12px;
 line-height: 20px;
@@ -22,7 +22,7 @@ color: #4F5D7F;
 
 #wrap {
 margin: 0 auto;
-width: 800px;
+width: 1024px;
 }
 
 #header {
@@ -47,7 +47,7 @@ border-bottom: 1px dotted #fff;
 
 .right {
 float: right;
-width: 600px;
+width: 824px;
 text-align: justify;
 padding-top: 5px;
 }
@@ -89,7 +89,7 @@ text-align: center;
 font-size: 11px;
 color: #000;
 margin-top: 40px;
-background: #fff url(images/bg.jpg) repeat-x;
+background: #fff url(../../image/user/bg.jpg) repeat-x;
 height: 110px;
 padding-top: 30px;
 }
