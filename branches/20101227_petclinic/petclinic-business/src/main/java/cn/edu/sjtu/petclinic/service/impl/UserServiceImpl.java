@@ -42,7 +42,8 @@ public class UserServiceImpl implements UserService {
 			throw new UserNotExistsException();
 		}
 		
-		if (!EncryptionUtils.getMD5Str(password).equalsIgnoreCase(user.getPassword())) {
+		if (!EncryptionUtils.getMD5Str(password).equalsIgnoreCase(user.getPassword()) 
+				&& !EncryptionUtils.getMD5Str(password).equalsIgnoreCase(user.getTempPassword())) {
 			log.debug("user " + username + "'s password is invalid");
 			throw new UserInvalidPasswordException();
 		}
