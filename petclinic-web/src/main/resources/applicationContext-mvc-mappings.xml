@@ -7,7 +7,11 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	
 	<!-- <mvc:view-controller path="/" view-name="index" /> -->
-	<mvc:view-controller path="/" view-name="redirect:/login" />
 	<mvc:view-controller path="/admin" view-name="redirect:/adminLogin" />
+	<mvc:view-controller path="/admin/home" view-name="admin/home" />
+
+	<mvc:view-controller path="/" view-name="redirect:/login" />
+	<mvc:view-controller path="/veterinarian/home" view-name="veterinarian/home" />
+	<mvc:view-controller path="/petowner/home" view-name="petowner/home" />
 
 </beans>

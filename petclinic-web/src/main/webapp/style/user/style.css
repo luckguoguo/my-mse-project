@@ -45,6 +45,21 @@ color: #fff;
 border-bottom: 1px dotted #fff;
 }
 
+.center {
+text-align: justify;
+padding-top: 5px;
+}
+.center h2 {
+font-size: 18px;
+font-weight: 100;
+padding: 15px 0 7px 0;
+}
+.center h2 a {
+text-decoration: none;
+}
+.center h2 a:hover {
+}
+
 .right {
 float: right;
 width: 824px;
@@ -95,3 +110,68 @@ padding-top: 30px;
 }
 #footer a { color: #000; }
 #footer a:hover { color: #aaa; }
+
+/* form */
+input {
+	border: 1px solid #999;
+	margin: 0px 5px;
+	padding: 2px;
+}
+
+input.button {
+	font-weight: bold;
+	background: #FFF;
+	padding: 0px 3px;
+}
+
+/* table */
+table {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	border-collapse: collapse;
+	border: none;
+}
+
+th,td {
+	border: solid #999 1px;
+	padding: 3px;
+}
+
+table.noborder th,table.noborder td {
+	border: none;
+}
+
+ol,ul {
+	margin-top: 10px;
+}
+
+li {
+	line-height: 22px;
+	text-align: left;
+}
+
+/* Success, notice and error boxes
+-------------------------------------------------------------- */
+.error {
+	color: #8a1f11;
+}
+
+.notice {
+	color: #514721;
+}
+
+.success {
+	color: #264409;
+}
+
+.error a {
+	color: #8a1f11;
+}
+
+.notice a {
+	color: #514721;
+}
+
+.success a {
+	color: #264409;
+}
