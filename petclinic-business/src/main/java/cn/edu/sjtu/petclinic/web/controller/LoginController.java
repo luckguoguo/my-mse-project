@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import cn.edu.sjtu.petclinic.entity.Administrator;
 import cn.edu.sjtu.petclinic.entity.PetOwner;
 import cn.edu.sjtu.petclinic.entity.User;
 import cn.edu.sjtu.petclinic.entity.Veterinarian;
@@ -33,15 +34,25 @@ public class LoginController extends BaseController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String getLoginForm(Model model) {
+	public String getLoginForm(HttpServletRequest request, Model model) {
 		log.debug("do getLoginForm...");
+		if (checkLogin(request)) {
+			return getHomeViewName(getSessionUser(request.getSession()));
+		} 
 		model.addAttribute(new LoginForm());
 		return getLoginFormViewName();
 	}
 	
+	protected boolean checkLogin(HttpServletRequest request) {
+		return getSessionUser(request.getSession()) != null;
+	}
+
 	@RequestMapping(method = RequestMethod.POST)
 	public String login(HttpServletRequest request, Model model, @Valid LoginForm loginForm, BindingResult result) {
 		log.debug("do submit login form...");
+		if (checkLogin(request)) {
+			return getHomeViewName(getSessionUser(request.getSession()));
+		} 
 		
 		if (result.hasErrors()) {
 			log.debug("login form has field errors");
@@ -50,7 +61,13 @@ public class LoginController extends BaseController {
 		
 		try {
 			User user = userService.authenticate(loginForm.getUsername(), loginForm.getPassword());
-			setSessionUser(request.getSession(), user);
+			
+			boolean isValid = validateUser(user);
+			if (isValid) {
+				setSessionUser(request.getSession(), user);
+			} else {
+				result.reject("login.error.userInvalidRole");
+			}
 		} catch (UserNotExistsException e) {
 			result.reject("login.error.userNotExists");
 		} catch (UserInvalidPasswordException e) {
@@ -70,11 +87,17 @@ public class LoginController extends BaseController {
 		return getHomeViewName(getSessionUser(request.getSession()));
 	}
 
+	protected boolean validateUser(User user) {
+		return !(user instanceof Administrator);
+	}
+
 	protected String getHomeViewName(User sessionUser) {
 		if (sessionUser instanceof Veterinarian) {
 			return ViewNames.REDIRECT_VETERINARIAN_HOME;
 		} else if (sessionUser instanceof PetOwner) {
 			return ViewNames.REDIRECT_PETOWNER_HOME;
+		} else if (sessionUser instanceof Administrator) {
+			return ViewNames.REDIRECT_ADMIN_HOME;
 		}
 		return null;
 	}

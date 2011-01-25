@@ -28,6 +28,18 @@
 		<put-attribute name="body" value="user.container.body" />
 		<put-attribute name="footer" value="user.container.footer" />
 	</definition>
+	<definition name="veterinarian.2column" extends="user.2column">
+		<put-attribute name="header" value="user.container.header" />
+		<put-attribute name="left" value="veterinarian.container.left" />
+		<put-attribute name="body" value="user.container.body" />
+		<put-attribute name="footer" value="user.container.footer" />
+	</definition>
+	<definition name="petowner.2column" extends="user.2column">
+		<put-attribute name="header" value="user.container.header" />
+		<put-attribute name="left" value="petowner.container.left" />
+		<put-attribute name="body" value="user.container.body" />
+		<put-attribute name="footer" value="user.container.footer" />
+	</definition>
 	
 	<!-- ======================================================= -->
 	<!-- Container definitions                                   -->
@@ -38,15 +50,18 @@
 	<definition name="admin.container.footer" template="/WEB-INF/view/containers/admin/footer.ftl"/>
 	
 	<definition name="admin.container.body.login" template="/WEB-INF/view/containers/admin/login.ftl"/>
+	<definition name="admin.container.body.home" template="/WEB-INF/view/containers/admin/home.ftl"/>
 	
 	<definition name="user.container.header" template="/WEB-INF/view/containers/user/header.ftl"/>
 	<definition name="user.container.left" template="/WEB-INF/view/containers/user/left.ftl"/>
+	<definition name="veterinarian.container.left" template="/WEB-INF/view/containers/user/veterinarian/left.ftl"/>
+	<definition name="petowner.container.left" template="/WEB-INF/view/containers/user/petowner/left.ftl"/>
 	<definition name="user.container.body" template="/WEB-INF/view/containers/user/body.ftl"/>
 	<definition name="user.container.footer" template="/WEB-INF/view/containers/user/footer.ftl"/>
 	
 	<definition name="user.container.body.login" template="/WEB-INF/view/containers/user/login.ftl"/>
-	<definition name="user.container.body.veterinarian.home" template="/WEB-INF/view/containers/user/veterinarian/home.ftl"/>
-	<definition name="user.container.body.petowner.home" template="/WEB-INF/view/containers/user/petowner/home.ftl"/>
+	<definition name="veterinarian.container.body.home" template="/WEB-INF/view/containers/user/veterinarian/home.ftl"/>
+	<definition name="petowner.container.body.home" template="/WEB-INF/view/containers/user/petowner/home.ftl"/>
 	
 	<!-- ======================================================= -->
 	<!-- Component definitions                                   -->
@@ -65,11 +80,11 @@
 	<definition name="login" extends="user.1column">
 		<put-attribute name="body" value="user.container.body.login" />
 	</definition>
-	<definition name="veterinarian/home" extends="user.2column">
-		<put-attribute name="body" value="user.container.body.veterinarian.home" />
+	<definition name="veterinarian/home" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.home" />
 	</definition>
-	<definition name="petowner/home" extends="user.2column">
-		<put-attribute name="body" value="user.container.body.petowner.home" />
+	<definition name="petowner/home" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.home" />
 	</definition>
 	
 </tiles-definitions>

@@ -1,26 +1,17 @@
 <#include "*/common/taglibs.ftl" parse=true encoding="UTF-8">
-<h2>Categories :</h2>
+<h2><@spring.messageText "admin.left.information", "Information" /></h2>
+<p><@spring.messageText "admin.left.welcome", "Welcome!" />${sessionUser.name}</p>
+<h2><@spring.messageText "admin.left.clinic", "Clinic" /></h2>
 <ul>
-<li><a href="#">World Politics</a></li> 
-<li><a href="#">Europe Sport</a></li> 
-<li><a href="#">Networking</a></li> 
-<li><a href="#">Nature - Africa</a></li>
-<li><a href="#">SuperCool</a></li> 
-<li><a href="#">Last Category</a></li>
+<li><a href="#"><@spring.messageText "admin.left.clinic.register", "Clinic Register" /></a></li>
+<li><a href="#"><@spring.messageText "admin.left.clinic.query", "Clinic Query" /></a></li>
+<li><a href="#"><@spring.messageText "admin.left.clinic.updateProfile", "Clinic Update Profile" /></a></li>
+<li><a href="#"><@spring.messageText "admin.left.clinic.updateStatus", "Clinic Update Status" /></a></li>
 </ul>
-
-<h2>Archives</h2>
+<h2><@spring.messageText "admin.left.veterinarian", "Veterinarian" /></h2>
 <ul>
-<li><a href="#">January 2007</a></li> 
-<li><a href="#">February 2007</a></li> 
-<li><a href="#">March 2007</a></li> 
-<li><a href="#">April 2007</a></li>
-<li><a href="#">May 2007</a></li> 
-<li><a href="#">June 2007</a></li> 
-<li><a href="#">July 2007</a></li> 
-<li><a href="#">August 2007</a></li> 
-<li><a href="#">September 2007</a></li>
-<li><a href="#">October 2007</a></li>
-<li><a href="#">November 2007</a></li>
-<li><a href="#">December 2007</a></li>
+<li><a href="#"><@spring.messageText "admin.left.veterinarian.register", "Veterinarian Register" /></a></li>
+<li><a href="#"><@spring.messageText "admin.left.veterinarian.query", "Veterinarian Query" /></a></li>
+<li><a href="#"><@spring.messageText "admin.left.veterinarian.updateProfile", "Veterinarian Update Profile" /></a></li>
+<li><a href="#"><@spring.messageText "admin.left.veterinarian.updateStatus", "Veterinarian Update Status" /></a></li>
 </ul>

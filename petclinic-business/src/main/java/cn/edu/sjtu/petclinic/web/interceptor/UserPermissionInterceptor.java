@@ -36,7 +36,7 @@ public class UserPermissionInterceptor extends HandlerInterceptorAdapter {
 			log.debug("user logged in with valid permission");
 			return true;
 		} else {
-			log.debug("user not loggged in, redirect to login page");
+			log.debug("user has no permission to this page");
 			throw new ModelAndViewDefiningException(createRedirectLoginMav());
 		}
 	}
@@ -46,8 +46,10 @@ public class UserPermissionInterceptor extends HandlerInterceptorAdapter {
 	}
 
 	protected boolean hasPermission(User sessionUser) {
-		if (sessionUser == null)
+		if (sessionUser == null) {
+			log.debug("user not loggged in, redirect to login page");
 			return false;
+		}
 		return sessionUser.getClass().getSimpleName().equals(validUserClassName);
 	}
 
