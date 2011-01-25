@@ -5,3 +5,4 @@
 <#assign contextPath=Request["javax.servlet.forward.context_path"]>
 <#assign requestUri=Request["javax.servlet.forward.request_uri"]!"">
 <#assign queryString=Request["javax.servlet.forward.query_string"]!"">
+<#assign sessionUser=Session["cn.edu.sjtu.petclinic.session.user"]!"">

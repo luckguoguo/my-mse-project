@@ -1,7 +1,6 @@
 <#include "*/common/taglibs.ftl" parse=true encoding="UTF-8">
 <h2><@spring.messageText "login.label.title", "Please Login" /></h2>
-<div class="data-center">
-<form action="" method="POST">
+<form id="loginForm" action="" method="POST">
 <#if globalErrorMessage??>
 <div class="error">
 	${globalErrorMessage}
@@ -30,4 +29,3 @@
 	</tr>
 </table>
 </form>
-</div>

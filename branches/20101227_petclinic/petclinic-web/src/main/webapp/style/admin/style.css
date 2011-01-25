@@ -92,6 +92,7 @@ a:hover {
 }
 
 .right h2 {
+	color: #fff;
 	font-size: 18px;
 	font-weight: 100;
 	padding-left: 10px;
@@ -161,10 +162,6 @@ a:hover {
 	color: #111;
 }
 
-.data-center {
-	padding: 5px 0 0 370px;
-}
-
 /* form */
 input {
 	border: 1px solid #999;
@@ -228,4 +225,10 @@ li {
 
 .success a {
 	color: #264409;
+}
+
+/* Page style
+-------------------------------------------------------------- */
+#loginForm {
+	padding: 5px 0 0 370px;
 }
