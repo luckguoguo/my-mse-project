@@ -1,17 +1,17 @@
 <#include "*/common/taglibs.ftl" parse=true encoding="UTF-8">
-<h2><a href="#">License and terms of use</a></h2>
-SimplyBlue is a CSS template that is free and fully standards compliant. <a href="http://www.free-css-templates.com/">Free CSS Templates</a> designed this template.
-This template is allowed for all uses, including commercial use, as it is released under the <strong>Creative Commons Attributions 2.5</strong> license. The only stipulation to the use of this free template is that the links appearing in the footer remain intact. Beyond that, simply enjoy and have fun with it!	 
+<h2><a href="###"><@spring.messageText "petowner.home.p1.title", "P1 Title" /></a></h2>
+<div class="center">
+<@spring.messageText "petowner.home.p1.content", "P1 Content" />
 <br /><br />
 <img src="${contextPath}/image/user/pic.jpg" alt="Example pic" style="border: 3px solid #ccc;" />
-<br /><br />
-Donec nulla. Aenean eu augue ac nisl tincidunt rutrum. Proin erat justo, pharetra eget, posuere at, malesuada 
-et, nulla. Donec pretium nibh sed est faucibus suscipit. Nunc nisi. Nullam vehicula. In ipsum lorem, bibendum sed, 
-consectetuer et, gravida id, erat. Ut imperdiet, leo vel condimentum faucibus, risus justo feugiat purus, vitae 
-congue nulla diam non urna.
+</div>
 
-<h2><a href="#">Title with a link - Example of heading 2</a></h2>
-Donec nulla. Aenean eu augue ac nisl tincidunt rutrum. Proin erat justo, pharetra eget, posuere at, malesuada 
-et, nulla. Donec pretium nibh sed est faucibus suscipit. Nunc nisi. Nullam vehicula. In ipsum lorem, bibendum sed, 
-consectetuer et, gravida id, erat. Ut imperdiet, leo vel condimentum faucibus, risus justo feugiat purus, vitae 
-congue nulla diam non urna.
+<h2><a href="###"><@spring.messageText "petowner.home.p2.title", "P2 Title" /></a></h2>
+<div class="center">
+<@spring.messageText "petowner.home.p2.content", "P2 Content" />
+</div>
+
+<h2><a href="###"><@spring.messageText "petowner.home.p3.title", "P3 Title" /></a></h2>
+<div class="center">
+<@spring.messageText "petowner.home.p3.content", "P3 Content" />
+</div>
