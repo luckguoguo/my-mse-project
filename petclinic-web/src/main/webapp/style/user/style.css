@@ -50,7 +50,8 @@ a:hover {
 
 .center {
 	text-align: justify;
-	padding-top: 5px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .center h2 {
@@ -75,33 +76,49 @@ a:hover {
 	float: right;
 	width: 824px;
 	text-align: justify;
-	padding-top: 5px;
+	padding-top: 20px;
+	padding-left: 5px;
 }
 
 .right h2 {
+	color: #fff;
 	font-size: 18px;
-	font-weight: 100;
-	padding: 15px 0 7px 0;
+	font-weight: 600;
+	padding-left: 10px;
+	height: 30px;
+	line-height: 30px;
+	background: #9ee0f6;
 }
 
 .right h2 a {
 	text-decoration: none;
+	color: #fff;
 }
 
 .right h2 a:hover {
-	
 }
 
 .left {
 	float: left;
-	width: 200px;
+	width: 180px;
 	padding-top: 10px;
-	font-size: 14px;
+	font-size: 13px;
+}
+
+.left h2 {
+	margin: 10px 0 0 0;
+	padding-left: 10px;
+	height: 30px;
+	line-height: 30px;
+	background: #9ee0f6;
+	color: #fff;
+	font-size: 13px;
 }
 
 .left ul {
-	padding: 10px 0 15px 0;
-	list-style-type: none;
+	padding: 10px 0 15px 20px;
+	list-style-type: disc;
+	color: #99aecd;
 }
 
 .left ul li a {
@@ -172,6 +189,10 @@ li {
 	text-align: left;
 }
 
+ol.top,ul.top {
+	margin-top: 0px;
+}
+
 /* Success, notice and error boxes
 -------------------------------------------------------------- */
 .error {
@@ -202,4 +223,12 @@ li {
 -------------------------------------------------------------- */
 #loginForm {
 	padding: 5px 0 0 370px;
+}
+
+.welcome {
+	color: #000;
+	font-size: 12px;
+	font-weight: 600;
+	padding-left: 11px;
+	color: #99aecd;
 }

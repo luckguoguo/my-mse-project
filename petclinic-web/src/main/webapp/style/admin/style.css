@@ -64,6 +64,7 @@ a:hover {
 .center {
 	text-align: justify;
 	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .center h2 {
@@ -107,7 +108,6 @@ a:hover {
 }
 
 .right h2 a:hover {
-	color: #111;
 }
 
 .left {
@@ -201,6 +201,10 @@ li {
 	text-align: left;
 }
 
+ol.top,ul.top {
+	margin-top: 0px;
+}
+
 /* Success, notice and error boxes
 -------------------------------------------------------------- */
 .error {
@@ -231,4 +235,12 @@ li {
 -------------------------------------------------------------- */
 #loginForm {
 	padding: 5px 0 0 370px;
+}
+
+.welcome {
+	color: #000;
+	font-size: 12px;
+	font-weight: 600;
+	padding-left: 11px;
+	color: #425969;
 }
