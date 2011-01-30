@@ -1,13 +1,9 @@
 package cn.edu.sjtu.petclinic.service.impl;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.edu.sjtu.common.orm.Page;
 import cn.edu.sjtu.common.utils.EncryptionUtils;
-import cn.edu.sjtu.petclinic.dao.UserDao;
 import cn.edu.sjtu.petclinic.dto.VeterinarianQuery;
 import cn.edu.sjtu.petclinic.entity.PetOwner;
 import cn.edu.sjtu.petclinic.entity.User;
@@ -20,16 +16,7 @@ import cn.edu.sjtu.petclinic.service.exception.UserInvalidStatusException;
 import cn.edu.sjtu.petclinic.service.exception.UserNotExistsException;
 
 @Service
-public class UserServiceImpl implements UserService {
-
-	private final Log log = LogFactory.getLog(this.getClass());
-	
-	@Autowired
-	private UserDao userDao;
-	
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
-	}
+public class UserServiceImpl extends AbstractService implements UserService {
 
 	@Override
 	public User authenticate(String username, String password)

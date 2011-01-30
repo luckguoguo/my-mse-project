@@ -58,6 +58,12 @@ public class SimpleHibernateDao<T, PK extends Serializable> {
 		getSession().saveOrUpdate(entity);
 		logger.debug("save entity: {}", entity);
 	}
+	
+	public void merge(T entity) {
+		Assert.notNull(entity, "entity cannot be null");
+		getSession().merge(entity);
+		logger.debug("merge entity: {}", entity);
+	}
 
 	public void delete(final T entity) {
 		Assert.notNull(entity, "entity cannot be null");
@@ -210,5 +216,5 @@ public class SimpleHibernateDao<T, PK extends Serializable> {
 		ClassMetadata meta = getSessionFactory().getClassMetadata(entityClass);
 		return meta.getIdentifierPropertyName();
 	}
-	
+
 }

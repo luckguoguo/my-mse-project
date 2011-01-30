@@ -7,6 +7,9 @@
   			email="email2" star="2" management_password="mgrPassword2" status="INACTIVE" 
   			created_by="2" created_date="2011-01-02 10:00:00" last_modified_by="2" last_modified_date="2011-01-02 10:00:00" />
   	<tbl_clinic id="3" name="clinicName3" introduction="intro3" grade="3" address="address3" telephone="telephone3" 
-  			email="email3" star="3" management_password="mgrPassword1" status="PENDING" 
+  			email="email3" star="3" management_password="mgrPassword3" status="PENDING" 
   			created_by="3" created_date="2011-01-03 10:00:00" last_modified_by="3" last_modified_date="2011-01-03 10:00:00" />
+  	<tbl_clinic id="4" name="clinicName4" introduction="intro4" grade="4" address="address4" telephone="telephone4" 
+  			email="email4" star="4" management_password="mgrPassword4" status="PENDING" 
+  			created_by="4" created_date="2011-01-03 10:00:00" last_modified_by="4" last_modified_date="2011-01-03 10:00:00" />
 </dataset>

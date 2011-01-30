@@ -32,6 +32,7 @@ public class TestUserServiceImpl {
 	@Test(expected = UserNotExistsException.class)
 	public void testAuthenticate_UserNotExists() 
 			throws UserNotExistsException, UserInvalidPasswordException, UserInvalidStatusException {
+		
 		expect(mockUserDao.findUserByUsername(username)).andReturn(null);
 		replay(mockUserDao);
 		userService.authenticate(username, password);
@@ -41,6 +42,7 @@ public class TestUserServiceImpl {
 	@Test(expected = UserInvalidPasswordException.class)
 	public void testAuthenticate_UserInvalidPassword() 
 			throws UserNotExistsException, UserInvalidPasswordException, UserInvalidStatusException {
+		
 		User user = new Administrator();
 		user.setUsername(username);
 		user.setPassword(md5Password);
@@ -53,6 +55,7 @@ public class TestUserServiceImpl {
 	@Test(expected = UserInvalidStatusException.class)
 	public void testAuthenticate_UserInvalidStatus() 
 			throws UserNotExistsException, UserInvalidPasswordException, UserInvalidStatusException {
+		
 		User user = new Administrator();
 		user.setUsername(username);
 		user.setPassword(md5Password);
@@ -66,6 +69,7 @@ public class TestUserServiceImpl {
 	@Test
 	public void testAuthenticate_Success() 
 			throws UserNotExistsException, UserInvalidPasswordException, UserInvalidStatusException {
+		
 		User user = new Administrator();
 		user.setUsername(username);
 		user.setPassword(md5Password);

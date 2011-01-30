@@ -3,15 +3,20 @@ package cn.edu.sjtu.petclinic.service;
 import cn.edu.sjtu.common.orm.Page;
 import cn.edu.sjtu.petclinic.dto.ClinicQuery;
 import cn.edu.sjtu.petclinic.entity.Clinic;
+import cn.edu.sjtu.petclinic.service.exception.ClinicInvalidPasswordException;
 import cn.edu.sjtu.petclinic.service.exception.DuplicatedClinicNameException;
 
 public interface ClinicService {
 
-	void addClinic(Clinic clinic) throws DuplicatedClinicNameException;
+	void checkClinic(Clinic clinic) throws DuplicatedClinicNameException;
 	
-	void updateClinic(Clinic clinic);
+	void registerClinic(Clinic clinic) throws DuplicatedClinicNameException;
 	
-	Page<Clinic> queryClinics(ClinicQuery query);
+	void updateClinic(Clinic clinic) throws DuplicatedClinicNameException, ClinicInvalidPasswordException;
+	
+	Page<Clinic> queryClinics(Page<Clinic> page, ClinicQuery clinicQuery);
+
+	Page<Clinic> queryActiveClinics(Page<Clinic> page, ClinicQuery clinicQuery);
 	
 	Clinic getClinic(Long id);
 	
