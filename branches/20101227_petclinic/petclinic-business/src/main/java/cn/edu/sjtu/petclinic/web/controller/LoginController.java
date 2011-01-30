@@ -24,7 +24,7 @@ import cn.edu.sjtu.petclinic.web.utils.ServletUtils;
 
 @Controller
 @RequestMapping("/login")
-public class LoginController extends BaseController {
+public class LoginController extends AbstractController {
 	
 	@Autowired
 	protected UserService userService;

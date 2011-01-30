@@ -20,4 +20,8 @@ public abstract class IdEntity {
 		this.id = id;
 	}
 	
+	public boolean isNewEntity() {
+		return id == null || id < 1;
+	}
+	
 }

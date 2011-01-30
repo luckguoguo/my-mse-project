@@ -5,8 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 
 import cn.edu.sjtu.common.orm.jpa.AuditableEntity;
 
@@ -18,22 +25,46 @@ public class Clinic extends AuditableEntity {
 		ACTIVE, INACTIVE, PENDING;
 	};
 	
+	@NotBlank
+	@Size(max = 31)
 	private String name;
 	
+	@NotBlank
+	@Size(max = 1023)
 	private String introduction;
 	
+	@NotNull
+	@Min(value = 1)
+	@Max(value = 3)
 	private Integer grade;
 	
+	@NotBlank
+	@Size(max = 127)
 	private String address;
 	
+	@NotBlank
+	@Size(max = 31)
 	private String telephone;
 	
+	@NotBlank
+	@Email
+	@Size(max = 255)
 	private String email;
 	
+	@NotNull
+	@Min(value = 1)
+	@Max(value = 5)
 	private Integer star;
 	
+	@NotBlank
+	@Size(max = 255)
 	@Column(name = "management_password")
 	private String mgrPassword;
+	
+	@NotBlank
+	@Size(max = 255)
+	@Transient
+	private String confirmMgrPassword;
 	
 	@Enumerated(EnumType.STRING)
 	private Status status;
@@ -105,6 +136,14 @@ public class Clinic extends AuditableEntity {
 
 	public void setMgrPassword(String mgrPassword) {
 		this.mgrPassword = mgrPassword;
+	}
+
+	public String getConfirmMgrPassword() {
+		return confirmMgrPassword;
+	}
+
+	public void setConfirmMgrPassword(String confirmMgrPassword) {
+		this.confirmMgrPassword = confirmMgrPassword;
 	}
 
 	public Status getStatus() {

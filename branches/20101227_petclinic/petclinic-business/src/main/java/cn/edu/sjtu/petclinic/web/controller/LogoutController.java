@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import cn.edu.sjtu.petclinic.entity.User;
 
 @Controller
-public class LogoutController extends BaseController {
+public class LogoutController extends AbstractController {
 	
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request) {

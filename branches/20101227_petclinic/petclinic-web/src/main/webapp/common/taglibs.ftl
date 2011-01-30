@@ -6,3 +6,5 @@
 <#assign requestUri=Request["javax.servlet.forward.request_uri"]!"">
 <#assign queryString=Request["javax.servlet.forward.query_string"]!"">
 <#assign sessionUser=Session["cn.edu.sjtu.petclinic.session.user"]!"">
+
+<#assign clinicGrades={"":"请选择", "1":"一级", "2":"二级", "3":"三级"}>
