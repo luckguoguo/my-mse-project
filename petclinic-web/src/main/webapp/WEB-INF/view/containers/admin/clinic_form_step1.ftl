@@ -1,4 +1,15 @@
 <#include "*/common/taglibs.ftl" parse=true encoding="UTF-8">
+<script>
+$(document).ready(function() {
+	$("#clinicStarWidget").raty({
+		path: "${contextPath}/image/raty",
+		start: ${clinic.star!"0"},
+		onClick: function(score) {
+			$("input[name='star']").val(score);
+		}
+	});
+});
+</script>
 <h2><a href="###">
 <#if clinic.id??>
 	<@spring.messageText "admin.clinic.form.update.title", "Update Clinic" />
@@ -69,7 +80,8 @@
 		<td><@spring.messageText "admin.clinic.form.label.star", "Clinic Star" /></td>
 		<td>
 			<@spring.bind "clinic.star" />
-			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
+			<div id="clinicStarWidget"></div>
+			<input type="hidden" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
 			<@spring.showErrors ", ", "error"/>
 		</td>
 	</tr>
