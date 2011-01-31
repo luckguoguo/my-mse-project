@@ -6,7 +6,8 @@
 	<meta http-equiv="Content-Language" content="<@spring.messageText "user.page.content.language", "English" />" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="${contextPath}/style/user/style.css" media="screen" />
-	<script language="javascript" type="text/javascript" src="${contextPath}/script/jquery/jquery-1.4.4.js"></script>
+	<script language="javascript" type="text/javascript" src="${contextPath}/script/jquery/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="${contextPath}/script/jquery/jquery.raty.js"></script>
 	<script language="javascript" type="text/javascript">
 		var ctx = "${contextPath}";
 	</script>

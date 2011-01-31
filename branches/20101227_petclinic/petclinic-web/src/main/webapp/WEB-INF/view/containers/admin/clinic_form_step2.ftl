@@ -1,9 +1,16 @@
 <#include "*/common/taglibs.ftl" parse=true encoding="UTF-8">
 <script>
-	function goPrev() {
-		$("#step").val("0");
-		$("#clinicForm").submit();
-	}
+$(document).ready(function() {
+	$("#clinicStarWidget").raty({
+		path: "${contextPath}/image/raty",
+		start: ${clinic.star!"0"},
+		readOnly: true
+	});
+});
+function goPrev() {
+	$("#step").val("0");
+	$("#clinicForm").submit();
+}
 </script>
 <h2><a href="###">
 <#if clinic.id??>
@@ -12,6 +19,7 @@
 	<@spring.messageText "admin.clinic.form.register.title", "Register Clinic" />
 </#if>
 </a></h2>
+<p style="color: red;"><@spring.messageText "admin.clinic.form.mgrPassword.attention", "Attention" /></p>
 <form id="clinicForm" action="" method="POST">
 <input type="hidden" id="step" name="step" value="2" />
 <input type="hidden" name="id" value="${clinic.id!""}" />
@@ -31,6 +39,62 @@
 </div>
 </#if>
 <table>
+	<tr>
+		<td><@spring.messageText "admin.clinic.form.label.name", "Clinic Name" /></td>
+		<td>
+			<@spring.bind "clinic.name" />
+			${spring.status.value?default("")}
+			<@spring.showErrors ", ", "error"/>
+		</td>
+	</tr>
+	<tr>
+		<td><@spring.messageText "admin.clinic.form.label.grade", "Clinic Grade" /></td>
+		<td>
+			<@spring.bind "clinic.grade" />
+			${clinicGrades[spring.status.value?default("")]}
+			<@spring.showErrors ", ", "error"/>
+		</td>
+	</tr>
+	<tr>
+		<td><@spring.messageText "admin.clinic.form.label.address", "Clinic Address" /></td>
+		<td>
+			<@spring.bind "clinic.address" />
+			${spring.status.value?default("")}
+			<@spring.showErrors ", ", "error"/>
+		</td>
+	</tr>
+	<tr>
+		<td><@spring.messageText "admin.clinic.form.label.telephone", "Clinic Telephone" /></td>
+		<td>
+			<@spring.bind "clinic.telephone" />
+			${spring.status.value?default("")}
+			<@spring.showErrors ", ", "error"/>
+		</td>
+	</tr>
+	<tr>
+		<td><@spring.messageText "admin.clinic.form.label.email", "Clinic Email" /></td>
+		<td>
+			<@spring.bind "clinic.email" />
+			${spring.status.value?default("")}
+			<@spring.showErrors ", ", "error"/>
+		</td>
+	</tr>
+	<tr>
+		<td><@spring.messageText "admin.clinic.form.label.introduction", "Clinic Introduction" /></td>
+		<td>
+			<@spring.bind "clinic.introduction" />
+			${spring.status.value?default("")}
+			<@spring.showErrors ", ", "error"/>
+		</td>
+	</tr>
+	<tr>
+		<td><@spring.messageText "admin.clinic.form.label.star", "Clinic Star" /></td>
+		<td>
+			<@spring.bind "clinic.star" />
+			<div id="clinicStarWidget"></div>
+			<@spring.showErrors ", ", "error"/>
+		</td>
+	</tr>
 	<#if clinic.id??>
 	<#else>
 	<tr>
