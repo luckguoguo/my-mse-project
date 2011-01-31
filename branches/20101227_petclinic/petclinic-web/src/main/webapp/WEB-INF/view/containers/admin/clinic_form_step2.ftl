@@ -23,13 +23,6 @@ function goPrev() {
 <form id="clinicForm" action="" method="POST">
 <input type="hidden" id="step" name="step" value="2" />
 <input type="hidden" name="id" value="${clinic.id!""}" />
-<input type="hidden" name="name" value="${clinic.name!""}" />
-<input type="hidden" name="grade" value="${clinic.grade!""}" />
-<input type="hidden" name="address" value="${clinic.address!""}" />
-<input type="hidden" name="telephone" value="${clinic.telephone!""}" />
-<input type="hidden" name="email" value="${clinic.email!""}" />
-<input type="hidden" name="introduction" value="${clinic.introduction!""}" />
-<input type="hidden" name="star" value="${clinic.star!""}" />
 <#if clinic.id??>
 	<input type="hidden" name="mgrPassword" value="${clinic.mgrPassword!""}" />
 </#if>
@@ -44,6 +37,7 @@ function goPrev() {
 		<td>
 			<@spring.bind "clinic.name" />
 			${spring.status.value?default("")}
+			<input type="hidden" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
 			<@spring.showErrors ", ", "error"/>
 		</td>
 	</tr>
@@ -52,6 +46,7 @@ function goPrev() {
 		<td>
 			<@spring.bind "clinic.grade" />
 			${clinicGrades[spring.status.value?default("")]}
+			<input type="hidden" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
 			<@spring.showErrors ", ", "error"/>
 		</td>
 	</tr>
@@ -60,6 +55,7 @@ function goPrev() {
 		<td>
 			<@spring.bind "clinic.address" />
 			${spring.status.value?default("")}
+			<input type="hidden" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
 			<@spring.showErrors ", ", "error"/>
 		</td>
 	</tr>
@@ -68,6 +64,7 @@ function goPrev() {
 		<td>
 			<@spring.bind "clinic.telephone" />
 			${spring.status.value?default("")}
+			<input type="hidden" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
 			<@spring.showErrors ", ", "error"/>
 		</td>
 	</tr>
@@ -76,6 +73,7 @@ function goPrev() {
 		<td>
 			<@spring.bind "clinic.email" />
 			${spring.status.value?default("")}
+			<input type="hidden" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
 			<@spring.showErrors ", ", "error"/>
 		</td>
 	</tr>
@@ -84,6 +82,7 @@ function goPrev() {
 		<td>
 			<@spring.bind "clinic.introduction" />
 			${spring.status.value?default("")}
+			<textarea cols="80" name="${spring.status.expression}" rows="10" style="display: none;">${spring.status.value?default("")}</textarea>
 			<@spring.showErrors ", ", "error"/>
 		</td>
 	</tr>
@@ -92,6 +91,7 @@ function goPrev() {
 		<td>
 			<@spring.bind "clinic.star" />
 			<div id="clinicStarWidget"></div>
+			<input type="hidden" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
 			<@spring.showErrors ", ", "error"/>
 		</td>
 	</tr>

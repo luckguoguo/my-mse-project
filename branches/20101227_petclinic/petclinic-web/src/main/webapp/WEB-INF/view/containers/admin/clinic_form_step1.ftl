@@ -1,6 +1,17 @@
 <#include "*/common/taglibs.ftl" parse=true encoding="UTF-8">
+<script type="text/javascript" src="${contextPath}/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="${contextPath}/ckeditor/adapters/jquery.js"></script>
 <script>
 $(document).ready(function() {
+	$("textarea[name='introduction']").ckeditor({
+		toolbar: [
+			['Source','-','Bold','Italic','Underline','Strike','-','NumberedList','BulletedList','-','Link','Unlink','-','Smiley','SpecialChar'],'/',
+			['Styles','Format','Font','FontSize'],
+			['TextColor','BGColor'],
+			['Maximize']
+		]
+		/* toolbar_Full=[['Source','-','Save','NewPage','Preview','-','Templates'],['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print','SpellChecker','Scayt'],['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],['Form','Checkbox','Radio','TextField','Textarea','Select','Button','ImageButton','HiddenField'],'/',['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],['BidiLtr','BidiRtl'],['Link','Unlink','Anchor'],['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe'],'/',['Styles','Format','Font','FontSize'],['TextColor','BGColor'],['Maximize','ShowBlocks','-','About']] */
+	});
 	$("#clinicStarWidget").raty({
 		path: "${contextPath}/image/raty",
 		start: ${clinic.star!"0"},
@@ -27,10 +38,10 @@ $(document).ready(function() {
 	${globalErrorMessage}
 </div>
 </#if>
-<table>
+<table width="80%">
 	<tr>
-		<td><@spring.messageText "admin.clinic.form.label.name", "Clinic Name" /></td>
-		<td>
+		<td width="20%"><@spring.messageText "admin.clinic.form.label.name", "Clinic Name" /></td>
+		<td width="80%">
 			<@spring.bind "clinic.name" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
 			<@spring.showErrors ", ", "error"/>
@@ -72,7 +83,7 @@ $(document).ready(function() {
 		<td><@spring.messageText "admin.clinic.form.label.introduction", "Clinic Introduction" /></td>
 		<td>
 			<@spring.bind "clinic.introduction" />
-			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
+			<textarea cols="80" name="${spring.status.expression}" rows="10">${spring.status.value?default("")}</textarea>
 			<@spring.showErrors ", ", "error"/>
 		</td>
 	</tr>
