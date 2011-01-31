@@ -14,6 +14,10 @@
 		<to>/style/$1</to>
 	</rule>
 	<rule>
+		<from>/ckeditor/**</from>
+		<to>/ckeditor/$1</to>
+	</rule>
+	<rule>
 		<from>/**</from>
 		<to>/app/$1</to>
 	</rule>
