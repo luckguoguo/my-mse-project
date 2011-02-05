@@ -54,6 +54,7 @@
 	<definition name="admin.container.body.clinic_form_step1" template="/WEB-INF/view/containers/admin/clinic_form_step1.ftl"/>
 	<definition name="admin.container.body.clinic_form_step2" template="/WEB-INF/view/containers/admin/clinic_form_step2.ftl"/>
 	<definition name="admin.container.body.clinic_form_message" template="/WEB-INF/view/containers/admin/clinic_form_message.ftl"/>
+	<definition name="admin.container.body.clinic_query" template="/WEB-INF/view/containers/admin/clinic_query.ftl"/>
 	
 	<definition name="user.container.header" template="/WEB-INF/view/containers/user/header.ftl"/>
 	<definition name="user.container.left" template="/WEB-INF/view/containers/user/left.ftl"/>
@@ -87,6 +88,12 @@
 	</definition>
 	<definition name="admin/clinic/form/message" extends="admin.2column">
 		<put-attribute name="body" value="admin.container.body.clinic_form_message" />
+	</definition>
+	<definition name="admin/clinic/query/form" extends="admin.2column">
+		<put-attribute name="body" value="admin.container.body.clinic_query" />
+	</definition>
+	<definition name="admin/clinic/query/result" extends="admin.2column">
+		<put-attribute name="body" value="admin.container.body.clinic_query" />
 	</definition>
 	
 	<definition name="login" extends="user.1column">

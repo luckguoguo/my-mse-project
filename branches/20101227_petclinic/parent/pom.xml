@@ -223,6 +223,11 @@
 				<version>2.3</version>
 				<classifier>jdk15</classifier>
 			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-jaxrs</artifactId>
+				<version>1.6.4</version>
+			</dependency>
 
 			<!-- j2ee web spec -->
 			<dependency>

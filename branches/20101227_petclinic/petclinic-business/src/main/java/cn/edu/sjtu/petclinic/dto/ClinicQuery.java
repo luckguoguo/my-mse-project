@@ -1,5 +1,6 @@
 package cn.edu.sjtu.petclinic.dto;
 
+import cn.edu.sjtu.common.orm.Page;
 import cn.edu.sjtu.petclinic.entity.Clinic;
 
 public class ClinicQuery {
@@ -13,6 +14,8 @@ public class ClinicQuery {
 	private Integer star;
 	
 	private Clinic.Status status;
+	
+	private Page<Clinic> page = new Page<Clinic>(10);
 
 	public String getName() {
 		return name;
@@ -52,6 +55,14 @@ public class ClinicQuery {
 
 	public void setStatus(Clinic.Status status) {
 		this.status = status;
+	}
+
+	public Page<Clinic> getPage() {
+		return page;
+	}
+
+	public void setPage(Page<Clinic> page) {
+		this.page = page;
 	}
 	
 }

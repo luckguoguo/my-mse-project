@@ -68,14 +68,14 @@ public class ClinicServiceImpl extends AbstractService implements ClinicService 
 	}
 	
 	@Override
-	public Page<Clinic> queryClinics(Page<Clinic> page, ClinicQuery clinicQuery) {
-		return clinicDao.findClinics(page, clinicQuery);
+	public Page<Clinic> queryClinics(ClinicQuery clinicQuery) {
+		return clinicDao.findClinics(clinicQuery.getPage(), clinicQuery);
 	}
 	
 	@Override
-	public Page<Clinic> queryActiveClinics(Page<Clinic> page, ClinicQuery clinicQuery) {
+	public Page<Clinic> queryActiveClinics(ClinicQuery clinicQuery) {
 		clinicQuery.setStatus(Clinic.Status.ACTIVE);
-		return clinicDao.findClinics(page, clinicQuery);
+		return clinicDao.findClinics(clinicQuery.getPage(), clinicQuery);
 	}
 	
 	@Override
@@ -85,14 +85,16 @@ public class ClinicServiceImpl extends AbstractService implements ClinicService 
 
 	@Override
 	public void activeClinic(Clinic clinic) {
-		// TODO Auto-generated method stub
-		
+		Clinic clinicPojo = getClinic(clinic.getId());
+		clinicPojo.setStatus(Clinic.Status.ACTIVE);
+		clinicDao.save(clinicPojo);
 	}
 
 	@Override
 	public void inactiveClinic(Clinic clinic) {
-		// TODO Auto-generated method stub
-		
+		Clinic clinicPojo = getClinic(clinic.getId());
+		clinicPojo.setStatus(Clinic.Status.INACTIVE);
+		clinicDao.save(clinicPojo);
 	}
 
 }
