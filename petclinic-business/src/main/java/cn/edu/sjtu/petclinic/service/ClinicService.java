@@ -14,9 +14,9 @@ public interface ClinicService {
 	
 	void updateClinic(Clinic clinic) throws DuplicatedClinicNameException, ClinicInvalidPasswordException;
 	
-	Page<Clinic> queryClinics(Page<Clinic> page, ClinicQuery clinicQuery);
+	Page<Clinic> queryClinics(ClinicQuery clinicQuery);
 
-	Page<Clinic> queryActiveClinics(Page<Clinic> page, ClinicQuery clinicQuery);
+	Page<Clinic> queryActiveClinics(ClinicQuery clinicQuery);
 	
 	Clinic getClinic(Long id);
 	

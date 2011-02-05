@@ -28,6 +28,10 @@ public class Page<T> {
 	public int getPageNo() {
 		return pageNo;
 	}
+	
+	public int getCurrentPageNo() {
+		return pageNo;
+	}
 
 	public void setPageNo(final int pageNo) {
 		this.pageNo = pageNo;

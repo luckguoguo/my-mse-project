@@ -8,7 +8,7 @@
 <h2><@spring.messageText "admin.left.clinic", "Clinic" /></h2>
 <ul>
 <li><a href="${contextPath}/admin/clinic"><@spring.messageText "admin.left.clinic.register", "Clinic Register" /></a></li>
-<li><a href="#"><@spring.messageText "admin.left.clinic.query", "Clinic Query" /></a></li>
+<li><a href="${contextPath}/admin/clinic/query/form"><@spring.messageText "admin.left.clinic.query", "Clinic Query" /></a></li>
 </ul>
 <h2><@spring.messageText "admin.left.veterinarian", "Veterinarian" /></h2>
 <ul>

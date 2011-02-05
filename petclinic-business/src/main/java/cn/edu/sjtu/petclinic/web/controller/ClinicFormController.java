@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.edu.sjtu.petclinic.entity.Clinic;
 import cn.edu.sjtu.petclinic.service.exception.ClinicInvalidPasswordException;
@@ -21,19 +22,39 @@ import cn.edu.sjtu.petclinic.web.utils.ServletUtils;
 public class ClinicFormController extends AbstractController {
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String getRegisterClinicForm(HttpServletRequest request, Model model) {
-		log.debug("do getRegisterClinicForm...");
+	public String getClinicRegistrationForm(HttpServletRequest request, Model model) {
+		log.debug("do getClinicRegistrationForm...");
 		model.addAttribute(new Clinic());
 		return ViewNames.FORWARD_ADMIN_CLINIC_FORM_STEP1;
 	}
 	
 	@RequestMapping(value = "/{clinicId}", method = RequestMethod.GET)
-	public String getUpdateClinicForm(HttpServletRequest request, @PathVariable Long clinicId, Model model) {
-		log.debug("do getUpdateClinicForm...");
+	public String getClinicUpdateForm(HttpServletRequest request, @PathVariable Long clinicId, Model model) {
+		log.debug("do getClinicUpdateForm...");
 		Clinic clinic = clinicService.getClinic(clinicId);
 		if (clinic == null) clinic = new Clinic();
 		model.addAttribute(clinic);
 		return ViewNames.FORWARD_ADMIN_CLINIC_FORM_STEP1;
+	}
+	
+	@RequestMapping(value = "/{clinicId}/active", method = RequestMethod.POST)
+	public @ResponseBody Model active(HttpServletRequest request, @PathVariable Long clinicId, Model model) {
+		log.debug("do active...");
+		Clinic clinic = new Clinic();
+		clinic.setId(clinicId);
+		clinicService.activeClinic(clinic);
+		model.addAttribute(clinic);
+		return model;
+	}
+	
+	@RequestMapping(value = "/{clinicId}/inactive", method = RequestMethod.POST)
+	public @ResponseBody Model inactive(HttpServletRequest request, @PathVariable Long clinicId, Model model) {
+		log.debug("do inactive...");
+		Clinic clinic = new Clinic();
+		clinic.setId(clinicId);
+		clinicService.inactiveClinic(clinic);
+		model.addAttribute(clinic);
+		return model;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
