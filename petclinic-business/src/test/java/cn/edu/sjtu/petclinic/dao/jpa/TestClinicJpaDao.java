@@ -20,7 +20,7 @@ public class TestClinicJpaDao extends SpringTxDaoTestCase {
 	
 	@Test
 	public void testSave_Success() {
-		logger.debug("testSave...");
+		logger.debug("testSave_Success...");
 		Clinic clinic = createValidClinic();
 		clinic.setName("new clinic");
 		clinic.setMgrPassword("new mgr password");
@@ -29,7 +29,7 @@ public class TestClinicJpaDao extends SpringTxDaoTestCase {
 	
 	@Test(expected = PersistenceException.class)
 	public void testSave_NameExists() {
-		logger.debug("testSave...");
+		logger.debug("testSave_NameExists...");
 		Clinic clinic = createValidClinic();
 		clinic.setName("clinicName1");
 		clinic.setMgrPassword("new mgr password");
@@ -90,21 +90,24 @@ public class TestClinicJpaDao extends SpringTxDaoTestCase {
 		logger.debug("testFindClinics...");
 		Page<Clinic> page = new Page<Clinic>(2).pageNo(1);
 		ClinicQuery clinicQuery = new ClinicQuery();
-		page = clinicDao.findClinics(page, clinicQuery);
+		clinicQuery.setPage(page);
+		page = clinicDao.findClinics(clinicQuery);
 		assertEquals(4l, page.getTotalCount());
 		assertEquals(2l, page.getTotalPages());
 		
 		page = new Page<Clinic>(2).pageNo(1);
 		clinicQuery = new ClinicQuery();
 		clinicQuery.setName("clinicName");
-		page = clinicDao.findClinics(page, clinicQuery);
+		clinicQuery.setPage(page);
+		page = clinicDao.findClinics(clinicQuery);
 		assertEquals(4l, page.getTotalCount());
 		assertEquals(2l, page.getTotalPages());
 		
 		page = new Page<Clinic>(2).pageNo(1);
 		clinicQuery = new ClinicQuery();
 		clinicQuery.setName("clinicName1");
-		page = clinicDao.findClinics(page, clinicQuery);
+		clinicQuery.setPage(page);
+		page = clinicDao.findClinics(clinicQuery);
 		assertEquals(1l, page.getTotalCount());
 		assertEquals(1l, page.getTotalPages());
 		
@@ -112,35 +115,40 @@ public class TestClinicJpaDao extends SpringTxDaoTestCase {
 		clinicQuery = new ClinicQuery();
 		clinicQuery.setName("clinicName1");
 		clinicQuery.setGrade(10);
-		page = clinicDao.findClinics(page, clinicQuery);
+		clinicQuery.setPage(page);
+		page = clinicDao.findClinics(clinicQuery);
 		assertEquals(0l, page.getTotalCount());
 		assertEquals(0l, page.getTotalPages());
 		
 		page = new Page<Clinic>(2).pageNo(1);
 		clinicQuery = new ClinicQuery();
 		clinicQuery.setGrade(1);
-		page = clinicDao.findClinics(page, clinicQuery);
+		clinicQuery.setPage(page);
+		page = clinicDao.findClinics(clinicQuery);
 		assertEquals(1l, page.getTotalCount());
 		assertEquals(1l, page.getTotalPages());
 		
 		page = new Page<Clinic>(2).pageNo(1);
 		clinicQuery = new ClinicQuery();
 		clinicQuery.setAddress("address1");
-		page = clinicDao.findClinics(page, clinicQuery);
+		clinicQuery.setPage(page);
+		page = clinicDao.findClinics(clinicQuery);
 		assertEquals(1l, page.getTotalCount());
 		assertEquals(1l, page.getTotalPages());
 		
 		page = new Page<Clinic>(2).pageNo(1);
 		clinicQuery = new ClinicQuery();
 		clinicQuery.setStar(1);
-		page = clinicDao.findClinics(page, clinicQuery);
+		clinicQuery.setPage(page);
+		page = clinicDao.findClinics(clinicQuery);
 		assertEquals(1l, page.getTotalCount());
 		assertEquals(1l, page.getTotalPages());
 		
 		page = new Page<Clinic>(2).pageNo(1);
 		clinicQuery = new ClinicQuery();
 		clinicQuery.setStatus(Clinic.Status.ACTIVE);
-		page = clinicDao.findClinics(page, clinicQuery);
+		clinicQuery.setPage(page);
+		page = clinicDao.findClinics(clinicQuery);
 		assertEquals(1l, page.getTotalCount());
 		assertEquals(1l, page.getTotalPages());
 	}

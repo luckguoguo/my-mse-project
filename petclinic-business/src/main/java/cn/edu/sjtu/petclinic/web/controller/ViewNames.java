@@ -23,5 +23,10 @@ public final class ViewNames {
 	public static final String FORWARD_ADMIN_CLINIC_FORM_MESSAGE = "admin/clinic/form/message";
 	public static final String FORWARD_ADMIN_CLINIC_QUERY_FORM = "admin/clinic/query/form";
 	public static final String FORWARD_ADMIN_CLINIC_QUERY_RESULT = "admin/clinic/query/result";
+	public static final String FORWARD_ADMIN_VETERINARIAN_FORM_STEP1 = "admin/veterinarian/form/step1";
+	public static final String FORWARD_ADMIN_VETERINARIAN_FORM_STEP2 = "admin/veterinarian/form/step2";
+	public static final String FORWARD_ADMIN_VETERINARIAN_FORM_MESSAGE = "admin/veterinarian/form/message";
+	public static final String FORWARD_ADMIN_VETERINARIAN_QUERY_FORM = "admin/veterinarian/query/form";
+	public static final String FORWARD_ADMIN_VETERINARIAN_QUERY_RESULT = "admin/veterinarian/query/result";
 	
 }

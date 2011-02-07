@@ -25,6 +25,11 @@ public class PetOwner extends User {
 	private String zipcode;
 	
 	private String telephone;
+	
+	public PetOwner() {
+		super();
+		setUserType(2);
+	}
 
 	public String getIdCard() {
 		return idCard;

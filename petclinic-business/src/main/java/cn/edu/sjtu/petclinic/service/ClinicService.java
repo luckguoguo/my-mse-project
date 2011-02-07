@@ -1,5 +1,7 @@
 package cn.edu.sjtu.petclinic.service;
 
+import java.util.List;
+
 import cn.edu.sjtu.common.orm.Page;
 import cn.edu.sjtu.petclinic.dto.ClinicQuery;
 import cn.edu.sjtu.petclinic.entity.Clinic;
@@ -23,5 +25,7 @@ public interface ClinicService {
 	void activeClinic(Clinic clinic);
 	
 	void inactiveClinic(Clinic clinic);
+	
+	List<Clinic> getAllClinics();
 	
 }

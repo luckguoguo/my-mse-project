@@ -9,6 +9,11 @@ import javax.persistence.Enumerated;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 import cn.edu.sjtu.common.orm.jpa.AuditableEntity;
 import cn.edu.sjtu.petclinic.enums.Gender;
@@ -23,22 +28,37 @@ public abstract class User extends AuditableEntity {
 		ACTIVE, INACTIVE, PENDING;
 	}
 	
+	@NotBlank
+	@Size(max = 31)
 	protected String username;
 	
+	@NotBlank
+	@Size(max = 255)
 	protected String password;
 	
 	@Column(name = "temp_password")
 	protected String tempPassword;
 	
+	@Transient
+	protected String confirmPassword;
+	
+	@NotBlank
+	@Size(max = 255)
 	protected String email;
 	
+	@NotBlank
+	@Size(max = 31)
 	protected String name;
 	
+	@NotNull
 	@Enumerated(EnumType.STRING)
-	protected Gender gender = Gender.MALE;
+	protected Gender gender;
 	
 	@Enumerated(EnumType.STRING)
 	protected Status status = Status.PENDING;
+	
+	@Column(name = "user_type")
+	protected Integer userType;
 
 	public String getUsername() {
 		return username;
@@ -62,6 +82,14 @@ public abstract class User extends AuditableEntity {
 
 	public void setTempPassword(String tempPassword) {
 		this.tempPassword = tempPassword;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
 	}
 
 	public String getEmail() {
@@ -95,5 +123,13 @@ public abstract class User extends AuditableEntity {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-	
+
+	public Integer getUserType() {
+		return userType;
+	}
+
+	public void setUserType(Integer userType) {
+		this.userType = userType;
+	}
+
 }

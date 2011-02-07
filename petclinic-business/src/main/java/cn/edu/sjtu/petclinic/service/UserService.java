@@ -20,11 +20,13 @@ public interface UserService {
 	
 	String requestTempPassword(User user);
 	
+	void checkUser(User user) throws DuplicatedUsernameException;
+	
 	void addVeterinarian(Veterinarian veterinarian, String clinicPassword) 
 			throws InvalidClinicPasswordException, DuplicatedUsernameException;
 	
 	void updateVeterinarian(Veterinarian veterinarian, String clinicPassword) 
-			throws InvalidClinicPasswordException;
+			throws InvalidClinicPasswordException, DuplicatedUsernameException;
 	
 	Page<Veterinarian> queryVeterinarians(VeterinarianQuery query);
 	
@@ -36,7 +38,7 @@ public interface UserService {
 	
 	void addPetOwner(PetOwner petOwner) throws DuplicatedUsernameException;
 	
-	void updatePetOwner(PetOwner petOwner);
+	void updatePetOwner(PetOwner petOwner) throws DuplicatedUsernameException;
 	
 	PetOwner getPetOwner(Long id);
 	
