@@ -12,6 +12,6 @@
 </ul>
 <h2><@spring.messageText "admin.left.veterinarian", "Veterinarian" /></h2>
 <ul>
-<li><a href="#"><@spring.messageText "admin.left.veterinarian.register", "Veterinarian Register" /></a></li>
-<li><a href="#"><@spring.messageText "admin.left.veterinarian.query", "Veterinarian Query" /></a></li>
+<li><a href="${contextPath}/admin/veterinarian"><@spring.messageText "admin.left.veterinarian.register", "Veterinarian Register" /></a></li>
+<li><a href="${contextPath}/admin/veterinarian/query/form"><@spring.messageText "admin.left.veterinarian.query", "Veterinarian Query" /></a></li>
 </ul>
