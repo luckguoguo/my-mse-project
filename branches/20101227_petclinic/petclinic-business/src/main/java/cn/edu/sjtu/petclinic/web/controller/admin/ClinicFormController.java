@@ -1,4 +1,4 @@
-package cn.edu.sjtu.petclinic.web.controller;
+package cn.edu.sjtu.petclinic.web.controller.admin;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import cn.edu.sjtu.petclinic.entity.Clinic;
 import cn.edu.sjtu.petclinic.service.exception.ClinicInvalidPasswordException;
 import cn.edu.sjtu.petclinic.service.exception.DuplicatedClinicNameException;
+import cn.edu.sjtu.petclinic.web.controller.AbstractController;
+import cn.edu.sjtu.petclinic.web.controller.ViewNames;
 import cn.edu.sjtu.petclinic.web.utils.ServletUtils;
 
 @Controller
@@ -152,11 +154,11 @@ public class ClinicFormController extends AbstractController {
 			try {
 				clinicService.updateClinic(clinic);
 				log.debug("update clinic successfully");
-			} catch (DuplicatedClinicNameException e) {
-				result.reject("admin.clinic.form.error.duplicatedClinicName");
 			} catch (ClinicInvalidPasswordException e) {
 				clinic.setConfirmMgrPassword(null);
 				result.reject("admin.clinic.form.error.invalidMgrPassword");
+			} catch (DuplicatedClinicNameException e) {
+				result.reject("admin.clinic.form.error.duplicatedClinicName");
 			}
 		}
 		

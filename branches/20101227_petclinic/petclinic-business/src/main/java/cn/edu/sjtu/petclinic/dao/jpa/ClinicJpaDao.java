@@ -1,6 +1,7 @@
 package cn.edu.sjtu.petclinic.dao.jpa;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
@@ -21,7 +22,7 @@ public class ClinicJpaDao extends AbstractJpaDaoSupport<Clinic, Long> implements
 	}
 
 	@Override
-	public Page<Clinic> findClinics(Page<Clinic> page, ClinicQuery clinicQuery) {
+	public Page<Clinic> findClinics(ClinicQuery clinicQuery) {
 		StringBuilder jpqlSb = new StringBuilder();
 		jpqlSb.append("from Clinic ");
 		jpqlSb.append("where 1 = 1 ");
@@ -48,7 +49,12 @@ public class ClinicJpaDao extends AbstractJpaDaoSupport<Clinic, Long> implements
 			values.put("status", clinicQuery.getStatus());
 		}
 		jpqlSb.append("order by createdTime");
-		return findPage(page, jpqlSb.toString(), values);
+		return findPage(clinicQuery.getPage(), jpqlSb.toString(), values);
+	}
+
+	@Override
+	public List<Clinic> getAll() {
+		return find("from Clinic order by name");
 	}
 	
 }

@@ -1,5 +1,7 @@
 package cn.edu.sjtu.petclinic.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import cn.edu.sjtu.common.orm.Page;
@@ -18,22 +20,12 @@ public class ClinicServiceImpl extends AbstractService implements ClinicService 
 		if (isClinicNameRegistered(clinic)) throw new DuplicatedClinicNameException();
 	}
 	
-	@Override
-	public void registerClinic(Clinic clinic) throws DuplicatedClinicNameException {
-		if (isClinicNameRegistered(clinic)) throw new DuplicatedClinicNameException();
-		
-		// register clinic
-		clinic.setMgrPassword(EncryptionUtils.getMD5Str(clinic.getMgrPassword()));
-		clinic.setStatus(Clinic.Status.ACTIVE);
-		clinicDao.save(clinic);
-	}
-	
 	private boolean isClinicNameRegistered(Clinic clinic) {
 		Clinic clinicPojo = clinicDao.findClinicByName(clinic.getName());
 		log.debug("clinicPojo: " + clinicPojo);
 		if (clinicPojo == null) return false;
 		log.debug("found clinicPojo");
-		if (clinic.getId() == null || clinic.getId() < 1) {
+		if (clinic.isNewEntity()) {
 			// a new clinic
 			log.debug("new clinic's name is same as pojo's");
 			return true;
@@ -43,10 +35,27 @@ public class ClinicServiceImpl extends AbstractService implements ClinicService 
 	}
 	
 	@Override
+	public void registerClinic(Clinic clinic) throws DuplicatedClinicNameException {
+		
+		// check clinic name
+		checkClinic(clinic);
+		
+		// register clinic
+		clinic.setMgrPassword(EncryptionUtils.getMD5Str(clinic.getMgrPassword()));
+		clinic.setStatus(Clinic.Status.ACTIVE);
+		clinicDao.save(clinic);
+	}
+	
+	@Override
 	public void updateClinic(Clinic clinic) throws DuplicatedClinicNameException, ClinicInvalidPasswordException {
+		
+		// check mgr password
 		if (!clinic.getMgrPassword().equals(EncryptionUtils.getMD5Str(clinic.getConfirmMgrPassword()))) {
 			throw new ClinicInvalidPasswordException();
 		}
+		
+		// check clinic name
+		checkClinic(clinic);
 		
 		Clinic clinicPojo = getClinic(clinic.getId());
 		copyToClinicPojo(clinic, clinicPojo);
@@ -69,13 +78,13 @@ public class ClinicServiceImpl extends AbstractService implements ClinicService 
 	
 	@Override
 	public Page<Clinic> queryClinics(ClinicQuery clinicQuery) {
-		return clinicDao.findClinics(clinicQuery.getPage(), clinicQuery);
+		return clinicDao.findClinics(clinicQuery);
 	}
 	
 	@Override
 	public Page<Clinic> queryActiveClinics(ClinicQuery clinicQuery) {
 		clinicQuery.setStatus(Clinic.Status.ACTIVE);
-		return clinicDao.findClinics(clinicQuery.getPage(), clinicQuery);
+		return clinicDao.findClinics(clinicQuery);
 	}
 	
 	@Override
@@ -95,6 +104,11 @@ public class ClinicServiceImpl extends AbstractService implements ClinicService 
 		Clinic clinicPojo = getClinic(clinic.getId());
 		clinicPojo.setStatus(Clinic.Status.INACTIVE);
 		clinicDao.save(clinicPojo);
+	}
+
+	@Override
+	public List<Clinic> getAllClinics() {
+		return clinicDao.getAll();
 	}
 
 }

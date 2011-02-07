@@ -30,6 +30,10 @@ public abstract class AbstractJpaDaoSupport<T, PK extends Serializable> {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
+	
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
 
 	public AbstractJpaDaoSupport() {
 		super();

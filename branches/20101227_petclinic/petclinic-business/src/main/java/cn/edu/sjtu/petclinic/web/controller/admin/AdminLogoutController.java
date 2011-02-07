@@ -1,4 +1,4 @@
-package cn.edu.sjtu.petclinic.web.controller;
+package cn.edu.sjtu.petclinic.web.controller.admin;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.edu.sjtu.petclinic.entity.User;
+import cn.edu.sjtu.petclinic.web.controller.LogoutController;
+import cn.edu.sjtu.petclinic.web.controller.ViewNames;
 
 @Controller
 @RequestMapping("/admin")

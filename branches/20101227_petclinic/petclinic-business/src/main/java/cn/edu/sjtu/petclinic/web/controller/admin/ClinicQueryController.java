@@ -1,4 +1,4 @@
-package cn.edu.sjtu.petclinic.web.controller;
+package cn.edu.sjtu.petclinic.web.controller.admin;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import cn.edu.sjtu.common.orm.Page;
 import cn.edu.sjtu.petclinic.dto.ClinicQuery;
 import cn.edu.sjtu.petclinic.entity.Clinic;
+import cn.edu.sjtu.petclinic.web.controller.AbstractController;
+import cn.edu.sjtu.petclinic.web.controller.Constants;
+import cn.edu.sjtu.petclinic.web.controller.ViewNames;
 
 @Controller
 public class ClinicQueryController extends AbstractController {

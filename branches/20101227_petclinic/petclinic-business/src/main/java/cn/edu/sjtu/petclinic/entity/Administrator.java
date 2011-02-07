@@ -9,4 +9,9 @@ import javax.persistence.Table;
 @DiscriminatorValue("0")
 public class Administrator extends User {
 
+	public Administrator() {
+		super();
+		setUserType(0);
+	}
+	
 }
