@@ -31,7 +31,7 @@ function goPrev() {
 	${globalErrorMessage}
 </div>
 </#if>
-<table>
+<table width="80%">
 	<tr>
 		<td><@spring.messageText "admin.clinic.form.label.name", "Clinic Name" /></td>
 		<td>
@@ -107,7 +107,13 @@ function goPrev() {
 	</tr>
 	</#if>
 	<tr>
-		<td><@spring.messageText "admin.clinic.form.label.confirmMgrPassword", "Clinic ConfirmMgrPassword" /></td>
+		<td>
+		<#if clinic.id??>
+		<@spring.messageText "admin.clinic.form.label.mgrPassword", "Clinic ConfirmMgrPassword" />
+		<#else>
+		<@spring.messageText "admin.clinic.form.label.confirmMgrPassword", "Clinic ConfirmMgrPassword" />
+		</#if>
+		</td>
 		<td>
 			<@spring.bind "clinic.confirmMgrPassword" />
 			<input type="password" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
