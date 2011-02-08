@@ -114,6 +114,8 @@ public class TestJpaMappings extends SpringTxDaoTestCase {
 		assertEquals(DateUtils.parseDate("2011-01-01", new String[] { "yyyy-MM-dd" }), vet.getWorkingdate());
 		assertNotNull(vet.getClinic());
 		assertEquals(1l, vet.getClinic().getId());
+		assertNotNull(vet.getSpecialityPetCategory());
+		assertEquals(1l, vet.getSpecialityPetCategory().getId());
 	}
 	
 	@Test

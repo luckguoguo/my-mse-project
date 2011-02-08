@@ -3,7 +3,7 @@
 <p class="welcome"><@spring.messageText "petowner.left.welcome", "Welcome!" />${sessionUser.name}</p>
 <ul class="top">
 <li><a href="#"><@spring.messageText "petowner.left.user.updateProfile", "Update Profile" /></a></li>
-<li><a href="#"><@spring.messageText "petowner.left.user.updatePassword", "Update Password" /></a></li>
+<li><a href="${contextPath}/petowner/password"><@spring.messageText "petowner.left.user.updatePassword", "Update Password" /></a></li>
 <li><a href="${contextPath}/logout"><@spring.messageText "petowner.left.user.logout", "Logout" /></a></li>
 </ul>
 <h2><@spring.messageText "petowner.left.pet", "Pet" /></h2>

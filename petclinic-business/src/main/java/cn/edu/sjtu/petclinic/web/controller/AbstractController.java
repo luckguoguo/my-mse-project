@@ -1,6 +1,8 @@
 package cn.edu.sjtu.petclinic.web.controller;
 
 import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -9,8 +11,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.ui.Model;
 
 import cn.edu.sjtu.common.orm.jpa.AuditableEntity;
+import cn.edu.sjtu.petclinic.entity.Clinic;
+import cn.edu.sjtu.petclinic.entity.PetCategory;
 import cn.edu.sjtu.petclinic.entity.User;
 import cn.edu.sjtu.petclinic.service.AppointmentService;
 import cn.edu.sjtu.petclinic.service.ClinicService;
@@ -101,6 +106,24 @@ public abstract class AbstractController {
 		Date now = new Date();
 		entity.setLastModifiedTime(now);
 		entity.setLastModifiedBy(getSessionUser(request.getSession()).getId());
+	}
+	
+	protected void bindAllClinicsAsOptions(Model model) {
+		Map<String, String> allClinics = new LinkedHashMap<String, String>();
+		allClinics.put("", "-");
+		for (Clinic clinic : clinicService.getAllClinics()) {
+			allClinics.put(clinic.getId() + "", clinic.getName());
+		}
+		model.addAttribute("allClinics", allClinics);
+	}
+	
+	protected void bindAllPetCategoriesAsOptions(Model model) {
+		Map<String, String> allPetCategories = new LinkedHashMap<String, String>();
+		allPetCategories.put("", "-");
+		for (PetCategory petCategory : petService.getAllPetCategories()) {
+			allPetCategories.put(petCategory.getId() + "", petCategory.getName());
+		}
+		model.addAttribute("allPetCategories", allPetCategories);
 	}
 	
 }

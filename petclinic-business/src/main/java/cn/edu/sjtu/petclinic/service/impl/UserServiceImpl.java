@@ -1,15 +1,22 @@
 package cn.edu.sjtu.petclinic.service.impl;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.edu.sjtu.common.orm.Page;
 import cn.edu.sjtu.common.utils.EncryptionUtils;
+import cn.edu.sjtu.petclinic.dto.EmailRequest;
 import cn.edu.sjtu.petclinic.dto.VeterinarianQuery;
 import cn.edu.sjtu.petclinic.entity.Clinic;
 import cn.edu.sjtu.petclinic.entity.PetOwner;
 import cn.edu.sjtu.petclinic.entity.User;
 import cn.edu.sjtu.petclinic.entity.Veterinarian;
+import cn.edu.sjtu.petclinic.service.EmailService;
 import cn.edu.sjtu.petclinic.service.UserService;
 import cn.edu.sjtu.petclinic.service.exception.DuplicatedUsernameException;
 import cn.edu.sjtu.petclinic.service.exception.InvalidClinicPasswordException;
@@ -19,6 +26,13 @@ import cn.edu.sjtu.petclinic.service.exception.UserNotExistsException;
 
 @Service
 public class UserServiceImpl extends AbstractService implements UserService {
+
+	@Autowired
+	protected EmailService emailService;
+	
+	public void setEmailService(EmailService emailService) {
+		this.emailService = emailService;
+	}
 
 	@Override
 	public User authenticate(String username, String password)
@@ -46,15 +60,46 @@ public class UserServiceImpl extends AbstractService implements UserService {
 	}
 	
 	@Override
-	public void updatePassword(User user, String originalPassword) {
-		// TODO Auto-generated method stub
+	public void updatePassword(Long userId, String originalPassword, String newPassword) 
+			throws UserInvalidPasswordException {
 		
+		// check original password
+		User user = userDao.get(userId);
+		if (user == null) return;
+		if (!StringUtils.equals(user.getPassword(), EncryptionUtils.getMD5Str(originalPassword))
+				&& !StringUtils.equals(user.getTempPassword(), EncryptionUtils.getMD5Str(originalPassword))) {
+			throw new UserInvalidPasswordException();
+		}
+		
+		// update password with new password
+		user.setPassword(EncryptionUtils.getMD5Str(newPassword));
+		user.setTempPassword(EncryptionUtils.getMD5Str(newPassword));
+		userDao.save(user);
 	}
 	
 	@Override
-	public String requestTempPassword(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public String requestTempPassword(String username) throws UserNotExistsException {
+		User user = userDao.findUserByUsername(username);
+		if (user == null) {
+			throw new UserNotExistsException();
+		}
+		
+		// generate random temp password
+		String tempPassword = RandomStringUtils.randomAlphanumeric(6);
+		
+		// update temp password
+		user.setTempPassword(EncryptionUtils.getMD5Str(tempPassword));
+		userDao.save(user);
+		
+		// send email
+		EmailRequest emailRequest = new EmailRequest();
+		emailRequest.setToEmailAddress(user.getEmail());
+		Map<String, Object> model = new HashMap<String, Object>();
+		model.put("TEMP_PASSWORD", tempPassword);
+		emailRequest.setModel(model);
+		emailService.sendEmail(emailRequest);
+		
+		return tempPassword;
 	}
 	
 	@Override
@@ -120,7 +165,7 @@ public class UserServiceImpl extends AbstractService implements UserService {
 			Veterinarian veterinarianPojo) {
 		
 		veterinarianPojo.setClinic(veterinarian.getClinic());
-		veterinarianPojo.setUsername(veterinarian.getName());
+		veterinarianPojo.setUsername(veterinarian.getUsername());
 		veterinarianPojo.setTitle(veterinarian.getTitle());
 		veterinarianPojo.setName(veterinarian.getName());
 		veterinarianPojo.setGender(veterinarian.getGender());
@@ -128,15 +173,21 @@ public class UserServiceImpl extends AbstractService implements UserService {
 		veterinarianPojo.setWorkingdate(veterinarian.getWorkingdate());
 		veterinarianPojo.setTelephone(veterinarian.getTelephone());
 		veterinarianPojo.setEmail(veterinarian.getEmail());
+		veterinarianPojo.setSpecialityPetCategory(veterinarian.getSpecialityPetCategory());
 		veterinarianPojo.setIntroduction(veterinarian.getIntroduction());
 		veterinarianPojo.setLastModifiedTime(veterinarian.getLastModifiedTime());
 		veterinarianPojo.setLastModifiedBy(veterinarian.getLastModifiedBy());
 	}
 
 	@Override
-	public Page<Veterinarian> queryVeterinarians(VeterinarianQuery query) {
-		// TODO Auto-generated method stub
-		return null;
+	public Page<User> queryVeterinarians(VeterinarianQuery query) {
+		return userDao.findVeterinarians(query);
+	}
+	
+	@Override
+	public Page<User> queryActiveVeterinarians(VeterinarianQuery query) {
+		query.setStatus(User.Status.ACTIVE);
+		return userDao.findVeterinarians(query);
 	}
 	
 	@Override
@@ -149,14 +200,16 @@ public class UserServiceImpl extends AbstractService implements UserService {
 	
 	@Override
 	public void activeVeterinarian(Veterinarian veterinarian) {
-		// TODO Auto-generated method stub
-		
+		Veterinarian veterinarianPojo = getVeterinarian(veterinarian.getId());
+		veterinarianPojo.setStatus(User.Status.ACTIVE);
+		userDao.save(veterinarianPojo);
 	}
 	
 	@Override
 	public void inactiveVeterinarian(Veterinarian veterinarian) {
-		// TODO Auto-generated method stub
-		
+		Veterinarian veterinarianPojo = getVeterinarian(veterinarian.getId());
+		veterinarianPojo.setStatus(User.Status.INACTIVE);
+		userDao.save(veterinarianPojo);
 	}
 
 	@Override

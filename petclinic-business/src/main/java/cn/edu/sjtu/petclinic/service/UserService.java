@@ -16,9 +16,10 @@ public interface UserService {
 	User authenticate(String username, String password) 
 			throws UserNotExistsException, UserInvalidPasswordException, UserInvalidStatusException;
 	
-	void updatePassword(User user, String originalPassword);
+	void updatePassword(Long userId, String originalPassword, String newPassword)
+			throws UserInvalidPasswordException;
 	
-	String requestTempPassword(User user);
+	String requestTempPassword(String username) throws UserNotExistsException;
 	
 	void checkUser(User user) throws DuplicatedUsernameException;
 	
@@ -28,7 +29,9 @@ public interface UserService {
 	void updateVeterinarian(Veterinarian veterinarian, String clinicPassword) 
 			throws InvalidClinicPasswordException, DuplicatedUsernameException;
 	
-	Page<Veterinarian> queryVeterinarians(VeterinarianQuery query);
+	Page<User> queryVeterinarians(VeterinarianQuery query);
+	
+	Page<User> queryActiveVeterinarians(VeterinarianQuery query);
 	
 	Veterinarian getVeterinarian(Long id);
 	

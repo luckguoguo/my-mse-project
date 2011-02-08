@@ -5,7 +5,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,7 +15,6 @@ import cn.edu.sjtu.petclinic.entity.Administrator;
 import cn.edu.sjtu.petclinic.entity.PetOwner;
 import cn.edu.sjtu.petclinic.entity.User;
 import cn.edu.sjtu.petclinic.entity.Veterinarian;
-import cn.edu.sjtu.petclinic.service.UserService;
 import cn.edu.sjtu.petclinic.service.exception.UserInvalidPasswordException;
 import cn.edu.sjtu.petclinic.service.exception.UserInvalidStatusException;
 import cn.edu.sjtu.petclinic.service.exception.UserNotExistsException;
@@ -26,13 +24,6 @@ import cn.edu.sjtu.petclinic.web.utils.ServletUtils;
 @RequestMapping("/login")
 public class LoginController extends AbstractController {
 	
-	@Autowired
-	protected UserService userService;
-	
-	public void setUserService(UserService userService) {
-		this.userService = userService;
-	}
-
 	@RequestMapping(method = RequestMethod.GET)
 	public String getLoginForm(HttpServletRequest request, Model model) {
 		log.debug("do getLoginForm...");
@@ -115,7 +106,6 @@ public class LoginController extends AbstractController {
 		@NotEmpty
 		@Size(min = 4, max = 12)
 		private String password;
-
 
 		public String getUsername() {
 			return username;

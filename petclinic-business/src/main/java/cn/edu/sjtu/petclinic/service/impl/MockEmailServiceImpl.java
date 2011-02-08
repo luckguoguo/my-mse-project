@@ -1,5 +1,7 @@
 package cn.edu.sjtu.petclinic.service.impl;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
 import org.springframework.stereotype.Service;
 
 import cn.edu.sjtu.petclinic.dto.EmailRequest;
@@ -10,8 +12,7 @@ public class MockEmailServiceImpl extends AbstractService implements EmailServic
 
 	@Override
 	public void sendEmail(EmailRequest emailRequest) {
-		// TODO Auto-generated method stub
-		
+		log.info(ToStringBuilder.reflectionToString(emailRequest, ToStringStyle.MULTI_LINE_STYLE));
 	}
 
 }

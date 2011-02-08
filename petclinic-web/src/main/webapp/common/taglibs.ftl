@@ -11,3 +11,4 @@
 <#assign clinicGrades={"":"-", "1":"一级", "2":"二级", "3":"三级"}>
 <#assign clinicStars={"":"-", "1":"一星", "2":"二星", "3":"三星", "4":"四星", "5":"五星"}>
 <#assign clinicStatuses={"ACTIVE":"已激活", "INACTIVE":"未激活", "PENDING":"待处理"}>
+<#assign userStatuses={"ACTIVE":"已激活", "INACTIVE":"未激活", "PENDING":"待处理"}>

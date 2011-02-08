@@ -110,6 +110,14 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
+		<td><@spring.messageText "admin.veterinarian.form.label.speciality", "Veterinarian Speiality" /></td>
+		<td>
+			<@spring.bind "veterinarian.specialityPetCategory.id" />
+			<@spring.formSingleSelect path="veterinarian.specialityPetCategory.id" options=allPetCategories />
+			<@spring.showErrors ", ", "error"/>
+		</td>
+	</tr>
+	<tr>
 		<td><@spring.messageText "admin.veterinarian.form.label.introduction", "Veterinarian Introduction" /></td>
 		<td>
 			<@spring.bind "veterinarian.introduction" />
