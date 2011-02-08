@@ -228,6 +228,7 @@ create table tbl_veterinarian
    telephone            varchar(31),
    birthdate            date,
    workingdate          date not null,
+   speciality_category_id int,
    primary key (id)
 );
 

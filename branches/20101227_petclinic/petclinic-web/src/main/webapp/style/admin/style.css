@@ -237,7 +237,7 @@ ol.top,ul.top {
 
 /* Page style
 -------------------------------------------------------------- */
-#loginForm {
+#loginForm, #tempPasswordForm {
 	padding: 5px 0 0 370px;
 }
 

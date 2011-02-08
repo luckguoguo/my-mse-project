@@ -25,7 +25,7 @@
 	<tbl_administrator id="1" />
 			
 	<tbl_veterinarian id="2" clinic_id="1" title="Dr." introduction="intro2" telephone="telephone2" 
-			birthdate="2011-01-01 10:00:00" workingdate="2011-01-01 10:00:00" />
+			birthdate="2011-01-01 10:00:00" workingdate="2011-01-01 10:00:00" speciality_category_id="1" />
 			
 	<tbl_petowner id="3" id_card="310000xxxxxx" birthdate="2011-01-01 10:00:00" address="address3" zipcode="200000" telephone="telephone3" />
 

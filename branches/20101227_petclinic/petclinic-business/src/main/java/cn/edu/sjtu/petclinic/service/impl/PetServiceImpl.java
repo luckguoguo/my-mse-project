@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import cn.edu.sjtu.petclinic.entity.Pet;
+import cn.edu.sjtu.petclinic.entity.PetCategory;
 import cn.edu.sjtu.petclinic.entity.PetOwner;
 import cn.edu.sjtu.petclinic.service.PetService;
 
@@ -33,6 +34,11 @@ public class PetServiceImpl extends AbstractService implements PetService {
 	public void updatePet(Pet pet) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<PetCategory> getAllPetCategories() {
+		return petCategoryDao.getAll();
 	}
 
 }

@@ -50,7 +50,11 @@
 	<definition name="admin.container.footer" template="/WEB-INF/view/containers/admin/footer.ftl"/>
 	
 	<definition name="admin.container.body.login" template="/WEB-INF/view/containers/admin/login.ftl"/>
+	<definition name="admin.container.body.requestTempPassowrd_form" template="/WEB-INF/view/containers/admin/requestTempPassword_form.ftl"/>
+	<definition name="admin.container.body.requestTempPassowrd_form_message" template="/WEB-INF/view/containers/admin/requestTempPassword_form_message.ftl"/>
 	<definition name="admin.container.body.home" template="/WEB-INF/view/containers/admin/home.ftl"/>
+	<definition name="admin.container.body.password_form" template="/WEB-INF/view/containers/admin/password_form.ftl"/>
+	<definition name="admin.container.body.password_form_message" template="/WEB-INF/view/containers/admin/password_form_message.ftl"/>
 	<definition name="admin.container.body.clinic_form_step1" template="/WEB-INF/view/containers/admin/clinic_form_step1.ftl"/>
 	<definition name="admin.container.body.clinic_form_step2" template="/WEB-INF/view/containers/admin/clinic_form_step2.ftl"/>
 	<definition name="admin.container.body.clinic_form_message" template="/WEB-INF/view/containers/admin/clinic_form_message.ftl"/>
@@ -62,14 +66,21 @@
 	
 	<definition name="user.container.header" template="/WEB-INF/view/containers/user/header.ftl"/>
 	<definition name="user.container.left" template="/WEB-INF/view/containers/user/left.ftl"/>
-	<definition name="veterinarian.container.left" template="/WEB-INF/view/containers/user/veterinarian/left.ftl"/>
-	<definition name="petowner.container.left" template="/WEB-INF/view/containers/user/petowner/left.ftl"/>
 	<definition name="user.container.body" template="/WEB-INF/view/containers/user/body.ftl"/>
 	<definition name="user.container.footer" template="/WEB-INF/view/containers/user/footer.ftl"/>
-	
 	<definition name="user.container.body.login" template="/WEB-INF/view/containers/user/login.ftl"/>
+	<definition name="user.container.body.requestTempPassowrd_form" template="/WEB-INF/view/containers/user/requestTempPassword_form.ftl"/>
+	<definition name="user.container.body.requestTempPassowrd_form_message" template="/WEB-INF/view/containers/user/requestTempPassword_form_message.ftl"/>
+
+	<definition name="veterinarian.container.left" template="/WEB-INF/view/containers/user/veterinarian/left.ftl"/>
 	<definition name="veterinarian.container.body.home" template="/WEB-INF/view/containers/user/veterinarian/home.ftl"/>
+	<definition name="veterinarian.container.body.password_form" template="/WEB-INF/view/containers/user/password_form.ftl"/>
+	<definition name="veterinarian.container.body.password_form_message" template="/WEB-INF/view/containers/user/password_form_message.ftl"/>
+	
+	<definition name="petowner.container.left" template="/WEB-INF/view/containers/user/petowner/left.ftl"/>
 	<definition name="petowner.container.body.home" template="/WEB-INF/view/containers/user/petowner/home.ftl"/>
+	<definition name="petowner.container.body.password_form" template="/WEB-INF/view/containers/user/password_form.ftl"/>
+	<definition name="petowner.container.body.password_form_message" template="/WEB-INF/view/containers/user/password_form_message.ftl"/>
 	
 	<!-- ======================================================= -->
 	<!-- Component definitions                                   -->
@@ -81,8 +92,20 @@
 	<definition name="admin/login" extends="admin.1column">
 		<put-attribute name="body" value="admin.container.body.login" />
 	</definition>
+	<definition name="admin/requestTempPassword/form" extends="admin.1column">
+		<put-attribute name="body" value="admin.container.body.requestTempPassowrd_form" />
+	</definition>
+	<definition name="admin/requestTempPassword/form/message" extends="admin.1column">
+		<put-attribute name="body" value="admin.container.body.requestTempPassowrd_form_message" />
+	</definition>
 	<definition name="admin/home" extends="admin.2column">
 		<put-attribute name="body" value="admin.container.body.home" />
+	</definition>
+	<definition name="admin/password/form" extends="admin.2column">
+		<put-attribute name="body" value="admin.container.body.password_form" />
+	</definition>
+	<definition name="admin/password/form/message" extends="admin.2column">
+		<put-attribute name="body" value="admin.container.body.password_form_message" />
 	</definition>
 	<definition name="admin/clinic/form/step1" extends="admin.2column">
 		<put-attribute name="body" value="admin.container.body.clinic_form_step1" />
@@ -118,11 +141,31 @@
 	<definition name="login" extends="user.1column">
 		<put-attribute name="body" value="user.container.body.login" />
 	</definition>
+	<definition name="requestTempPassword/form" extends="user.1column">
+		<put-attribute name="body" value="user.container.body.requestTempPassowrd_form" />
+	</definition>
+	<definition name="requestTempPassword/form/message" extends="user.1column">
+		<put-attribute name="body" value="user.container.body.requestTempPassowrd_form_message" />
+	</definition>
+	
 	<definition name="veterinarian/home" extends="veterinarian.2column">
 		<put-attribute name="body" value="veterinarian.container.body.home" />
 	</definition>
+	<definition name="veterinarian/password/form" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.password_form" />
+	</definition>
+	<definition name="veterinarian/password/form/message" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.password_form_message" />
+	</definition>
+	
 	<definition name="petowner/home" extends="petowner.2column">
 		<put-attribute name="body" value="petowner.container.body.home" />
+	</definition>
+	<definition name="petowner/password/form" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.password_form" />
+	</definition>
+	<definition name="petowner/password/form/message" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.password_form_message" />
 	</definition>
 	
 </tiles-definitions>

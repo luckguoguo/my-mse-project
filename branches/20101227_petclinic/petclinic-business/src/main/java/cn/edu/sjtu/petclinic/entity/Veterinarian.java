@@ -46,6 +46,10 @@ public class Veterinarian extends User {
 	@JoinColumn(name = "clinic_id")
 	private Clinic clinic = new Clinic();
 	
+	@ManyToOne
+	@JoinColumn(name = "speciality_category_id")
+	private PetCategory specialityPetCategory;
+	
 	public Veterinarian() {
 		super();
 		setUserType(1);
@@ -97,6 +101,14 @@ public class Veterinarian extends User {
 
 	public void setClinic(Clinic clinic) {
 		this.clinic = clinic;
+	}
+
+	public PetCategory getSpecialityPetCategory() {
+		return specialityPetCategory;
+	}
+
+	public void setSpecialityPetCategory(PetCategory specialityPetCategory) {
+		this.specialityPetCategory = specialityPetCategory;
 	}
 
 }

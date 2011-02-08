@@ -1,5 +1,6 @@
 package cn.edu.sjtu.petclinic.dao.jpa;
 
+import java.text.ParseException;
 import java.util.Date;
 
 import javax.annotation.Resource;
@@ -7,10 +8,14 @@ import javax.persistence.PersistenceException;
 
 import org.junit.Test;
 
+import cn.edu.sjtu.common.orm.Page;
 import cn.edu.sjtu.common.test.SpringTxDaoTestCase;
+import cn.edu.sjtu.common.utils.DateUtils;
+import cn.edu.sjtu.petclinic.dto.VeterinarianQuery;
 import cn.edu.sjtu.petclinic.entity.Administrator;
 import cn.edu.sjtu.petclinic.entity.Clinic;
 import cn.edu.sjtu.petclinic.entity.PetOwner;
+import cn.edu.sjtu.petclinic.entity.User;
 import cn.edu.sjtu.petclinic.entity.Veterinarian;
 import cn.edu.sjtu.petclinic.enums.Gender;
 
@@ -63,6 +68,147 @@ public class TestUserJpaDao extends SpringTxDaoTestCase {
 		clinic.setId(1l);
 		veterinarian.setClinic(clinic);
 		return veterinarian;
+	}
+	
+	@Test
+	public void testFindVeterinarians() throws ParseException {
+		logger.debug("testFindVeterinarians...");
+		Page<User> page = new Page<User>(1).pageNo(1);
+		VeterinarianQuery query = new VeterinarianQuery();
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(1l, page.getTotalCount());
+		assertEquals(1l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setClinicName("clinicName1");
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(1l, page.getTotalCount());
+		assertEquals(1l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setClinicName("clinicName0");
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(0l, page.getTotalCount());
+		assertEquals(0l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setUsername("vet1");
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(1l, page.getTotalCount());
+		assertEquals(1l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setUsername("vet0");
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(0l, page.getTotalCount());
+		assertEquals(0l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setName("vetname1");
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(1l, page.getTotalCount());
+		assertEquals(1l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setName("vetname0");
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(0l, page.getTotalCount());
+		assertEquals(0l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setGender(Gender.MALE);
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(1l, page.getTotalCount());
+		assertEquals(1l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setGender(Gender.FEMALE);
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(0l, page.getTotalCount());
+		assertEquals(0l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setWorkingDateFrom(DateUtils.parseDefaultFormatDate("2011-01-01"));
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(1l, page.getTotalCount());
+		assertEquals(1l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setWorkingDateTo(DateUtils.parseDefaultFormatDate("2011-01-01"));
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(1l, page.getTotalCount());
+		assertEquals(1l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setWorkingDateFrom(DateUtils.parseDefaultFormatDate("2011-01-01"));
+		query.setWorkingDateTo(DateUtils.parseDefaultFormatDate("2011-01-01"));
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(1l, page.getTotalCount());
+		assertEquals(1l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setWorkingDateFrom(DateUtils.parseDefaultFormatDate("2011-01-02"));
+		query.setWorkingDateTo(DateUtils.parseDefaultFormatDate("2011-01-02"));
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(0l, page.getTotalCount());
+		assertEquals(0l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setSpecialityPetCategoryId(1l);
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(1l, page.getTotalCount());
+		assertEquals(1l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setSpecialityPetCategoryId(100l);
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(0l, page.getTotalCount());
+		assertEquals(0l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setStatus(User.Status.ACTIVE);
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(1l, page.getTotalCount());
+		assertEquals(1l, page.getTotalPages());
+		
+		page = new Page<User>(1).pageNo(1);
+		query = new VeterinarianQuery();
+		query.setStatus(User.Status.INACTIVE);
+		query.setPage(page);
+		page = userDao.findVeterinarians(query);
+		assertEquals(0l, page.getTotalCount());
+		assertEquals(0l, page.getTotalPages());
 	}
 
 	@Override

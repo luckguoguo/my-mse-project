@@ -79,11 +79,15 @@ function inactive(clinicId) {
 		<td colspan="9" align="right">
 			<#if page.hasPre>
 			<a href="result?name=${query.name!""}&grade=${query.grade!""}&address=${query.address!""}&star=${query.star!""}&page.pageNo=${page.prePage}"><@spring.messageText "admin.clinic.query.result.btn.prev", "Prev" /></a>
+			<#else>
+			<@spring.messageText "admin.clinic.query.result.btn.prev", "Prev" />
 			</#if>
 			<#if page.hasNext>
 			<a href="result?name=${query.name!""}&grade=${query.grade!""}&address=${query.address!""}&star=${query.star!""}&page.pageNo=${page.nextPage}"><@spring.messageText "admin.clinic.query.result.btn.next", "Next" /></a>
+			<#else>
+			<@spring.messageText "admin.clinic.query.result.btn.next", "Next" />
 			</#if>
-			<@spring.messageArgsText "admin.clinic.query.result.pageInfo", ["${page.currentPageNo}", "${page.totalPages}", "${page.totalCount}"], "Prev" />
+			&nbsp;<@spring.messageArgsText "admin.clinic.query.result.pageInfo", ["${page.currentPageNo}", "${page.totalPages}", "${page.totalCount}"], "Page Info" />
 		</td>
 	</tr>
 	<tr>
@@ -123,11 +127,15 @@ function inactive(clinicId) {
 		<td colspan="9" align="right">
 			<#if page.hasPre>
 			<a href="result?name=${query.name!""}&grade=${query.grade!""}&address=${query.address!""}&star=${query.star!""}&page.pageNo=${page.prePage}"><@spring.messageText "admin.clinic.query.result.btn.prev", "Prev" /></a>
+			<#else>
+			<@spring.messageText "admin.clinic.query.result.btn.prev", "Prev" />
 			</#if>
 			<#if page.hasNext>
 			<a href="result?name=${query.name!""}&grade=${query.grade!""}&address=${query.address!""}&star=${query.star!""}&page.pageNo=${page.nextPage}"><@spring.messageText "admin.clinic.query.result.btn.next", "Next" /></a>
+			<#else>
+			<@spring.messageText "admin.clinic.query.result.btn.next", "Next" />
 			</#if>
-			<@spring.messageArgsText "admin.clinic.query.result.pageInfo", ["${page.currentPageNo}", "${page.totalPages}", "${page.totalCount}"], "Info" />
+			&nbsp;<@spring.messageArgsText "admin.clinic.query.result.pageInfo", ["${page.currentPageNo}", "${page.totalPages}", "${page.totalCount}"], "Page Info" />
 		</td>
 	</tr>
 </table>

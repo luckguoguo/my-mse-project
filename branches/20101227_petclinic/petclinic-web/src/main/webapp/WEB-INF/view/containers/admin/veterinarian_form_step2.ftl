@@ -101,7 +101,17 @@ function goPrev() {
 		<td><@spring.messageText "admin.veterinarian.form.label.email", "Veterinarian Email" /></td>
 		<td>
 			<@spring.bind "veterinarian.email" />
-			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
+			${spring.status.value?default("")}
+			<input type="hidden" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
+			<@spring.showErrors ", ", "error"/>
+		</td>
+	</tr>
+	<tr>
+		<td><@spring.messageText "admin.veterinarian.form.label.speciality", "Veterinarian Speiality" /></td>
+		<td>
+			<@spring.bind "veterinarian.specialityPetCategory.id" />
+			${allPetCategories[spring.status.value?default("")]}
+			<input type="hidden" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
 			<@spring.showErrors ", ", "error"/>
 		</td>
 	</tr>

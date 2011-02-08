@@ -2,9 +2,10 @@ package cn.edu.sjtu.petclinic.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import cn.edu.sjtu.common.orm.Page;
 import cn.edu.sjtu.petclinic.entity.User;
-import cn.edu.sjtu.petclinic.entity.Veterinarian;
 import cn.edu.sjtu.petclinic.enums.Gender;
 
 public class VeterinarianQuery {
@@ -17,13 +18,17 @@ public class VeterinarianQuery {
 	
 	private Gender gender;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date workingDateFrom;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date workingDateTo;
+	
+	private Long specialityPetCategoryId;
 	
 	private User.Status status;
 	
-	private Page<Veterinarian> page = new Page<Veterinarian>(10);
+	private Page<User> page = new Page<User>(10);
 
 	public String getClinicName() {
 		return clinicName;
@@ -73,6 +78,14 @@ public class VeterinarianQuery {
 		this.workingDateTo = workingDateTo;
 	}
 
+	public Long getSpecialityPetCategoryId() {
+		return specialityPetCategoryId;
+	}
+
+	public void setSpecialityPetCategoryId(Long specialityPetCategoryId) {
+		this.specialityPetCategoryId = specialityPetCategoryId;
+	}
+
 	public User.Status getStatus() {
 		return status;
 	}
@@ -81,11 +94,11 @@ public class VeterinarianQuery {
 		this.status = status;
 	}
 
-	public Page<Veterinarian> getPage() {
+	public Page<User> getPage() {
 		return page;
 	}
 
-	public void setPage(Page<Veterinarian> page) {
+	public void setPage(Page<User> page) {
 		this.page = page;
 	}
 	

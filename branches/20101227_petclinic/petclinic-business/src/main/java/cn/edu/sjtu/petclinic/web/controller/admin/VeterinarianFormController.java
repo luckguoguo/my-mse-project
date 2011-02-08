@@ -1,8 +1,5 @@
 package cn.edu.sjtu.petclinic.web.controller.admin;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -15,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import cn.edu.sjtu.petclinic.entity.Clinic;
 import cn.edu.sjtu.petclinic.entity.Veterinarian;
 import cn.edu.sjtu.petclinic.service.exception.DuplicatedUsernameException;
 import cn.edu.sjtu.petclinic.service.exception.InvalidClinicPasswordException;
@@ -45,18 +41,10 @@ public class VeterinarianFormController extends AbstractController {
 
 	private String returnToStep1(Model model) {
 		bindAllClinicsAsOptions(model);
+		bindAllPetCategoriesAsOptions(model);
 		return ViewNames.FORWARD_ADMIN_VETERINARIAN_FORM_STEP1;
 	}
 
-	private void bindAllClinicsAsOptions(Model model) {
-		Map<String, String> allClinics = new LinkedHashMap<String, String>();
-		allClinics.put("", "-");
-		for (Clinic clinic : clinicService.getAllClinics()) {
-			allClinics.put(clinic.getId() + "", clinic.getName());
-		}
-		model.addAttribute("allClinics", allClinics);
-	}
-	
 	@RequestMapping(value = "/{veterinarianId}/active", method = RequestMethod.POST)
 	public @ResponseBody Model active(HttpServletRequest request, @PathVariable Long veterinarianId, Model model) {
 		log.debug("do active...");
@@ -83,6 +71,7 @@ public class VeterinarianFormController extends AbstractController {
 		String step = request.getParameter("step");
 		if (StringUtils.isBlank(step)) step = "0";
 		
+		try {
 		if ("0".equals(step)) {
 			return doPrevious(request, model, veterinarian, result);
 		} else if ("1".equals(step)) {
@@ -90,6 +79,10 @@ public class VeterinarianFormController extends AbstractController {
 		} else if ("2".equals(step)) {
 			return doSubmit(request, model, veterinarian, result);
 		} else {
+			return returnToStep1(model);
+		}
+		} catch(Exception e) {
+			e.printStackTrace();
 			return returnToStep1(model);
 		}
 	}
@@ -133,6 +126,7 @@ public class VeterinarianFormController extends AbstractController {
 
 	private String returnToStep2(Model model) {
 		bindAllClinicsAsOptions(model);
+		bindAllPetCategoriesAsOptions(model);
 		return ViewNames.FORWARD_ADMIN_VETERINARIAN_FORM_STEP2;
 	}
 
@@ -144,6 +138,10 @@ public class VeterinarianFormController extends AbstractController {
 		if (result.hasErrors()) {
 			log.debug("doSubmit has field errors");
 			return returnToStep2(model);
+		}
+		
+		if (veterinarian.getSpecialityPetCategory() == null || veterinarian.getSpecialityPetCategory().isNewEntity()) {
+			veterinarian.setSpecialityPetCategory(null);
 		}
 		
 		if (veterinarian.isNewEntity()) {

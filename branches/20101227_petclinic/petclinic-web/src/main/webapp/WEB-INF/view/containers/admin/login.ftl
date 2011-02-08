@@ -25,7 +25,10 @@
 	</tr>
 	<tr>
 		<td></td>
-		<td><input type="submit" value="<@spring.messageText "login.label.submit", "Login" />" /></td>
+		<td>
+			<input type="submit" value="<@spring.messageText "login.label.submit", "Login" />" />
+			<a href="adminRequestTempPassword"><@spring.messageText "login.label.requestTempPassword", "RequestTempPassword" />
+		</a></td>
 	</tr>
 </table>
 </form>
