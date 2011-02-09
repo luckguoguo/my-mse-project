@@ -216,20 +216,47 @@ public class UserServiceImpl extends AbstractService implements UserService {
 	@Override
 	public void addPetOwner(PetOwner petOwner)
 			throws DuplicatedUsernameException {
-		// TODO Auto-generated method stub
+
+		// check username
+		checkUser(petOwner);
 		
+		// register veterinarian
+		petOwner.setPassword(EncryptionUtils.getMD5Str(petOwner.getPassword()));
+		petOwner.setStatus(User.Status.ACTIVE);
+		userDao.save(petOwner);
 	}
 	
 	@Override
 	public void updatePetOwner(PetOwner petOwner) 
 			throws DuplicatedUsernameException {
-		// TODO Auto-generated method stub
+
+		// check username
+		checkUser(petOwner);
 		
+		PetOwner petOwnerPojo = getPetOwner(petOwner.getId());
+		copyToPetOwnerPojo(petOwner, petOwnerPojo);
+		userDao.save(petOwnerPojo);
+	}
+
+	private void copyToPetOwnerPojo(PetOwner petOwner, PetOwner petOwnerPojo) {
+		petOwnerPojo.setUsername(petOwner.getUsername());
+		petOwnerPojo.setName(petOwner.getName());
+		petOwnerPojo.setGender(petOwner.getGender());
+		petOwnerPojo.setIdCard(petOwner.getIdCard());
+		petOwnerPojo.setBirthdate(petOwner.getBirthdate());
+		petOwnerPojo.setAddress(petOwner.getAddress());
+		petOwnerPojo.setTelephone(petOwner.getTelephone());
+		petOwnerPojo.setZipcode(petOwner.getZipcode());
+		petOwnerPojo.setEmail(petOwner.getEmail());
+		petOwnerPojo.setLastModifiedTime(petOwner.getLastModifiedTime());
+		petOwnerPojo.setLastModifiedBy(petOwner.getLastModifiedBy());
 	}
 
 	@Override
 	public PetOwner getPetOwner(Long id) {
-		// TODO Auto-generated method stub
+		User petOwner = userDao.get(id);
+		if (petOwner instanceof PetOwner)
+			return (PetOwner) petOwner;
 		return null;
 	}
 

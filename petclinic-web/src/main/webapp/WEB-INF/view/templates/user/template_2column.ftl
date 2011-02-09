@@ -6,7 +6,10 @@
 	<meta http-equiv="Content-Language" content="<@spring.messageText "user.page.content.language", "English" />" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="${contextPath}/style/user/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="${contextPath}/style/jquery/ui-lightness/jquery-ui.css" media="screen" />
 	<script language="javascript" type="text/javascript" src="${contextPath}/script/jquery/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="${contextPath}/script/jquery/jquery-ui.js"></script>
+	<script language="javascript" type="text/javascript" src="${contextPath}/script/jquery/i18n/jquery-ui-i18n.js"></script>
 	<script language="javascript" type="text/javascript" src="${contextPath}/script/jquery/jquery.raty.js"></script>
 	<script language="javascript" type="text/javascript">
 		var ctx = "${contextPath}";

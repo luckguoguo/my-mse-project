@@ -11,6 +11,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import cn.edu.sjtu.common.orm.jpa.AuditableEntity;
 
@@ -21,11 +26,19 @@ public class Interrogation extends AuditableEntity {
 	public static enum Status {
 		NEW, DIAGNOSING, DIAGNOSED
 	}
+
+	@NotBlank
+	@Size(max = 63)
+	private String name;
 	
+	@NotNull
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "start_date")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date startDate;
 	
+	@NotBlank
+	@Size(max = 2000)
 	private String symptom;
 	
 	private String memo;
@@ -44,6 +57,14 @@ public class Interrogation extends AuditableEntity {
 	@ManyToOne
 	@JoinColumn(name = "vet_id")
 	private Veterinarian veterinarian;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public Date getStartDate() {
 		return startDate;

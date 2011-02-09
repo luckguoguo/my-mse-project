@@ -4,6 +4,7 @@ import java.util.List;
 
 import cn.edu.sjtu.common.orm.Page;
 import cn.edu.sjtu.petclinic.dto.AppointmentQuery;
+import cn.edu.sjtu.petclinic.dto.DailyOutpatientQuery;
 import cn.edu.sjtu.petclinic.entity.Appointment;
 import cn.edu.sjtu.petclinic.entity.DailyOutpatient;
 import cn.edu.sjtu.petclinic.entity.Veterinarian;
@@ -21,6 +22,8 @@ public interface AppointmentService {
 	List<DailyOutpatient> queryAvailableDailyOutpatients(Veterinarian veterinarian);
 	
 	List<DailyOutpatient> queryUpcomingDailyOutpatients(Veterinarian veterinarian);
+	
+	Page<DailyOutpatient> queryUpcomingDailyOutpatients(DailyOutpatientQuery query);
 	
 	DailyOutpatient getDailyOutpatient(Long id);
 	

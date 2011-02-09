@@ -77,6 +77,7 @@
 	<definition name="user.container.footer" template="/WEB-INF/view/containers/user/footer.ftl"/>
 	<definition name="user.container.body.index" template="/WEB-INF/view/containers/user/index.ftl"/>
 	<definition name="user.container.body.login" template="/WEB-INF/view/containers/user/login.ftl"/>
+	<definition name="user.container.body.register" template="/WEB-INF/view/containers/user/petowner/profile.ftl"/>
 	<definition name="user.container.body.requestTempPassowrd_form" template="/WEB-INF/view/containers/user/requestTempPassword_form.ftl"/>
 	<definition name="user.container.body.requestTempPassowrd_form_message" template="/WEB-INF/view/containers/user/requestTempPassword_form_message.ftl"/>
 	<definition name="user.container.body.clinic_query" template="/WEB-INF/view/containers/user/clinic_query.ftl"/>
@@ -86,11 +87,16 @@
 
 	<definition name="veterinarian.container.left" template="/WEB-INF/view/containers/user/veterinarian/left.ftl"/>
 	<definition name="veterinarian.container.body.home" template="/WEB-INF/view/containers/user/veterinarian/home.ftl"/>
+	<definition name="veterinarian.container.body.profile" template="/WEB-INF/view/containers/user/veterinarian/profile.ftl"/>
 	<definition name="veterinarian.container.body.password_form" template="/WEB-INF/view/containers/user/password_form.ftl"/>
 	<definition name="veterinarian.container.body.password_form_message" template="/WEB-INF/view/containers/user/password_form_message.ftl"/>
 	
 	<definition name="petowner.container.left" template="/WEB-INF/view/containers/user/petowner/left.ftl"/>
 	<definition name="petowner.container.body.home" template="/WEB-INF/view/containers/user/petowner/home.ftl"/>
+	<definition name="petowner.container.body.profile" template="/WEB-INF/view/containers/user/petowner/profile.ftl"/>
+	<definition name="petowner.container.body.pet_form" template="/WEB-INF/view/containers/user/petowner/pet_form.ftl"/>
+	<definition name="petowner.container.body.pet_form_message" template="/WEB-INF/view/containers/user/petowner/pet_form_message.ftl"/>
+	<definition name="petowner.container.body.pet_query" template="/WEB-INF/view/containers/user/petowner/pet_query.ftl"/>
 	<definition name="petowner.container.body.password_form" template="/WEB-INF/view/containers/user/password_form.ftl"/>
 	<definition name="petowner.container.body.password_form_message" template="/WEB-INF/view/containers/user/password_form_message.ftl"/>
 	
@@ -156,6 +162,9 @@
 	<definition name="login" extends="user.1column">
 		<put-attribute name="body" value="user.container.body.login" />
 	</definition>
+	<definition name="register" extends="user.2column.unlogin">
+		<put-attribute name="body" value="user.container.body.register" />
+	</definition>
 	<definition name="requestTempPassword/form" extends="user.1column">
 		<put-attribute name="body" value="user.container.body.requestTempPassowrd_form" />
 	</definition>
@@ -184,6 +193,9 @@
 	<definition name="veterinarian/home" extends="veterinarian.2column">
 		<put-attribute name="body" value="veterinarian.container.body.home" />
 	</definition>
+	<definition name="veterinarian/profile" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.profile" />
+	</definition>
 	<definition name="veterinarian/password/form" extends="veterinarian.2column">
 		<put-attribute name="body" value="veterinarian.container.body.password_form" />
 	</definition>
@@ -194,11 +206,26 @@
 	<definition name="petowner/home" extends="petowner.2column">
 		<put-attribute name="body" value="petowner.container.body.home" />
 	</definition>
+	<definition name="petowner/profile" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.profile" />
+	</definition>
 	<definition name="petowner/password/form" extends="petowner.2column">
 		<put-attribute name="body" value="petowner.container.body.password_form" />
 	</definition>
 	<definition name="petowner/password/form/message" extends="petowner.2column">
 		<put-attribute name="body" value="petowner.container.body.password_form_message" />
+	</definition>
+	<definition name="petowner/pet/form" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.pet_form" />
+	</definition>
+	<definition name="petowner/pet/form/message" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.pet_form_message" />
+	</definition>
+	<definition name="petowner/pet/query/form" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.pet_query" />
+	</definition>
+	<definition name="petowner/pet/query/result" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.pet_query" />
 	</definition>
 	<definition name="petowner/clinic/query/form" extends="petowner.2column">
 		<put-attribute name="body" value="user.container.body.clinic_query" />

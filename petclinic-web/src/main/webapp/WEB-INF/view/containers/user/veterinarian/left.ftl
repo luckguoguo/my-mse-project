@@ -2,7 +2,7 @@
 <h2><@spring.messageText "veterinarian.left.information", "Information" /></h2>
 <p class="welcome"><@spring.messageText "veterinarian.left.welcome", "Welcome!" />${sessionUser.name}</p>
 <ul class="top">
-<li><a href="#"><@spring.messageText "veterinarian.left.user.viewProfile", "View Profile" /></a></li>
+<li><a href="${contextPath}/veterinarian/profile"><@spring.messageText "veterinarian.left.user.viewProfile", "View Profile" /></a></li>
 <li><a href="${contextPath}/veterinarian/password"><@spring.messageText "veterinarian.left.user.updatePassword", "Update Password" /></a></li>
 <li><a href="${contextPath}/logout"><@spring.messageText "veterinarian.left.user.logout", "Logout" /></a></li>
 </ul>

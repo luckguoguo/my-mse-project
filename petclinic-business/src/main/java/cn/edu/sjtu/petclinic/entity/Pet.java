@@ -10,6 +10,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import cn.edu.sjtu.common.orm.jpa.AuditableEntity;
 import cn.edu.sjtu.petclinic.enums.Gender;
@@ -18,14 +23,21 @@ import cn.edu.sjtu.petclinic.enums.Gender;
 @Table(name = "tbl_pet")
 public class Pet extends AuditableEntity {
 
+	@NotBlank
+	@Size(max = 63)
 	private String name;
 	
+	@NotNull
 	@Enumerated(EnumType.STRING)
-	private Gender gender = Gender.MALE;
+	private Gender gender;
 	
+	@NotNull
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Date birthdate;
 	
+	@NotBlank
+	@Size(max = 255)
 	private String introduction;
 	
 	@ManyToOne

@@ -71,7 +71,6 @@ public class AdminVeterinarianFormController extends AbstractController {
 		String step = request.getParameter("step");
 		if (StringUtils.isBlank(step)) step = "0";
 		
-		try {
 		if ("0".equals(step)) {
 			return doPrevious(request, model, veterinarian, result);
 		} else if ("1".equals(step)) {
@@ -79,10 +78,6 @@ public class AdminVeterinarianFormController extends AbstractController {
 		} else if ("2".equals(step)) {
 			return doSubmit(request, model, veterinarian, result);
 		} else {
-			return returnToStep1(model);
-		}
-		} catch(Exception e) {
-			e.printStackTrace();
 			return returnToStep1(model);
 		}
 	}

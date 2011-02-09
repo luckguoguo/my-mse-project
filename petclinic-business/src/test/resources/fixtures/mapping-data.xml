@@ -37,10 +37,11 @@
 			created_by="1" created_date="2011-01-01 10:00:00" last_modified_by="1" last_modified_date="2011-01-01 10:00:00" />
 	
 	<tbl_interrogation id="1" pet_id="1" petowner_id="3" vet_id="2"
-			start_date="2011-01-01 10:00:00" symptom="symptom1" memo="memo1" status="NEW" 
+			name="name1" start_date="2011-01-01 10:00:00" symptom="symptom1" memo="memo1" status="NEW" 
 			created_by="1" created_date="2011-01-01 10:00:00" last_modified_by="1" last_modified_date="2011-01-01 10:00:00" />
 			
-	<tbl_diagnosis id="1" interrogation_id="1" vet_id="2" diagnosis="diagnosis1" 
+	<tbl_diagnosis id="1" interrogation_id="1" vet_id="2" symptom="symptom1" diagnosis="diagnosis1" 
+			therapy="therapy1" prescription="prescription1" star="5" status="NEW"
 			created_by="1" created_date="2011-01-01 10:00:00" last_modified_by="1" last_modified_date="2011-01-01 10:00:00" />
 			
 	<tbl_daily_outpatient id="1" vet_id="2" day="2011-01-01" count_limit="10" count_actual="1" 

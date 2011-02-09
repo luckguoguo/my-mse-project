@@ -28,6 +28,7 @@
 		<td>
 			<input type="submit" value="<@spring.messageText "login.label.submit", "Login" />" />
 			<a href="requestTempPassword"><@spring.messageText "login.label.requestTempPassword", "RequestTempPassword" /></a>
+			<a href="register"><@spring.messageText "login.label.register", "Register" /></a>
 		</td>
 	</tr>
 </table>
