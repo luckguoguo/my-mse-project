@@ -15,7 +15,7 @@ import cn.edu.sjtu.petclinic.web.controller.Constants;
 import cn.edu.sjtu.petclinic.web.controller.ViewNames;
 
 @Controller
-public class ClinicQueryController extends AbstractController {
+public class AdminClinicQueryController extends AbstractController {
 
 	@RequestMapping(value = "/admin/clinic/query/form", method = RequestMethod.GET)
 	public String getClinicQueryForm(HttpServletRequest request, Model model) {

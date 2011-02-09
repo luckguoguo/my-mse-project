@@ -9,6 +9,12 @@ public final class ViewNames {
 	public static final String REDIRECT_LOGIN = "redirect:/login";
 	public static final String FORWARD_REQUEST_TEMPPASSWORD_FORM = "requestTempPassword/form";
 	public static final String FORWARD_REQUEST_TEMPPASSWORD_FORM_MESSAGE = "requestTempPassword/form/message";
+	public static final String FORWARD_CLINIC_QUERY_FORM = "clinic/query/form";
+	public static final String FORWARD_CLINIC_QUERY_RESULT = "clinic/query/result";
+	public static final String FORWARD_CLINIC_QUERY_DETAIL = "clinic/query/detail";
+	public static final String FORWARD_VETERINARIAN_QUERY_FORM = "veterinarian/query/form";
+	public static final String FORWARD_VETERINARIAN_QUERY_RESULT = "veterinarian/query/result";
+	public static final String FORWARD_VETERINARIAN_QUERY_DETAIL = "veterinarian/query/detail";
 	
 	/* veterinarian views */
 	public static final String REDIRECT_VETERINARIAN_HOME = "redirect:/veterinarian/home";
@@ -19,6 +25,12 @@ public final class ViewNames {
 	public static final String REDIRECT_PETOWNER_HOME = "redirect:/petowner/home";
 	public static final String FORWARD_PETOWNER_PASSWORD_FORM = "petowner/password/form";
 	public static final String FORWARD_PETOWNER_PASSWORD_FORM_MESSAGE = "petowner/password/form/message";
+	public static final String FORWARD_PETOWNER_CLINIC_QUERY_FORM = "petowner/clinic/query/form";
+	public static final String FORWARD_PETOWNER_CLINIC_QUERY_RESULT = "petowner/clinic/query/result";
+	public static final String FORWARD_PETOWNER_CLINIC_QUERY_DETAIL = "petowner/clinic/query/detail";
+	public static final String FORWARD_PETOWNER_VETERINARIAN_QUERY_FORM = "petowner/veterinarian/query/form";
+	public static final String FORWARD_PETOWNER_VETERINARIAN_QUERY_RESULT = "petowner/veterinarian/query/result";
+	public static final String FORWARD_PETOWNER_VETERINARIAN_QUERY_DETAIL = "petowner/veterinarian/query/detail";
 	
 	/* admin views */
 	public static final String FORWARD_ADMIN_LOGIN = "admin/login";

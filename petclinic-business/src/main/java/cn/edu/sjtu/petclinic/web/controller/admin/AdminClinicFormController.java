@@ -21,7 +21,7 @@ import cn.edu.sjtu.petclinic.web.utils.ServletUtils;
 
 @Controller
 @RequestMapping("/admin/clinic")
-public class ClinicFormController extends AbstractController {
+public class AdminClinicFormController extends AbstractController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String getClinicRegistrationForm(HttpServletRequest request, Model model) {

@@ -1,7 +1,10 @@
 package cn.edu.sjtu.petclinic.service;
 
+import java.util.List;
+
 import cn.edu.sjtu.common.orm.Page;
 import cn.edu.sjtu.petclinic.dto.VeterinarianQuery;
+import cn.edu.sjtu.petclinic.entity.Clinic;
 import cn.edu.sjtu.petclinic.entity.PetOwner;
 import cn.edu.sjtu.petclinic.entity.User;
 import cn.edu.sjtu.petclinic.entity.Veterinarian;
@@ -34,6 +37,8 @@ public interface UserService {
 	Page<User> queryActiveVeterinarians(VeterinarianQuery query);
 	
 	Veterinarian getVeterinarian(Long id);
+	
+	List<User> findVeterinariansByClinic(Clinic clinic);
 	
 	void activeVeterinarian(Veterinarian veterinarian);
 	
