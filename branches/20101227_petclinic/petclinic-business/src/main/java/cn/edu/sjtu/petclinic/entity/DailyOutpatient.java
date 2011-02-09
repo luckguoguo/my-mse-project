@@ -9,6 +9,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import cn.edu.sjtu.common.orm.jpa.AuditableEntity;
 
@@ -16,14 +19,17 @@ import cn.edu.sjtu.common.orm.jpa.AuditableEntity;
 @Table(name = "tbl_daily_outpatient")
 public class DailyOutpatient extends AuditableEntity {
 
+	@NotNull
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Date day;
 	
+	@NotNull
 	@Column(name = "count_limit")
 	private Integer countLimit;
 	
 	@Column(name = "count_actual")
-	private Integer countActual;
+	private Integer countActual = 0;
 	
 	@ManyToOne
 	@JoinColumn(name = "vet_id")

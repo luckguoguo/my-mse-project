@@ -179,6 +179,7 @@ public class TestJpaMappings extends SpringTxDaoTestCase {
 		Interrogation interrogation = interrogationDao.get(new Long(1));
 		assertNotNull(interrogation);
 		assertEquals(1l, interrogation.getId());
+		assertEquals("name1", interrogation.getName());
 		assertEquals(DateUtils.parseDate("2011-01-01 10:00:00", new String[] { "yyyy-MM-dd hh:mm:ss" }), interrogation.getStartDate());
 		assertEquals("symptom1", interrogation.getSymptom());
 		assertEquals("memo1", interrogation.getMemo());
@@ -201,7 +202,12 @@ public class TestJpaMappings extends SpringTxDaoTestCase {
 		Diagnosis diagnosis = diagnosisDao.get(new Long(1));
 		assertNotNull(diagnosis);
 		assertEquals(1l, diagnosis.getId());
+		assertEquals("symptom1", diagnosis.getSymptom());
 		assertEquals("diagnosis1", diagnosis.getDiagnosis());
+		assertEquals("therapy1", diagnosis.getTherapy());
+		assertEquals("prescription1", diagnosis.getPrescription());
+		assertEquals(5, diagnosis.getStar());
+		assertEquals(Diagnosis.Status.NEW, diagnosis.getStatus());
 		assertNotNull(diagnosis.getInterrogation());
 		assertEquals(1l, diagnosis.getInterrogation().getId());
 		assertNotNull(diagnosis.getVeterinarian());

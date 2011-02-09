@@ -3,13 +3,13 @@
 $(document).ready(function() {
 });
 </script>
-<h2><a href="###"><@spring.messageText "veterinarian.detail.title", "Veterinarian Detail" /></a></h2>
+<h2><a href="###"><@spring.messageText "veterinarian.detail.profile.title", "Veterinarian Detail" /></a></h2>
 <table width="80%">
 	<tr>
 		<td width="20%"><@spring.messageText "veterinarian.detail.label.clinic", "Veterinarian Clinic" /></td>
 		<td width="80%">
 			<@spring.bind "veterinarian.clinic.name" />
-			${spring.status.value?default("")} (<a href="../clinic/${veterinarian.clinic.id}">查看详情</a>)
+			${spring.status.value?default("")}
 			<@spring.showErrors ", ", "error"/>
 		</td>
 	</tr>
@@ -99,18 +99,6 @@ $(document).ready(function() {
 			<@spring.bind "veterinarian.introduction" />
 			${spring.status.value?default("")}
 			<@spring.showErrors ", ", "error"/>
-		</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td>
-			<#if sessionUser?? && sessionUser!="" >
-			<input type="button" value="<@spring.messageText "veterinarian.detail.btn.interrogation", "Interrogation" />" onclick="javascript:location.href='${contextPath}/petowner/interrogation?veterinarianId=${veterinarian.id}';" />
-			<#else>
-			<input type="button" value="<@spring.messageText "veterinarian.detail.btn.login", "Login" />" onclick="javascript:location.href='${contextPath}/login';" />
-			<input type="button" value="<@spring.messageText "veterinarian.detail.btn.register", "Register" />" onclick="javascript:location.href='${contextPath}/register';" />
-			</#if>
-			<input type="button" value="<@spring.messageText "veterinarian.detail.btn.close", "Close" />" onclick="javascript:window.close();" />
 		</td>
 	</tr>
 </table>

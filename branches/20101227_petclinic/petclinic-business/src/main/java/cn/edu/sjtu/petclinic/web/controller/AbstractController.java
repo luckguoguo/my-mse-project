@@ -19,7 +19,7 @@ import cn.edu.sjtu.petclinic.entity.PetCategory;
 import cn.edu.sjtu.petclinic.entity.User;
 import cn.edu.sjtu.petclinic.service.AppointmentService;
 import cn.edu.sjtu.petclinic.service.ClinicService;
-import cn.edu.sjtu.petclinic.service.DirectoryService;
+import cn.edu.sjtu.petclinic.service.DictionaryService;
 import cn.edu.sjtu.petclinic.service.EmailService;
 import cn.edu.sjtu.petclinic.service.InterrogationService;
 import cn.edu.sjtu.petclinic.service.PetService;
@@ -49,7 +49,7 @@ public abstract class AbstractController {
 	protected EmailService emailService;
 	
 	@Autowired
-	protected DirectoryService directoryService;
+	protected DictionaryService dictionaryService;
 	
 	@Autowired
 	protected MessageSource messageSource;
@@ -78,8 +78,8 @@ public abstract class AbstractController {
 		this.emailService = emailService;
 	}
 	
-	public void setDirectoryService(DirectoryService directoryService) {
-		this.directoryService = directoryService;
+	public void setDictionaryService(DictionaryService dictionaryService) {
+		this.dictionaryService = dictionaryService;
 	}
 
 	public void setMessageSource(MessageSource messageSource) {
@@ -97,9 +97,11 @@ public abstract class AbstractController {
 	protected void addCreationAuditInfo(HttpServletRequest request, AuditableEntity entity) {
 		Date now = new Date();
 		entity.setCreatedTime(now);
-		entity.setCreatedBy(getSessionUser(request.getSession()).getId());
 		entity.setLastModifiedTime(now);
-		entity.setLastModifiedBy(getSessionUser(request.getSession()).getId());
+		if (getSessionUser(request.getSession()) != null) {
+			entity.setCreatedBy(getSessionUser(request.getSession()).getId());
+			entity.setLastModifiedBy(getSessionUser(request.getSession()).getId());
+		}
 	}
 	
 	protected void addModificationAuditInfo(HttpServletRequest request, AuditableEntity entity) {

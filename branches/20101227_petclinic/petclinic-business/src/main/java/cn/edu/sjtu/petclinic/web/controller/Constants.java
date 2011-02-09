@@ -6,6 +6,9 @@ public class Constants {
 	public static final String MODEL_NAME_CLINICS = "clinics";
 	public static final String MODEL_NAME_VETERINARIAN = "veterinarian";
 	public static final String MODEL_NAME_VETERINARIANS = "veterinarians";
+	public static final String MODEL_NAME_PET = "pet";
+	public static final String MODEL_NAME_PETS = "pets";
+	public static final String MODEL_NAME_PETOWNER = "petOwner";
 	public static final String MODEL_NAME_QUERY = "query";
 	public static final String MODEL_NAME_RESULT = "result";
 	public static final String MODEL_NAME_PAGE = "page";

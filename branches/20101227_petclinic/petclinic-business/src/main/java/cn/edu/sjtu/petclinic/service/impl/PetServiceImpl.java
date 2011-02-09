@@ -14,25 +14,35 @@ public class PetServiceImpl extends AbstractService implements PetService {
 
 	@Override
 	public void addPet(Pet pet) {
-		// TODO Auto-generated method stub
-		
+		petDao.save(pet);
 	}
 
 	@Override
 	public List<Pet> getOwnerPets(PetOwner petOwner) {
-		// TODO Auto-generated method stub
-		return null;
+		return petDao.findPetsByOwner(petOwner);
 	}
 
 	@Override
 	public Pet getPet(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return petDao.get(id);
 	}
 
 	@Override
 	public void updatePet(Pet pet) {
-		// TODO Auto-generated method stub
+		Pet petPojo = getPet(pet.getId());
+		copyToPetPojo(pet, petPojo);
+		petDao.save(petPojo);
+	}
+
+	private void copyToPetPojo(Pet pet, Pet petPojo) {
+		petPojo.setOwner(pet.getOwner());
+		petPojo.setCategory(pet.getCategory());
+		petPojo.setName(pet.getName());
+		petPojo.setGender(pet.getGender());
+		petPojo.setBirthdate(pet.getBirthdate());
+		petPojo.setIntroduction(pet.getIntroduction());
+		petPojo.setLastModifiedTime(pet.getLastModifiedTime());
+		petPojo.setLastModifiedBy(pet.getLastModifiedBy());
 		
 	}
 

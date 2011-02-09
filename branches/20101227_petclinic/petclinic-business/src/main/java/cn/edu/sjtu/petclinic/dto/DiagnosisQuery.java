@@ -5,9 +5,9 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import cn.edu.sjtu.common.orm.Page;
-import cn.edu.sjtu.petclinic.entity.Interrogation;
+import cn.edu.sjtu.petclinic.entity.Diagnosis;
 
-public class InterrogationQuery {
+public class DiagnosisQuery {
 
 	private String name;
 	
@@ -17,15 +17,17 @@ public class InterrogationQuery {
 	
 	private Long veterinarianId;
 	
+	private Long interrogationId;
+	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDateFrom;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDateTo;
 	
-	private Interrogation.Status status;
+	private Diagnosis.Status status;
 	
-	private Page<Interrogation> page = new Page<Interrogation>(10);
+	private Page<Diagnosis> page = new Page<Diagnosis>(10);
 
 	public String getName() {
 		return name;
@@ -59,6 +61,14 @@ public class InterrogationQuery {
 		this.veterinarianId = veterinarianId;
 	}
 
+	public Long getInterrogationId() {
+		return interrogationId;
+	}
+
+	public void setInterrogationId(Long interrogationId) {
+		this.interrogationId = interrogationId;
+	}
+
 	public Date getStartDateFrom() {
 		return startDateFrom;
 	}
@@ -75,19 +85,19 @@ public class InterrogationQuery {
 		this.startDateTo = startDateTo;
 	}
 
-	public Interrogation.Status getStatus() {
+	public Diagnosis.Status getStatus() {
 		return status;
 	}
 
-	public void setStatus(Interrogation.Status status) {
+	public void setStatus(Diagnosis.Status status) {
 		this.status = status;
 	}
 
-	public Page<Interrogation> getPage() {
+	public Page<Diagnosis> getPage() {
 		return page;
 	}
 
-	public void setPage(Page<Interrogation> page) {
+	public void setPage(Page<Diagnosis> page) {
 		this.page = page;
 	}
 	

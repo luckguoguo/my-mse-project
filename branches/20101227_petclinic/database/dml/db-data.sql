@@ -123,3 +123,7 @@ insert  into `tbl_pet_category`(`id`,`name`,`description`) values
 (3,'鸟类',NULL),
 (4,'鱼类',NULL),
 (100,'其它',NULL);
+
+insert  into `tbl_pet`(`id`,`petowner_id`,`category_id`,`name`,`gender`,`birthdate`,`introduction`,`created_date`,`created_by`,`last_modified_date`,`last_modified_by`) values 
+(1,32,1,'小强','MALE','2010-11-01','<p>\r\n	身长1米，体重20公斤，黑色。</p>\r\n','2011-02-09 15:34:53',32,'2011-02-09 15:39:23',32),
+(2,32,2,'小花','FEMALE','2010-12-01','<p>\r\n	身长50厘米，体重10公斤，花色。</p>\r\n','2011-02-09 15:37:25',32,'2011-02-09 15:37:25',32);
