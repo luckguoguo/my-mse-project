@@ -12,6 +12,8 @@ public class VeterinarianQuery {
 	
 	private String clinicName;
 	
+	private String clinicAddress;
+	
 	private String username;
 	
 	private String name;
@@ -36,6 +38,14 @@ public class VeterinarianQuery {
 
 	public void setClinicName(String clinicName) {
 		this.clinicName = clinicName;
+	}
+
+	public String getClinicAddress() {
+		return clinicAddress;
+	}
+
+	public void setClinicAddress(String clinicAddress) {
+		this.clinicAddress = clinicAddress;
 	}
 
 	public String getUsername() {

@@ -1,6 +1,7 @@
 package cn.edu.sjtu.petclinic.service.impl;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.RandomStringUtils;
@@ -230,6 +231,11 @@ public class UserServiceImpl extends AbstractService implements UserService {
 	public PetOwner getPetOwner(Long id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<User> findVeterinariansByClinic(Clinic clinic) {
+		return userDao.findVeterinariansByClinic(clinic);
 	}
 
 }

@@ -126,4 +126,12 @@ public abstract class AbstractController {
 		model.addAttribute("allPetCategories", allPetCategories);
 	}
 	
+	protected boolean isClinicActive(Clinic clinic) {
+		return clinic != null && clinic.getStatus() == Clinic.Status.ACTIVE;
+	}
+	
+	protected boolean isUserActive(User user) {
+		return user != null && user.getStatus() == User.Status.ACTIVE;
+	}
+	
 }

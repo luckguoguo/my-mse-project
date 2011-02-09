@@ -1,6 +1,7 @@
 package cn.edu.sjtu.petclinic.dao.jpa;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
@@ -11,6 +12,7 @@ import cn.edu.sjtu.common.orm.jpa.AbstractJpaDaoSupport;
 import cn.edu.sjtu.common.utils.DateUtils;
 import cn.edu.sjtu.petclinic.dao.UserDao;
 import cn.edu.sjtu.petclinic.dto.VeterinarianQuery;
+import cn.edu.sjtu.petclinic.entity.Clinic;
 import cn.edu.sjtu.petclinic.entity.User;
 
 @Repository("userDao")
@@ -31,6 +33,10 @@ public class UserJpaDao extends AbstractJpaDaoSupport<User, Long> implements Use
 		if (StringUtils.isNotBlank(query.getClinicName())) {
 			jpqlSb.append("and v.clinic.name like :clinicName ");
 			values.put("clinicName", "%" + query.getClinicName() + "%");
+		}
+		if (StringUtils.isNotBlank(query.getClinicAddress())) {
+			jpqlSb.append("and v.clinic.address like :clinicAddress ");
+			values.put("clinicAddress", "%" + query.getClinicAddress() + "%");
 		}
 		if (StringUtils.isNotBlank(query.getUsername())) {
 			jpqlSb.append("and v.username like :username ");
@@ -62,6 +68,11 @@ public class UserJpaDao extends AbstractJpaDaoSupport<User, Long> implements Use
 		}
 		jpqlSb.append("order by v.clinic.name, v.name");
 		return findPage(query.getPage(), jpqlSb.toString(), values);
+	}
+
+	@Override
+	public List<User> findVeterinariansByClinic(Clinic clinic) {
+		return find("from Veterinarian v where v.clinic.id = ? order by name", clinic.getId());
 	}
 	
 }
