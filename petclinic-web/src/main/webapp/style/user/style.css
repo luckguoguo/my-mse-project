@@ -184,6 +184,10 @@ table a {
 	text-decoration: underline;
 }
 
+table .required {
+	color: red;	
+}
+
 ol,ul {
 	margin-top: 10px;
 }

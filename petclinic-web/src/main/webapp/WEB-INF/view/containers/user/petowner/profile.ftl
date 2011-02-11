@@ -25,7 +25,7 @@ $(document).ready(function() {
 </#if>
 <table width="80%">
 	<tr>
-		<td width="20%"><@spring.messageText "petowner.profile.form.label.username", "PetOwner Username" /></td>
+		<td width="20%"><span class="required">*</span> <@spring.messageText "petowner.profile.form.label.username", "PetOwner Username" /></td>
 		<td width="80%">
 			<@spring.bind "petOwner.username" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -36,7 +36,7 @@ $(document).ready(function() {
 	<input type="hidden" name="password" value="${petOwner.password!"111111"}" />
 	<#else>
 	<tr>
-		<td><@spring.messageText "petowner.profile.form.label.password", "PetOwner Password" /></td>
+		<td><span class="required">*</span> <@spring.messageText "petowner.profile.form.label.password", "PetOwner Password" /></td>
 		<td>
 			<@spring.bind "petOwner.password" />
 			<input type="password" name="${spring.status.expression}" value="" />
@@ -53,7 +53,7 @@ $(document).ready(function() {
 	</tr>
 	</#if>
 	<tr>
-		<td><@spring.messageText "petowner.profile.form.label.name", "PetOwner Name" /></td>
+		<td><span class="required">*</span> <@spring.messageText "petowner.profile.form.label.name", "PetOwner Name" /></td>
 		<td>
 			<@spring.bind "petOwner.name" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -61,7 +61,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "petowner.profile.form.label.gender", "PetOwner Gender" /></td>
+		<td><span class="required">*</span> <@spring.messageText "petowner.profile.form.label.gender", "PetOwner Gender" /></td>
 		<td>
 			<@spring.bind "petOwner.gender" />
 			<@spring.formSingleSelect path="petOwner.gender" options=allGenders />
@@ -69,7 +69,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "petowner.profile.form.label.birthdate", "PetOwner Birthdate" /></td>
+		<td><span class="required">*</span> <@spring.messageText "petowner.profile.form.label.birthdate", "PetOwner Birthdate" /></td>
 		<td>
 			<@spring.bind "petOwner.birthdate" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -77,7 +77,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "petowner.profile.form.label.idcard", "PetOwner Idcard" /></td>
+		<td><span class="required">*</span> <@spring.messageText "petowner.profile.form.label.idcard", "PetOwner Idcard" /></td>
 		<td>
 			<@spring.bind "petOwner.idCard" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -85,7 +85,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "petowner.profile.form.label.address", "PetOwner Address" /></td>
+		<td><span class="required">*</span> <@spring.messageText "petowner.profile.form.label.address", "PetOwner Address" /></td>
 		<td>
 			<@spring.bind "petOwner.address" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -93,7 +93,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "petowner.profile.form.label.zipcode", "PetOwner Zipcode" /></td>
+		<td><span class="required">*</span> <@spring.messageText "petowner.profile.form.label.zipcode", "PetOwner Zipcode" /></td>
 		<td>
 			<@spring.bind "petOwner.zipcode" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -101,7 +101,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "petowner.profile.form.label.telephone", "PetOwner Telephone" /></td>
+		<td><span class="required">*</span> <@spring.messageText "petowner.profile.form.label.telephone", "PetOwner Telephone" /></td>
 		<td>
 			<@spring.bind "petOwner.telephone" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -109,7 +109,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "petowner.profile.form.label.email", "PetOwner Email" /></td>
+		<td><span class="required">*</span> <@spring.messageText "petowner.profile.form.label.email", "PetOwner Email" /></td>
 		<td>
 			<@spring.bind "petOwner.email" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />

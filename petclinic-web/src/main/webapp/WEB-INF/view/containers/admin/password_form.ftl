@@ -8,7 +8,7 @@
 </#if>
 <table>
 	<tr>
-		<td><@spring.messageText "admin.password.form.label.origPassword", "Original Password" /></td>
+		<td><span class="required">*</span> <@spring.messageText "admin.password.form.label.origPassword", "Original Password" /></td>
 		<td>
 			<@spring.bind "passwordForm.origPassword" />
 			<input type="password" name="${spring.status.expression}" value="" />
@@ -16,7 +16,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "admin.password.form.label.newPassword", "New Password" /></td>
+		<td><span class="required">*</span> <@spring.messageText "admin.password.form.label.newPassword", "New Password" /></td>
 		<td>
 			<@spring.bind "passwordForm.newPassword" />
 			<input type="password" name="${spring.status.expression}" value="" />
@@ -24,7 +24,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "admin.password.form.label.confirmNewPassword", "Confirm New Password" /></td>
+		<td><span class="required">*</span> <@spring.messageText "admin.password.form.label.confirmNewPassword", "Confirm New Password" /></td>
 		<td>
 			<@spring.bind "passwordForm.confirmNewPassword" />
 			<input type="password" name="${spring.status.expression}" value="" />

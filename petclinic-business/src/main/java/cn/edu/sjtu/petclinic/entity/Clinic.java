@@ -47,7 +47,7 @@ public class Clinic extends AuditableEntity {
 	private String telephone;
 	
 	@NotBlank
-	@Email
+	@Email()
 	@Size(max = 255)
 	private String email;
 	

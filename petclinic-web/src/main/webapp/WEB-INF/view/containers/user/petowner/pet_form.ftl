@@ -36,7 +36,7 @@ $(document).ready(function() {
 </#if>
 <table width="80%">
 	<tr>
-		<td width="20%"><@spring.messageText "petowner.pet.form.label.name", "Pet Name" /></td>
+		<td width="20%"><span class="required">*</span> <@spring.messageText "petowner.pet.form.label.name", "Pet Name" /></td>
 		<td width="80%">
 			<@spring.bind "pet.name" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -52,7 +52,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "petowner.pet.form.label.gender", "Pet Gender" /></td>
+		<td><span class="required">*</span> <@spring.messageText "petowner.pet.form.label.gender", "Pet Gender" /></td>
 		<td>
 			<@spring.bind "pet.gender" />
 			<@spring.formSingleSelect path="pet.gender" options=allPetGenders />
@@ -60,7 +60,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "petowner.pet.form.label.birthdate", "Pet Birthdate" /></td>
+		<td><span class="required">*</span> <@spring.messageText "petowner.pet.form.label.birthdate", "Pet Birthdate" /></td>
 		<td>
 			<@spring.bind "pet.birthdate" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -68,7 +68,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "petowner.pet.form.label.introduction", "Pet Introduction" /></td>
+		<td><span class="required">*</span> <@spring.messageText "petowner.pet.form.label.introduction", "Pet Introduction" /></td>
 		<td>
 			<@spring.bind "pet.introduction" />
 			<textarea cols="80" name="${spring.status.expression}" rows="10">${spring.status.value?default("")}</textarea>

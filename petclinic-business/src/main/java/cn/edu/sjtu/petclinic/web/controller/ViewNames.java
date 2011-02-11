@@ -38,6 +38,9 @@ public final class ViewNames {
 	public static final String FORWARD_PETOWNER_VETERINARIAN_QUERY_FORM = "petowner/veterinarian/query/form";
 	public static final String FORWARD_PETOWNER_VETERINARIAN_QUERY_RESULT = "petowner/veterinarian/query/result";
 	public static final String FORWARD_PETOWNER_VETERINARIAN_QUERY_DETAIL = "petowner/veterinarian/query/detail";
+	public static final String FORWARD_PETOWNER_INTERROGATION_FORM = "petowner/interrogation/form";
+	public static final String FORWARD_PETOWNER_INTERROGATION_FORM_ERROR = "petowner/interrogation/form/error";
+	public static final String FORWARD_PETOWNER_INTERROGATION_FORM_MESSAGE = "petowner/interrogation/form/message";
 	
 	/* admin views */
 	public static final String FORWARD_ADMIN_LOGIN = "admin/login";
