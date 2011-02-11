@@ -15,7 +15,9 @@ import org.springframework.ui.Model;
 
 import cn.edu.sjtu.common.orm.jpa.AuditableEntity;
 import cn.edu.sjtu.petclinic.entity.Clinic;
+import cn.edu.sjtu.petclinic.entity.Pet;
 import cn.edu.sjtu.petclinic.entity.PetCategory;
+import cn.edu.sjtu.petclinic.entity.PetOwner;
 import cn.edu.sjtu.petclinic.entity.User;
 import cn.edu.sjtu.petclinic.service.AppointmentService;
 import cn.edu.sjtu.petclinic.service.ClinicService;
@@ -126,6 +128,15 @@ public abstract class AbstractController {
 			allPetCategories.put(petCategory.getId() + "", petCategory.getName());
 		}
 		model.addAttribute("allPetCategories", allPetCategories);
+	}
+	
+	protected void bindOwnerPetsAsOptions(Model model, PetOwner owner) {
+		Map<String, String> ownerPets = new LinkedHashMap<String, String>();
+		ownerPets.put("", "-");
+		for (Pet pet : petService.getOwnerPets(owner)) {
+			ownerPets.put(pet.getId() + "", pet.getName());
+		}
+		model.addAttribute("ownerPets", ownerPets);
 	}
 	
 	protected boolean isClinicActive(Clinic clinic) {

@@ -40,7 +40,7 @@ $(document).ready(function() {
 </#if>
 <table width="80%">
 	<tr>
-		<td width="20%"><@spring.messageText "admin.clinic.form.label.name", "Clinic Name" /></td>
+		<td width="20%"><span class="required">*</span> <@spring.messageText "admin.clinic.form.label.name", "Clinic Name" /></td>
 		<td width="80%">
 			<@spring.bind "clinic.name" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -48,7 +48,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "admin.clinic.form.label.grade", "Clinic Grade" /></td>
+		<td><span class="required">*</span> <@spring.messageText "admin.clinic.form.label.grade", "Clinic Grade" /></td>
 		<td>
 			<@spring.bind "clinic.grade" />
 			<@spring.formSingleSelect path="clinic.grade" options=clinicGrades />
@@ -56,7 +56,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "admin.clinic.form.label.address", "Clinic Address" /></td>
+		<td><span class="required">*</span> <@spring.messageText "admin.clinic.form.label.address", "Clinic Address" /></td>
 		<td>
 			<@spring.bind "clinic.address" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -64,7 +64,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "admin.clinic.form.label.telephone", "Clinic Telephone" /></td>
+		<td><span class="required">*</span> <@spring.messageText "admin.clinic.form.label.telephone", "Clinic Telephone" /></td>
 		<td>
 			<@spring.bind "clinic.telephone" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -72,7 +72,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "admin.clinic.form.label.email", "Clinic Email" /></td>
+		<td><span class="required">*</span> <@spring.messageText "admin.clinic.form.label.email", "Clinic Email" /></td>
 		<td>
 			<@spring.bind "clinic.email" />
 			<input type="text" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -80,7 +80,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "admin.clinic.form.label.introduction", "Clinic Introduction" /></td>
+		<td><span class="required">*</span> <@spring.messageText "admin.clinic.form.label.introduction", "Clinic Introduction" /></td>
 		<td>
 			<@spring.bind "clinic.introduction" />
 			<textarea cols="80" name="${spring.status.expression}" rows="10">${spring.status.value?default("")}</textarea>
@@ -88,7 +88,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "admin.clinic.form.label.star", "Clinic Star" /></td>
+		<td><span class="required">*</span> <@spring.messageText "admin.clinic.form.label.star", "Clinic Star" /></td>
 		<td>
 			<@spring.bind "clinic.star" />
 			<div id="clinicStarWidget"></div>

@@ -26,8 +26,8 @@ function goPrev() {
 </#if>
 <table width="80%">
 	<tr>
-		<td width="20%"><@spring.messageText "admin.veterinarian.form.label.clinic", "Veterinarian Clinic" /></td>
-		<td width="80%">
+		<td width="22%"><@spring.messageText "admin.veterinarian.form.label.clinic", "Veterinarian Clinic" /></td>
+		<td width="78%">
 			<@spring.bind "veterinarian.clinic.id" />
 			${allClinics[spring.status.value?default("")]}
 			<input type="hidden" name="${spring.status.expression}" value="${spring.status.value?default("")}" />
@@ -125,7 +125,7 @@ function goPrev() {
 		</td>
 	</tr>
 	<tr>
-		<td><@spring.messageText "admin.veterinarian.form.label.mgrPassword", "Veterinarian Clinic MgrPassword" /></td>
+		<td><span class="required">*</span> <@spring.messageText "admin.veterinarian.form.label.mgrPassword", "Veterinarian Clinic MgrPassword" /></td>
 		<td>
 			<@spring.bind "veterinarian.clinic.confirmMgrPassword" />
 			<input type="password" name="${spring.status.expression}" value="${spring.status.value?default("")}" />

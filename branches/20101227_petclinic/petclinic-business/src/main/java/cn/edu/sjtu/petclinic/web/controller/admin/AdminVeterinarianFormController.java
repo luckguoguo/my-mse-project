@@ -130,6 +130,10 @@ public class AdminVeterinarianFormController extends AbstractController {
 		
 		log.debug("doSubmit...");
 		
+		if (StringUtils.isBlank(veterinarian.getClinic().getConfirmMgrPassword())) {
+			result.rejectValue("clinic.confirmMgrPassword", "admin.veterinarian.form.error.nullClinicPassword");
+		}
+		
 		if (result.hasErrors()) {
 			log.debug("doSubmit has field errors");
 			return returnToStep2(model);
