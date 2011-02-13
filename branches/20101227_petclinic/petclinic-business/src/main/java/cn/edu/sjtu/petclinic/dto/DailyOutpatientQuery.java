@@ -10,6 +10,8 @@ import cn.edu.sjtu.petclinic.entity.DailyOutpatient;
 public class DailyOutpatientQuery {
 
 	private Long veterinarianId;
+
+	private String veterinarianName;
 	
 	private String clinicName;
 	
@@ -31,6 +33,14 @@ public class DailyOutpatientQuery {
 
 	public void setVeterinarianId(Long veterinarianId) {
 		this.veterinarianId = veterinarianId;
+	}
+
+	public String getVeterinarianName() {
+		return veterinarianName;
+	}
+
+	public void setVeterinarianName(String veterinarianName) {
+		this.veterinarianName = veterinarianName;
 	}
 
 	public String getClinicName() {

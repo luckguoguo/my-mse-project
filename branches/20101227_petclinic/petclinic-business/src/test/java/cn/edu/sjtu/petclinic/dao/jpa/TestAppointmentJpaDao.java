@@ -11,6 +11,7 @@ import cn.edu.sjtu.common.test.SpringTxDaoTestCase;
 import cn.edu.sjtu.common.utils.DateUtils;
 import cn.edu.sjtu.petclinic.dto.AppointmentQuery;
 import cn.edu.sjtu.petclinic.entity.Appointment;
+import cn.edu.sjtu.petclinic.entity.DailyOutpatient;
 
 public class TestAppointmentJpaDao extends SpringTxDaoTestCase {
 	
@@ -92,6 +93,17 @@ public class TestAppointmentJpaDao extends SpringTxDaoTestCase {
 		page = appointmentDao.findAppointments(query);
 		assertEquals(0l, page.getTotalCount());
 		assertEquals(0l, page.getTotalPages());
+	}
+	
+	@Test
+	public void testFindAppointmentsByDailyoutpatient() {
+		logger.debug("testFindAppointments...");
+		DailyOutpatient dailyOutpatient = new DailyOutpatient();
+		dailyOutpatient.setId(1l);
+		assertEquals(1, appointmentDao.findAppointments(dailyOutpatient).size());
+		
+		dailyOutpatient.setId(0l);
+		assertEquals(0, appointmentDao.findAppointments(dailyOutpatient).size());
 	}
 
 	@Override

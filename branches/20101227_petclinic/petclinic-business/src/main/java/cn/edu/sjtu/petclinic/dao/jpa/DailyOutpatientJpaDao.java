@@ -13,6 +13,7 @@ import cn.edu.sjtu.common.orm.jpa.AbstractJpaDaoSupport;
 import cn.edu.sjtu.common.utils.DateUtils;
 import cn.edu.sjtu.petclinic.dao.DailyOutpatientDao;
 import cn.edu.sjtu.petclinic.dto.DailyOutpatientQuery;
+import cn.edu.sjtu.petclinic.entity.Appointment;
 import cn.edu.sjtu.petclinic.entity.DailyOutpatient;
 
 @Repository("dailyOutpatientDao")
@@ -35,6 +36,10 @@ public class DailyOutpatientJpaDao extends AbstractJpaDaoSupport<DailyOutpatient
 		if (query.getVeterinarianId() != null) {
 			jpqlSb.append("and veterinarian.id = :veterinarianId ");
 			values.put("veterinarianId", query.getVeterinarianId());
+		}
+		if (StringUtils.isNotBlank(query.getVeterinarianName())) {
+			jpqlSb.append("and veterinarian.name like :veterinarianName ");
+			values.put("veterinarianName", "%" + query.getVeterinarianName() + "%");
 		}
 		if (StringUtils.isNotBlank(query.getClinicName())) {
 			jpqlSb.append("and veterinarian.clinic.name like :clinicName ");
@@ -71,6 +76,10 @@ public class DailyOutpatientJpaDao extends AbstractJpaDaoSupport<DailyOutpatient
 		if (query.getVeterinarianId() != null) {
 			jpqlSb.append("and veterinarian.id = :veterinarianId ");
 			values.put("veterinarianId", query.getVeterinarianId());
+		}
+		if (StringUtils.isNotBlank(query.getVeterinarianName())) {
+			jpqlSb.append("and veterinarian.name like :veterinarianName ");
+			values.put("veterinarianName", "%" + query.getVeterinarianName() + "%");
 		}
 		if (StringUtils.isNotBlank(query.getClinicName())) {
 			jpqlSb.append("and veterinarian.clinic.name like :clinicName ");
