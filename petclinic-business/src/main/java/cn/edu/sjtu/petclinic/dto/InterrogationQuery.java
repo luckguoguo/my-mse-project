@@ -23,6 +23,12 @@ public class InterrogationQuery {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDateTo;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date createdDateFrom;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date createdDateTo;
+	
 	private Interrogation.Status status;
 	
 	private Page<Interrogation> page = new Page<Interrogation>(10);
@@ -81,6 +87,22 @@ public class InterrogationQuery {
 
 	public void setStatus(Interrogation.Status status) {
 		this.status = status;
+	}
+
+	public Date getCreatedDateFrom() {
+		return createdDateFrom;
+	}
+
+	public void setCreatedDateFrom(Date createdDateFrom) {
+		this.createdDateFrom = createdDateFrom;
+	}
+
+	public Date getCreatedDateTo() {
+		return createdDateTo;
+	}
+
+	public void setCreatedDateTo(Date createdDateTo) {
+		this.createdDateTo = createdDateTo;
 	}
 
 	public Page<Interrogation> getPage() {

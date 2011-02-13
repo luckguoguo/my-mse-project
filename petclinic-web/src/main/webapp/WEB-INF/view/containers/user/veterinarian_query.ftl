@@ -84,12 +84,14 @@ $(document).ready(function() {
 			<#else>
 			<@spring.messageText "veterinarian.query.result.btn.prev", "Prev" />
 			</#if>
+			&nbsp;
 			<#if page.hasNext>
 			<a href="result?clinicName=${query.clinicName!""}&clinicAddress=${query.clinicAddress!""}&username=${query.username!""}&name=${query.name!""}&gender=${query.gender!""}&workingDateFrom=${(query.workingDateFrom?string("yyyy-MM-dd"))!""}&workingDateTo=${(query.workingDateTo?string("yyyy-MM-dd"))!""}&specialityPetCategoryId=${query.specialityPetCategoryId!""}&page.pageNo=${(page.nextPage)!"1"}"><@spring.messageText "veterinarian.query.result.btn.next", "Next" /></a>
 			<#else>
 			<@spring.messageText "veterinarian.query.result.btn.next", "Next" />
 			</#if>
-			&nbsp;<@spring.messageArgsText "veterinarian.query.result.pageInfo", ["${page.currentPageNo}", "${page.totalPages}", "${page.totalCount}"], "Page Info" />
+			&nbsp;
+			<@spring.messageArgsText "veterinarian.query.result.pageInfo", ["${page.currentPageNo}", "${page.totalPages}", "${page.totalCount}"], "Page Info" />
 		</td>
 	</tr>
 	<tr>
@@ -127,12 +129,14 @@ $(document).ready(function() {
 			<#else>
 			<@spring.messageText "veterinarian.query.result.btn.prev", "Prev" />
 			</#if>
+			&nbsp;
 			<#if page.hasNext>
 			<a href="result?clinicName=${query.clinicName!""}&clinicAddress=${query.clinicAddress!""}&username=${query.username!""}&name=${query.name!""}&gender=${query.gender!""}&workingDateFrom=${(query.workingDateFrom?string("yyyy-MM-dd"))!""}&workingDateTo=${(query.workingDateTo?string("yyyy-MM-dd"))!""}&specialityPetCategoryId=${query.specialityPetCategoryId!""}&page.pageNo=${(page.nextPage)!"1"}"><@spring.messageText "veterinarian.query.result.btn.next", "Next" /></a>
 			<#else>
 			<@spring.messageText "veterinarian.query.result.btn.next", "Next" />
 			</#if>
-			&nbsp;<@spring.messageArgsText "veterinarian.query.result.pageInfo", ["${page.currentPageNo}", "${page.totalPages}", "${page.totalCount}"], "Page Info" />
+			&nbsp;
+			<@spring.messageArgsText "veterinarian.query.result.pageInfo", ["${page.currentPageNo}", "${page.totalPages}", "${page.totalCount}"], "Page Info" />
 		</td>
 	</tr>
 </table>

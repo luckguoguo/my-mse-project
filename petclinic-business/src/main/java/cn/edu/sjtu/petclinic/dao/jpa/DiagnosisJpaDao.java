@@ -12,6 +12,7 @@ import cn.edu.sjtu.common.utils.DateUtils;
 import cn.edu.sjtu.petclinic.dao.DiagnosisDao;
 import cn.edu.sjtu.petclinic.dto.DiagnosisQuery;
 import cn.edu.sjtu.petclinic.entity.Diagnosis;
+import cn.edu.sjtu.petclinic.entity.Interrogation;
 
 @Repository("diagnosisDao")
 public class DiagnosisJpaDao extends AbstractJpaDaoSupport<Diagnosis, Long> implements DiagnosisDao {
@@ -51,12 +52,25 @@ public class DiagnosisJpaDao extends AbstractJpaDaoSupport<Diagnosis, Long> impl
 			jpqlSb.append("and interrogation.startDate < :startDateTo ");
 			values.put("startDateTo", DateUtils.addDays(query.getStartDateTo(), 1));
 		}
+		if (query.getCreatedDateFrom() != null) {
+			jpqlSb.append("and createdTime >= :createdDateFrom ");
+			values.put("createdDateFrom", query.getCreatedDateFrom());
+		}
+		if (query.getCreatedDateTo() != null) {
+			jpqlSb.append("and createdTime < :createdDateTo ");
+			values.put("createdDateTo", DateUtils.addDays(query.getCreatedDateTo(), 1));
+		}
 		if (query.getStatus() != null) {
 			jpqlSb.append("and status = :status ");
 			values.put("status", query.getStatus());
 		}
 		jpqlSb.append("order by createdTime desc");
 		return findPage(query.getPage(), jpqlSb.toString(), values);
+	}
+
+	@Override
+	public Diagnosis findDiagnosis(Interrogation interrogation) {
+		return findUnique("from Diagnosis where interrogation.id = ?", interrogation.getId());
 	}
 
 }

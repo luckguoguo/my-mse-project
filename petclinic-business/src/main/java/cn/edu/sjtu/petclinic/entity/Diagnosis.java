@@ -1,6 +1,8 @@
 package cn.edu.sjtu.petclinic.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -30,12 +32,12 @@ public class Diagnosis extends AuditableEntity {
 	@Size(max = 512)
 	private String therapy;
 	
-	@NotBlank
 	@Size(max = 512)
 	private String prescription;
 	
 	private Integer star;
 	
+	@Enumerated(EnumType.STRING)
 	private Status status = Status.NEW;
 	
 	@ManyToOne

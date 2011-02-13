@@ -50,4 +50,6 @@ public interface UserService {
 	
 	PetOwner getPetOwner(Long id);
 	
+	PetOwner getPetOwner(String username);
+	
 }

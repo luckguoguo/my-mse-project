@@ -265,4 +265,11 @@ public class UserServiceImpl extends AbstractService implements UserService {
 		return userDao.findVeterinariansByClinic(clinic);
 	}
 
+	@Override
+	public PetOwner getPetOwner(String username) {
+		User user = userDao.findUserByUsername(username);
+		if (user instanceof PetOwner) return (PetOwner) user;
+		return null;
+	}
+
 }

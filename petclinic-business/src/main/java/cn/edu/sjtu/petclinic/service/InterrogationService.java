@@ -14,6 +14,8 @@ public interface InterrogationService {
 	
 	void updateInterrogation(Interrogation interrogation) throws InterrogationDiagnosedException;
 	
+	Page<Interrogation> queryInterrogations(InterrogationQuery query);
+	
 	Page<Interrogation> queryUndiagnosedInterrogations(InterrogationQuery query);
 	
 	Page<Interrogation> queryDiagnosedInterrogations(InterrogationQuery query);
@@ -24,10 +26,12 @@ public interface InterrogationService {
 
 	void updateDiagnosis(Diagnosis diagnosis) throws DiagnosisStaredException;
 	
-	Page<Diagnosis> queryDiagnosis(DiagnosisQuery query);
+	Page<Diagnosis> queryDiagnosises(DiagnosisQuery query);
 	
 	void updateDiagnosisStar(Diagnosis diagnosis, int star);
 	
 	Diagnosis getDiagnosis(Long id);
+	
+	Diagnosis getDiagnosis(Interrogation interrogation);
 	
 }

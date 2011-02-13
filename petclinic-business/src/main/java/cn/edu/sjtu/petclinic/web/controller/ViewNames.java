@@ -22,6 +22,16 @@ public final class ViewNames {
 	public static final String FORWARD_VETERINARIAN_PROFILE = "veterinarian/profile";
 	public static final String FORWARD_VETERINARIAN_PASSWORD_FORM = "veterinarian/password/form";
 	public static final String FORWARD_VETERINARIAN_PASSWORD_FORM_MESSAGE = "veterinarian/password/form/message";
+	public static final String FORWARD_VETERINARIAN_INTERROGATION_QUERY_FORM = "veterinarian/interrogation/query/form";
+	public static final String FORWARD_VETERINARIAN_INTERROGATION_QUERY_RESULT = "veterinarian/interrogation/query/result";
+	public static final String FORWARD_VETERINARIAN_INTERROGATION_QUERY_DETAIL = "veterinarian/interrogation/query/detail";
+	public static final String FORWARD_VETERINARIAN_DIAGNOSIS_FORM = "veterinarian/diagnosis/form";
+	public static final String FORWARD_VETERINARIAN_DIAGNOSIS_FORM_ERROR = "veterinarian/diagnosis/form/error";
+	public static final String FORWARD_VETERINARIAN_DIAGNOSIS_FORM_MESSAGE = "veterinarian/diagnosis/form/message";
+	public static final String FORWARD_VETERINARIAN_DIAGNOSIS_QUERY_FORM = "veterinarian/diagnosis/query/form";
+	public static final String FORWARD_VETERINARIAN_DIAGNOSIS_QUERY_RESULT = "veterinarian/diagnosis/query/result";
+	public static final String FORWARD_VETERINARIAN_DIAGNOSIS_QUERY_DETAIL = "veterinarian/diagnosis/query/detail";
+	public static final String FORWARD_VETERINARIAN_PETOWNER_PROFILE = "veterinarian/petowner/profile";
 	
 	/* petowner views */
 	public static final String REDIRECT_PETOWNER_HOME = "redirect:/petowner/home";
@@ -41,6 +51,9 @@ public final class ViewNames {
 	public static final String FORWARD_PETOWNER_INTERROGATION_FORM = "petowner/interrogation/form";
 	public static final String FORWARD_PETOWNER_INTERROGATION_FORM_ERROR = "petowner/interrogation/form/error";
 	public static final String FORWARD_PETOWNER_INTERROGATION_FORM_MESSAGE = "petowner/interrogation/form/message";
+	public static final String FORWARD_PETOWNER_INTERROGATION_QUERY_FORM = "petowner/interrogation/query/form";
+	public static final String FORWARD_PETOWNER_INTERROGATION_QUERY_RESULT = "petowner/interrogation/query/result";
+	public static final String FORWARD_PETOWNER_INTERROGATION_QUERY_DETAIL = "petowner/interrogation/query/detail";
 	
 	/* admin views */
 	public static final String FORWARD_ADMIN_LOGIN = "admin/login";

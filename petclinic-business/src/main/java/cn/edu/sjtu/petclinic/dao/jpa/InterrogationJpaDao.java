@@ -47,6 +47,14 @@ public class InterrogationJpaDao extends AbstractJpaDaoSupport<Interrogation, Lo
 			jpqlSb.append("and startDate < :startDateTo ");
 			values.put("startDateTo", DateUtils.addDays(query.getStartDateTo(), 1));
 		}
+		if (query.getCreatedDateFrom() != null) {
+			jpqlSb.append("and createdTime >= :createdDateFrom ");
+			values.put("createdDateFrom", query.getCreatedDateFrom());
+		}
+		if (query.getCreatedDateTo() != null) {
+			jpqlSb.append("and createdTime < :createdDateTo ");
+			values.put("createdDateTo", DateUtils.addDays(query.getCreatedDateTo(), 1));
+		}
 		if (query.getStatus() != null) {
 			jpqlSb.append("and status = :status ");
 			values.put("status", query.getStatus());
