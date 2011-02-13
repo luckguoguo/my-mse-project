@@ -81,7 +81,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td align="center"><@spring.messageText "petowner.interrogation.query.result.title.no", "No." /></td>
+		<td align="center"><@spring.messageText "petowner.interrogation.query.result.no", "No." /></td>
 		<td align="center"><@spring.messageText "petowner.interrogation.query.result.pet.name", "Interrogation Pet" /></td>
 		<td align="center"><@spring.messageText "petowner.interrogation.query.result.name", "Interrogation name" /></td>
 		<td align="center"><@spring.messageText "petowner.interrogation.query.result.createdDate", "Interrogation Created Date" /></td>

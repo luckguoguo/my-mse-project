@@ -77,7 +77,7 @@ $(document).ready(function() {
 	</tr>
 	<tr>
 		<td></td>
-		<td><input type="reset" value="<@spring.messageText "petowner.pet.form.btn.reset", "Reset" />" /><input type="submit" value="<@spring.messageText "petowner.pet.form.btn.submit", "Next" />" /></td>
+		<td><input type="reset" value="<@spring.messageText "petowner.pet.form.btn.reset", "Reset" />" /><input type="submit" value="<@spring.messageText "petowner.pet.form.btn.submit", "Submit" />" /></td>
 	</tr>
 </table>
 </form>

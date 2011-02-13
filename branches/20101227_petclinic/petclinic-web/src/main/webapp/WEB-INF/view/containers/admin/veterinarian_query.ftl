@@ -119,17 +119,17 @@ function inactive(veterinarianId) {
 		</td>
 	</tr>
 	<tr>
-		<td align="center"><@spring.messageText "admin.veterinarian.query.result.title.no", "No." /></td>
-		<td align="center"><@spring.messageText "admin.veterinarian.query.result.title.username", "Veterinarian Username" /></td>
-		<td align="center"><@spring.messageText "admin.veterinarian.query.result.title.name", "Veterinarian Name" /></td>
-		<td align="center"><@spring.messageText "admin.veterinarian.query.result.title.clinicName", "Veterinarian Clinic Name" /></td>
-		<td align="center"><@spring.messageText "admin.veterinarian.query.result.title.gender", "Veterinarian Gender" /></td>
-		<td align="center"><@spring.messageText "admin.veterinarian.query.result.title.telephone", "Veterinarian Telephone" /></td>
-		<td align="center"><@spring.messageText "admin.veterinarian.query.result.title.email", "Veterinarian Email" /></td>
-		<td align="center"><@spring.messageText "admin.veterinarian.query.result.title.createdDate", "Veterinarian Created Date" /></td>
-		<td align="center"><@spring.messageText "admin.veterinarian.query.result.title.speciality", "Veterinarian Speciality" /></td>
-		<td align="center"><@spring.messageText "admin.veterinarian.query.result.title.status", "Veterinarian Status" /></td>
-		<td align="center"><@spring.messageText "admin.veterinarian.query.result.title.operation", "Operation" /></td>
+		<td align="center"><@spring.messageText "admin.veterinarian.query.result.no", "No." /></td>
+		<td align="center"><@spring.messageText "admin.veterinarian.query.result.username", "Veterinarian Username" /></td>
+		<td align="center"><@spring.messageText "admin.veterinarian.query.result.name", "Veterinarian Name" /></td>
+		<td align="center"><@spring.messageText "admin.veterinarian.query.result.clinicName", "Veterinarian Clinic Name" /></td>
+		<td align="center"><@spring.messageText "admin.veterinarian.query.result.gender", "Veterinarian Gender" /></td>
+		<td align="center"><@spring.messageText "admin.veterinarian.query.result.telephone", "Veterinarian Telephone" /></td>
+		<td align="center"><@spring.messageText "admin.veterinarian.query.result.email", "Veterinarian Email" /></td>
+		<td align="center"><@spring.messageText "admin.veterinarian.query.result.createdDate", "Veterinarian Created Date" /></td>
+		<td align="center"><@spring.messageText "admin.veterinarian.query.result.speciality", "Veterinarian Speciality" /></td>
+		<td align="center"><@spring.messageText "admin.veterinarian.query.result.status", "Veterinarian Status" /></td>
+		<td align="center"><@spring.messageText "admin.veterinarian.query.result.operation", "Operation" /></td>
 	</tr>
 	<#list page.result as veterinarian>
 	<tr>

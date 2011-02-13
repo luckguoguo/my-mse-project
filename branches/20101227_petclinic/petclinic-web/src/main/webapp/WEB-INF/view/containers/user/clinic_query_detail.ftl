@@ -77,16 +77,16 @@ $(document).ready(function() {
 <#if veterinarians??>
 <table width="100%">
 	<tr>
-		<td align="center"><@spring.messageText "veterinarian.query.result.title.no", "No." /></td>
-		<td align="center"><@spring.messageText "veterinarian.query.result.title.username", "Veterinarian Username" /></td>
-		<td align="center"><@spring.messageText "veterinarian.query.result.title.name", "Veterinarian Name" /></td>
-		<td align="center"><@spring.messageText "veterinarian.query.result.title.clinicName", "Veterinarian Clinic Name" /></td>
-		<td align="center"><@spring.messageText "veterinarian.query.result.title.clinicAddress", "Veterinarian Clinic Address" /></td>
-		<td align="center"><@spring.messageText "veterinarian.query.result.title.gender", "Veterinarian Gender" /></td>
-		<td align="center"><@spring.messageText "veterinarian.query.result.title.telephone", "Veterinarian Telephone" /></td>
-		<td align="center"><@spring.messageText "veterinarian.query.result.title.email", "Veterinarian Email" /></td>
-		<td align="center"><@spring.messageText "veterinarian.query.result.title.speciality", "Veterinarian Speciality" /></td>
-		<td align="center"><@spring.messageText "veterinarian.query.result.title.operation", "Operation" /></td>
+		<td align="center"><@spring.messageText "veterinarian.query.result.no", "No." /></td>
+		<td align="center"><@spring.messageText "veterinarian.query.result.username", "Veterinarian Username" /></td>
+		<td align="center"><@spring.messageText "veterinarian.query.result.name", "Veterinarian Name" /></td>
+		<td align="center"><@spring.messageText "veterinarian.query.result.clinicName", "Veterinarian Clinic Name" /></td>
+		<td align="center"><@spring.messageText "veterinarian.query.result.clinicAddress", "Veterinarian Clinic Address" /></td>
+		<td align="center"><@spring.messageText "veterinarian.query.result.gender", "Veterinarian Gender" /></td>
+		<td align="center"><@spring.messageText "veterinarian.query.result.telephone", "Veterinarian Telephone" /></td>
+		<td align="center"><@spring.messageText "veterinarian.query.result.email", "Veterinarian Email" /></td>
+		<td align="center"><@spring.messageText "veterinarian.query.result.speciality", "Veterinarian Speciality" /></td>
+		<td align="center"><@spring.messageText "veterinarian.query.result.operation", "Operation" /></td>
 	</tr>
 	<#list veterinarians as veterinarian>
 	<tr>
