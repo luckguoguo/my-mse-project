@@ -14,6 +14,7 @@ import cn.edu.sjtu.petclinic.entity.Appointment;
 import cn.edu.sjtu.petclinic.entity.DailyOutpatient;
 import cn.edu.sjtu.petclinic.entity.Veterinarian;
 import cn.edu.sjtu.petclinic.service.AppointmentService;
+import cn.edu.sjtu.petclinic.service.exception.DailyOutpatientAppointedException;
 import cn.edu.sjtu.petclinic.service.exception.DailyOutpatientCountExceedsException;
 import cn.edu.sjtu.petclinic.service.exception.DailyOutpatientExistsException;
 import cn.edu.sjtu.petclinic.service.exception.DailyOutpatientExpiredException;
@@ -68,7 +69,7 @@ public class AppointmentServiceImpl extends AbstractService implements Appointme
 		
 		DailyOutpatientQuery query = new DailyOutpatientQuery();
 		query.setVeterinarianId(veterinarian.getId());
-		query.setDayFrom(new Date());
+		query.setDayFrom(DateUtils.addDays(new Date(), 1));
 		query.setDayTo(DateUtils.addDays(new Date(), 14));
 		return dailyOutpatientDao.findDailyOutpatients(query);
 	}
@@ -77,8 +78,15 @@ public class AppointmentServiceImpl extends AbstractService implements Appointme
 	public Page<DailyOutpatient> queryUpcomingDailyOutpatients(
 			DailyOutpatientQuery query) {
 		
-		query.setDayFrom(new Date());
+		query.setDayFrom(DateUtils.addDays(new Date(), 1));
 		query.setDayTo(DateUtils.addDays(new Date(), 14));
+		return dailyOutpatientDao.findPagedDailyOutpatients(query);
+	}
+	
+	@Override
+	public Page<DailyOutpatient> queryDailyOutpatients(
+			DailyOutpatientQuery query) {
+
 		return dailyOutpatientDao.findPagedDailyOutpatients(query);
 	}
 	
@@ -89,9 +97,15 @@ public class AppointmentServiceImpl extends AbstractService implements Appointme
 
 	@Override
 	public String addAppointment(Appointment appointment)
-			throws DailyOutpatientCountExceedsException {
+			throws DailyOutpatientCountExceedsException, DailyOutpatientAppointedException {
 		
 		DailyOutpatient dailyOutpatient = dailyOutpatientDao.get(appointment.getDailyOutpatient().getId());
+		
+		Appointment appointmentPojo = appointmentDao.findByPetOwnerAndDay(appointment.getPetOwner().getId(), 
+				appointment.getDailyOutpatient().getId());
+		if (appointmentPojo != null) {
+			throw new DailyOutpatientAppointedException();
+		}
 		
 		if (dailyOutpatient.getCountLimit().equals(dailyOutpatient.getCountActual())) {
 			throw new DailyOutpatientCountExceedsException();
@@ -108,13 +122,19 @@ public class AppointmentServiceImpl extends AbstractService implements Appointme
 	}
 
 	@Override
-	public Page<Appointment> queryAppointment(AppointmentQuery query) {
+	public Page<Appointment> queryAppointments(AppointmentQuery query) {
 		return appointmentDao.findAppointments(query);
 	}
 
 	@Override
 	public Appointment getAppointment(Long id) {
 		return appointmentDao.get(id);
+	}
+
+	@Override
+	public List<Appointment> queryAppointmentsByDailyOutpatient(
+			DailyOutpatient dailyOutpatient) {
+		return appointmentDao.findAppointments(dailyOutpatient);
 	}
 
 }

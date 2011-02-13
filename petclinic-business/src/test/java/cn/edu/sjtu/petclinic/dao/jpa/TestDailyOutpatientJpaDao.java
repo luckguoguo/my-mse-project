@@ -52,6 +52,22 @@ public class TestDailyOutpatientJpaDao extends SpringTxDaoTestCase {
 		
 		page = new Page<DailyOutpatient>(1).pageNo(1);
 		query = new DailyOutpatientQuery();
+		query.setVeterinarianName("vetName1");
+		query.setPage(page);
+		page = dailyOutpatientDao.findPagedDailyOutpatients(query);
+		assertEquals(1l, page.getTotalCount());
+		assertEquals(1l, page.getTotalPages());
+		
+		page = new Page<DailyOutpatient>(1).pageNo(1);
+		query = new DailyOutpatientQuery();
+		query.setVeterinarianName("vetName0");
+		query.setPage(page);
+		page = dailyOutpatientDao.findPagedDailyOutpatients(query);
+		assertEquals(0l, page.getTotalCount());
+		assertEquals(0l, page.getTotalPages());
+		
+		page = new Page<DailyOutpatient>(1).pageNo(1);
+		query = new DailyOutpatientQuery();
 		query.setClinicName("clinicName1");
 		query.setPage(page);
 		page = dailyOutpatientDao.findPagedDailyOutpatients(query);

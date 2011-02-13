@@ -32,6 +32,11 @@ public final class ViewNames {
 	public static final String FORWARD_VETERINARIAN_DIAGNOSIS_QUERY_RESULT = "veterinarian/diagnosis/query/result";
 	public static final String FORWARD_VETERINARIAN_DIAGNOSIS_QUERY_DETAIL = "veterinarian/diagnosis/query/detail";
 	public static final String FORWARD_VETERINARIAN_PETOWNER_PROFILE = "veterinarian/petowner/profile";
+	public static final String FORWARD_VETERINARIAN_DAILYOUTPATIENT_FORM = "veterinarian/dailyoutpatient/form";
+	public static final String FORWARD_VETERINARIAN_DAILYOUTPATIENT_FORM_MESSAGE = "veterinarian/dailyoutpatient/form/message";
+	public static final String FORWARD_VETERINARIAN_DAILYOUTPATIENT_QUERY_FORM = "veterinarian/dailyoutpatient/query/form";
+	public static final String FORWARD_VETERINARIAN_DAILYOUTPATIENT_QUERY_RESULT = "veterinarian/dailyoutpatient/query/result";
+	public static final String FORWARD_VETERINARIAN_DAILYOUTPATIENT_APPOINTMENTS = "veterinarian/dailyoutpatient/appointments";
 	
 	/* petowner views */
 	public static final String REDIRECT_PETOWNER_HOME = "redirect:/petowner/home";
@@ -54,6 +59,11 @@ public final class ViewNames {
 	public static final String FORWARD_PETOWNER_INTERROGATION_QUERY_FORM = "petowner/interrogation/query/form";
 	public static final String FORWARD_PETOWNER_INTERROGATION_QUERY_RESULT = "petowner/interrogation/query/result";
 	public static final String FORWARD_PETOWNER_INTERROGATION_QUERY_DETAIL = "petowner/interrogation/query/detail";
+	public static final String FORWARD_PETOWNER_DAILYOUTPATIENT_QUERY_FORM = "petowner/dailyoutpatient/query/form";
+	public static final String FORWARD_PETOWNER_DAILYOUTPATIENT_QUERY_RESULT = "petowner/dailyoutpatient/query/result";
+	public static final String FORWARD_PETOWNER_DAILYOUTPATIENT_APPOINTMENT_MESSAGE = "petowner/dailyoutpatient/appointment/message";
+	public static final String FORWARD_PETOWNER_APPOINTMENT_QUERY_FORM = "petowner/appointment/query/form";
+	public static final String FORWARD_PETOWNER_APPOINTMENT_QUERY_RESULT = "petowner/appointment/query/result";
 	
 	/* admin views */
 	public static final String FORWARD_ADMIN_LOGIN = "admin/login";

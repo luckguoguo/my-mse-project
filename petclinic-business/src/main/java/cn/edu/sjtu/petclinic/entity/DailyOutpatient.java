@@ -11,6 +11,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import cn.edu.sjtu.common.orm.jpa.AuditableEntity;
@@ -25,6 +26,7 @@ public class DailyOutpatient extends AuditableEntity {
 	private Date day;
 	
 	@NotNull
+	@Range(min = 1, max = 30)
 	@Column(name = "count_limit")
 	private Integer countLimit;
 	

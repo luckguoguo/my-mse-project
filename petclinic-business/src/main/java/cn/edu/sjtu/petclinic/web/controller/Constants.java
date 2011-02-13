@@ -12,6 +12,10 @@ public class Constants {
 	public static final String MODEL_NAME_DIAGNOSISES = "diagnosises";
 	public static final String MODEL_NAME_PET = "pet";
 	public static final String MODEL_NAME_PETS = "pets";
+	public static final String MODEL_NAME_DAILYOUTPATIENT = "dailyOutpatient";
+	public static final String MODEL_NAME_DAILYOUTPATIENTS = "dailyOutpatients";
+	public static final String MODEL_NAME_APPOINTMENT = "appointment";
+	public static final String MODEL_NAME_APPOINTMENTS = "appointments";
 	public static final String MODEL_NAME_PETOWNER = "petOwner";
 	public static final String MODEL_NAME_QUERY = "query";
 	public static final String MODEL_NAME_RESULT = "result";

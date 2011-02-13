@@ -1,6 +1,7 @@
 package cn.edu.sjtu.petclinic.dao.jpa;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Repository;
@@ -11,6 +12,7 @@ import cn.edu.sjtu.common.utils.DateUtils;
 import cn.edu.sjtu.petclinic.dao.AppointmentDao;
 import cn.edu.sjtu.petclinic.dto.AppointmentQuery;
 import cn.edu.sjtu.petclinic.entity.Appointment;
+import cn.edu.sjtu.petclinic.entity.DailyOutpatient;
 
 @Repository("appointmentDao")
 public class AppointmentJpaDao extends AbstractJpaDaoSupport<Appointment, Long> implements AppointmentDao {
@@ -40,6 +42,16 @@ public class AppointmentJpaDao extends AbstractJpaDaoSupport<Appointment, Long> 
 		}
 		jpqlSb.append("order by dailyOutpatient.day desc");
 		return findPage(query.getPage(), jpqlSb.toString(), values);
+	}
+
+	@Override
+	public Appointment findByPetOwnerAndDay(Long petOwnerId, Long dailyOutpatientId) {
+		return findUnique("from Appointment where petOwner.id = ? and dailyOutpatient.id = ?", petOwnerId, dailyOutpatientId);
+	}
+	
+	@Override
+	public List<Appointment> findAppointments(DailyOutpatient dailyOutpatient) {
+		return find("from Appointment where dailyOutpatient.id = ? order by createdTime", dailyOutpatient.getId());
 	}
 
 }
