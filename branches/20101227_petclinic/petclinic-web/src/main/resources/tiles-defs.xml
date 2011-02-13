@@ -90,6 +90,14 @@
 	<definition name="veterinarian.container.body.profile" template="/WEB-INF/view/containers/user/veterinarian/profile.ftl"/>
 	<definition name="veterinarian.container.body.password_form" template="/WEB-INF/view/containers/user/password_form.ftl"/>
 	<definition name="veterinarian.container.body.password_form_message" template="/WEB-INF/view/containers/user/password_form_message.ftl"/>
+	<definition name="veterinarian.container.body.interrogation_query" template="/WEB-INF/view/containers/user/veterinarian/interrogation_query.ftl"/>
+	<definition name="veterinarian.container.body.interrogation_query_detail" template="/WEB-INF/view/containers/user/veterinarian/interrogation_query_detail.ftl"/>
+	<definition name="veterinarian.container.body.diagnosis_form" template="/WEB-INF/view/containers/user/veterinarian/diagnosis_form.ftl"/>
+	<definition name="veterinarian.container.body.diagnosis_form_error" template="/WEB-INF/view/containers/user/veterinarian/diagnosis_form_error.ftl"/>
+	<definition name="veterinarian.container.body.diagnosis_form_message" template="/WEB-INF/view/containers/user/veterinarian/diagnosis_form_message.ftl"/>
+	<definition name="veterinarian.container.body.diagnosis_query" template="/WEB-INF/view/containers/user/veterinarian/diagnosis_query.ftl"/>
+	<definition name="veterinarian.container.body.diagnosis_query_detail" template="/WEB-INF/view/containers/user/veterinarian/diagnosis_query_detail.ftl"/>
+	<definition name="veterinarian.container.body.petowner_profile" template="/WEB-INF/view/containers/user/veterinarian/petowner_profile.ftl"/>
 	
 	<definition name="petowner.container.left" template="/WEB-INF/view/containers/user/petowner/left.ftl"/>
 	<definition name="petowner.container.body.home" template="/WEB-INF/view/containers/user/petowner/home.ftl"/>
@@ -99,6 +107,11 @@
 	<definition name="petowner.container.body.pet_query" template="/WEB-INF/view/containers/user/petowner/pet_query.ftl"/>
 	<definition name="petowner.container.body.password_form" template="/WEB-INF/view/containers/user/password_form.ftl"/>
 	<definition name="petowner.container.body.password_form_message" template="/WEB-INF/view/containers/user/password_form_message.ftl"/>
+	<definition name="petowner.container.body.interrogation_form" template="/WEB-INF/view/containers/user/petowner/interrogation_form.ftl"/>
+	<definition name="petowner.container.body.interrogation_form_error" template="/WEB-INF/view/containers/user/petowner/interrogation_form_error.ftl"/>
+	<definition name="petowner.container.body.interrogation_form_message" template="/WEB-INF/view/containers/user/petowner/interrogation_form_message.ftl"/>
+	<definition name="petowner.container.body.interrogation_query" template="/WEB-INF/view/containers/user/petowner/interrogation_query.ftl"/>
+	<definition name="petowner.container.body.interrogation_query_detail" template="/WEB-INF/view/containers/user/petowner/interrogation_query_detail.ftl"/>
 	
 	<!-- ======================================================= -->
 	<!-- Component definitions                                   -->
@@ -202,6 +215,36 @@
 	<definition name="veterinarian/password/form/message" extends="veterinarian.2column">
 		<put-attribute name="body" value="veterinarian.container.body.password_form_message" />
 	</definition>
+	<definition name="veterinarian/interrogation/query/form" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.interrogation_query" />
+	</definition>
+	<definition name="veterinarian/interrogation/query/result" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.interrogation_query" />
+	</definition>
+	<definition name="veterinarian/interrogation/query/detail" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.interrogation_query_detail" />
+	</definition>
+	<definition name="veterinarian/diagnosis/form" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.diagnosis_form" />
+	</definition>
+	<definition name="veterinarian/diagnosis/form/error" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.diagnosis_form_error" />
+	</definition>
+	<definition name="veterinarian/diagnosis/form/message" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.diagnosis_form_message" />
+	</definition>
+	<definition name="veterinarian/diagnosis/query/form" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.diagnosis_query" />
+	</definition>
+	<definition name="veterinarian/diagnosis/query/result" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.diagnosis_query" />
+	</definition>
+	<definition name="veterinarian/diagnosis/query/detail" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.diagnosis_query_detail" />
+	</definition>
+	<definition name="veterinarian/petowner/profile" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.petowner_profile" />
+	</definition>
 	
 	<definition name="petowner/home" extends="petowner.2column">
 		<put-attribute name="body" value="petowner.container.body.home" />
@@ -244,6 +287,24 @@
 	</definition>
 	<definition name="petowner/veterinarian/query/detail" extends="petowner.2column">
 		<put-attribute name="body" value="user.container.body.veterinarian_query_detail" />
+	</definition>
+	<definition name="petowner/interrogation/form" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.interrogation_form" />
+	</definition>
+	<definition name="petowner/interrogation/form/error" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.interrogation_form_error" />
+	</definition>
+	<definition name="petowner/interrogation/form/message" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.interrogation_form_message" />
+	</definition>
+	<definition name="petowner/interrogation/query/form" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.interrogation_query" />
+	</definition>
+	<definition name="petowner/interrogation/query/result" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.interrogation_query" />
+	</definition>
+	<definition name="petowner/interrogation/query/detail" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.interrogation_query_detail" />
 	</definition>
 	
 </tiles-definitions>

@@ -25,6 +25,12 @@ public class DiagnosisQuery {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDateTo;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date createdDateFrom;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date createdDateTo;
+	
 	private Diagnosis.Status status;
 	
 	private Page<Diagnosis> page = new Page<Diagnosis>(10);
@@ -83,6 +89,22 @@ public class DiagnosisQuery {
 
 	public void setStartDateTo(Date startDateTo) {
 		this.startDateTo = startDateTo;
+	}
+
+	public Date getCreatedDateFrom() {
+		return createdDateFrom;
+	}
+
+	public void setCreatedDateFrom(Date createdDateFrom) {
+		this.createdDateFrom = createdDateFrom;
+	}
+
+	public Date getCreatedDateTo() {
+		return createdDateTo;
+	}
+
+	public void setCreatedDateTo(Date createdDateTo) {
+		this.createdDateTo = createdDateTo;
 	}
 
 	public Diagnosis.Status getStatus() {

@@ -57,6 +57,10 @@ public class PetownerInterrogationFormController extends AbstractController {
 			result.rejectValue("pet.id", "petowner.interrogation.form.error.petId.null");
 		}
 		
+		if (interrogation.getVeterinarian() == null || interrogation.getVeterinarian().isNewEntity()) {
+			result.rejectValue("veterinarian.id", "petowner.interrogation.form.error.veterinarianId.null");
+		}
+		
 		if (result.hasErrors()) {
 			log.debug("doSubmit has field errors");
 			return returnToForm(request, model);

@@ -14,8 +14,8 @@
 <h2><@spring.messageText "petowner.left.interrogation", "Interrogation" /></h2>
 <ul>
 <li><a href="${contextPath}/petowner/vet/query/form"><@spring.messageText "petowner.left.interrogation.register", "Interrogation Register" /></a></li>
-<li><a href="#"><@spring.messageText "petowner.left.interrogation.query", "Interrogation Query" /></a></li>
-<li><a href="#"><@spring.messageText "petowner.left.interrogation.diagnosis.query", "Diagnosis Query" /></a></li>
+<li><a href="${contextPath}/petowner/interrogation/query/form"><@spring.messageText "petowner.left.interrogation.query", "Interrogation Query" /></a></li>
+<!--<li><a href="#"><@spring.messageText "petowner.left.interrogation.diagnosis.query", "Diagnosis Query" /></a></li>-->
 </ul>
 <h2><@spring.messageText "petowner.left.appointment", "Appointment" /></h2>
 <ul>

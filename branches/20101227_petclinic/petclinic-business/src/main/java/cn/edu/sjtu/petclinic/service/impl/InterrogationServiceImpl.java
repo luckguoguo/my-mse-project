@@ -46,6 +46,11 @@ public class InterrogationServiceImpl extends AbstractService implements Interro
 	}
 
 	@Override
+	public Page<Interrogation> queryInterrogations(InterrogationQuery query) {
+		return interrogationDao.findInterrogations(query);
+	}
+	
+	@Override
 	public Page<Interrogation> queryUndiagnosedInterrogations(
 			InterrogationQuery query) {
 		
@@ -110,7 +115,7 @@ public class InterrogationServiceImpl extends AbstractService implements Interro
 	}
 
 	@Override
-	public Page<Diagnosis> queryDiagnosis(DiagnosisQuery query) {
+	public Page<Diagnosis> queryDiagnosises(DiagnosisQuery query) {
 		return diagnosisDao.findDiagnosises(query);
 	}
 	
@@ -125,6 +130,11 @@ public class InterrogationServiceImpl extends AbstractService implements Interro
 	@Override
 	public Diagnosis getDiagnosis(Long id) {
 		return diagnosisDao.get(id);
+	}
+
+	@Override
+	public Diagnosis getDiagnosis(Interrogation interrogation) {
+		return diagnosisDao.findDiagnosis(interrogation);
 	}
 
 }

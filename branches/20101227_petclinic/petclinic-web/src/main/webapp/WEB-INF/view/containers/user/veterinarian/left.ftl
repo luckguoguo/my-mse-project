@@ -8,8 +8,8 @@
 </ul>
 <h2><@spring.messageText "veterinarian.left.interrogation", "Interrogation" /></h2>
 <ul>
-<li><a href="#"><@spring.messageText "veterinarian.left.interrogation.query", "Interrogation Query" /></a></li>
-<li><a href="#"><@spring.messageText "veterinarian.left.interrogation.diagnosis.query", "Diagnosis Query" /></a></li>
+<li><a href="${contextPath}/veterinarian/interrogation/query/form"><@spring.messageText "veterinarian.left.interrogation.query", "Interrogation Query" /></a></li>
+<li><a href="${contextPath}/veterinarian/diagnosis/query/form"><@spring.messageText "veterinarian.left.interrogation.diagnosis.query", "Diagnosis Query" /></a></li>
 </ul>
 <h2><@spring.messageText "veterinarian.left.appointment", "Appointment" /></h2>
 <ul>

@@ -56,12 +56,14 @@ $(document).ready(function() {
 			<#else>
 			<@spring.messageText "clinic.query.result.btn.prev", "Prev" />
 			</#if>
+			&nbsp;
 			<#if page.hasNext>
 			<a href="result?name=${query.name!""}&grade=${query.grade!""}&address=${query.address!""}&star=${query.star!""}&page.pageNo=${page.nextPage}"><@spring.messageText "clinic.query.result.btn.next", "Next" /></a>
 			<#else>
 			<@spring.messageText "clinic.query.result.btn.next", "Next" />
 			</#if>
-			&nbsp;<@spring.messageArgsText "clinic.query.result.pageInfo", ["${page.currentPageNo}", "${page.totalPages}", "${page.totalCount}"], "Page Info" />
+			&nbsp;
+			<@spring.messageArgsText "clinic.query.result.pageInfo", ["${page.currentPageNo}", "${page.totalPages}", "${page.totalCount}"], "Page Info" />
 		</td>
 	</tr>
 	<tr>
@@ -93,12 +95,14 @@ $(document).ready(function() {
 			<#else>
 			<@spring.messageText "clinic.query.result.btn.prev", "Prev" />
 			</#if>
+			&nbsp;
 			<#if page.hasNext>
 			<a href="result?name=${query.name!""}&grade=${query.grade!""}&address=${query.address!""}&star=${query.star!""}&page.pageNo=${page.nextPage}"><@spring.messageText "clinic.query.result.btn.next", "Next" /></a>
 			<#else>
 			<@spring.messageText "clinic.query.result.btn.next", "Next" />
 			</#if>
-			&nbsp;<@spring.messageArgsText "clinic.query.result.pageInfo", ["${page.currentPageNo}", "${page.totalPages}", "${page.totalCount}"], "Page Info" />
+			&nbsp;
+			<@spring.messageArgsText "clinic.query.result.pageInfo", ["${page.currentPageNo}", "${page.totalPages}", "${page.totalCount}"], "Page Info" />
 		</td>
 	</tr>
 </table>
