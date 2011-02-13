@@ -13,6 +13,6 @@
 </ul>
 <h2><@spring.messageText "veterinarian.left.appointment", "Appointment" /></h2>
 <ul>
-<li><a href="#"><@spring.messageText "veterinarian.left.appointment.register", "Appointment Register" /></a></li>
-<li><a href="#"><@spring.messageText "veterinarian.left.appointment.query", "Appointment Query" /></a></li>
+<li><a href="${contextPath}/veterinarian/dailyoutpatient"><@spring.messageText "veterinarian.left.appointment.register", "Appointment Register" /></a></li>
+<li><a href="${contextPath}/veterinarian/dailyoutpatient/query/form"><@spring.messageText "veterinarian.left.appointment.query", "Appointment Query" /></a></li>
 </ul>

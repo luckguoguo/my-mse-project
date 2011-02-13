@@ -98,6 +98,10 @@
 	<definition name="veterinarian.container.body.diagnosis_query" template="/WEB-INF/view/containers/user/veterinarian/diagnosis_query.ftl"/>
 	<definition name="veterinarian.container.body.diagnosis_query_detail" template="/WEB-INF/view/containers/user/veterinarian/diagnosis_query_detail.ftl"/>
 	<definition name="veterinarian.container.body.petowner_profile" template="/WEB-INF/view/containers/user/veterinarian/petowner_profile.ftl"/>
+	<definition name="veterinarian.container.body.dailyoutpatient_form" template="/WEB-INF/view/containers/user/veterinarian/dailyoutpatient_form.ftl"/>
+	<definition name="veterinarian.container.body.dailyoutpatient_form_message" template="/WEB-INF/view/containers/user/veterinarian/dailyoutpatient_form_message.ftl"/>
+	<definition name="veterinarian.container.body.dailyoutpatient_query" template="/WEB-INF/view/containers/user/veterinarian/dailyoutpatient_query.ftl"/>
+	<definition name="veterinarian.container.body.dailyoutpatient_appointments" template="/WEB-INF/view/containers/user/veterinarian/dailyoutpatient_appointments.ftl"/>
 	
 	<definition name="petowner.container.left" template="/WEB-INF/view/containers/user/petowner/left.ftl"/>
 	<definition name="petowner.container.body.home" template="/WEB-INF/view/containers/user/petowner/home.ftl"/>
@@ -112,6 +116,9 @@
 	<definition name="petowner.container.body.interrogation_form_message" template="/WEB-INF/view/containers/user/petowner/interrogation_form_message.ftl"/>
 	<definition name="petowner.container.body.interrogation_query" template="/WEB-INF/view/containers/user/petowner/interrogation_query.ftl"/>
 	<definition name="petowner.container.body.interrogation_query_detail" template="/WEB-INF/view/containers/user/petowner/interrogation_query_detail.ftl"/>
+	<definition name="petowner.container.body.dailyoutpatient_query" template="/WEB-INF/view/containers/user/petowner/dailyoutpatient_query.ftl"/>
+	<definition name="petowner.container.body.dailyoutpatient_appointment_message" template="/WEB-INF/view/containers/user/petowner/dailyoutpatient_appointment_message.ftl"/>
+	<definition name="petowner.container.body.appointment_query" template="/WEB-INF/view/containers/user/petowner/appointment_query.ftl"/>
 	
 	<!-- ======================================================= -->
 	<!-- Component definitions                                   -->
@@ -245,6 +252,21 @@
 	<definition name="veterinarian/petowner/profile" extends="veterinarian.2column">
 		<put-attribute name="body" value="veterinarian.container.body.petowner_profile" />
 	</definition>
+	<definition name="veterinarian/dailyoutpatient/form" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.dailyoutpatient_form" />
+	</definition>
+	<definition name="veterinarian/dailyoutpatient/form/message" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.dailyoutpatient_form_message" />
+	</definition>
+	<definition name="veterinarian/dailyoutpatient/query/form" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.dailyoutpatient_query" />
+	</definition>
+	<definition name="veterinarian/dailyoutpatient/query/result" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.dailyoutpatient_query" />
+	</definition>
+	<definition name="veterinarian/dailyoutpatient/appointments" extends="veterinarian.2column">
+		<put-attribute name="body" value="veterinarian.container.body.dailyoutpatient_appointments" />
+	</definition>
 	
 	<definition name="petowner/home" extends="petowner.2column">
 		<put-attribute name="body" value="petowner.container.body.home" />
@@ -305,6 +327,21 @@
 	</definition>
 	<definition name="petowner/interrogation/query/detail" extends="petowner.2column">
 		<put-attribute name="body" value="petowner.container.body.interrogation_query_detail" />
+	</definition>
+	<definition name="petowner/dailyoutpatient/query/form" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.dailyoutpatient_query" />
+	</definition>
+	<definition name="petowner/dailyoutpatient/query/result" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.dailyoutpatient_query" />
+	</definition>
+	<definition name="petowner/dailyoutpatient/appointment/message" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.dailyoutpatient_appointment_message" />
+	</definition>
+	<definition name="petowner/appointment/query/form" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.appointment_query" />
+	</definition>
+	<definition name="petowner/appointment/query/result" extends="petowner.2column">
+		<put-attribute name="body" value="petowner.container.body.appointment_query" />
 	</definition>
 	
 </tiles-definitions>

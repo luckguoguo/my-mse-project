@@ -7,13 +7,13 @@ $(document).ready(function() {
 <!-- Query Results -->
 <table width="100%">
 	<tr>
-		<td align="center"><@spring.messageText "petowner.pet.query.result.title.no", "No." /></td>
-		<td align="center"><@spring.messageText "petowner.pet.query.result.title.name", "Pet Name" /></td>
-		<td align="center"><@spring.messageText "petowner.pet.query.result.title.category", "Pet Category" /></td>
-		<td align="center"><@spring.messageText "petowner.pet.query.result.title.gender", "Pet Gender" /></td>
-		<td align="center"><@spring.messageText "petowner.pet.query.result.title.birthdate", "Pet Birthdate" /></td>
-		<td align="center"><@spring.messageText "petowner.pet.query.result.title.createdDate", "Pet Created Date" /></td>
-		<td align="center"><@spring.messageText "petowner.pet.query.result.title.operation", "Operation" /></td>
+		<td align="center"><@spring.messageText "petowner.pet.query.result.no", "No." /></td>
+		<td align="center"><@spring.messageText "petowner.pet.query.result.name", "Pet Name" /></td>
+		<td align="center"><@spring.messageText "petowner.pet.query.result.category", "Pet Category" /></td>
+		<td align="center"><@spring.messageText "petowner.pet.query.result.gender", "Pet Gender" /></td>
+		<td align="center"><@spring.messageText "petowner.pet.query.result.birthdate", "Pet Birthdate" /></td>
+		<td align="center"><@spring.messageText "petowner.pet.query.result.createdDate", "Pet Created Date" /></td>
+		<td align="center"><@spring.messageText "petowner.pet.query.result.operation", "Operation" /></td>
 	</tr>
 	<#list pets as pet>
 	<tr>

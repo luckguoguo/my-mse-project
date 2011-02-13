@@ -19,6 +19,6 @@
 </ul>
 <h2><@spring.messageText "petowner.left.appointment", "Appointment" /></h2>
 <ul>
-<li><a href="#"><@spring.messageText "petowner.left.appointment.register", "Appointment Register" /></a></li>
-<li><a href="#"><@spring.messageText "petowner.left.appointment.query", "Appointment Query" /></a></li>
+<li><a href="${contextPath}/petowner/availableDailyOutpatient/query/form"><@spring.messageText "petowner.left.appointment.register", "Appointment Register" /></a></li>
+<li><a href="${contextPath}/petowner/appointment/query/form"><@spring.messageText "petowner.left.appointment.query", "Appointment Query" /></a></li>
 </ul>

@@ -57,7 +57,7 @@ $(document).ready(function() {
 		</td>
 	</tr>
 	<tr>
-		<td align="center"><@spring.messageText "veterinarian.interrogation.query.result.title.no", "No." /></td>
+		<td align="center"><@spring.messageText "veterinarian.interrogation.query.result.no", "No." /></td>
 		<td align="center"><@spring.messageText "veterinarian.interrogation.query.result.petowner.username", "Interrogation Petowner Username" /></td>
 		<td align="center"><@spring.messageText "veterinarian.interrogation.query.result.petowner.name", "Interrogation Petowner Name" /></td>
 		<td align="center"><@spring.messageText "veterinarian.interrogation.query.result.pet.name", "Interrogation Pet" /></td>

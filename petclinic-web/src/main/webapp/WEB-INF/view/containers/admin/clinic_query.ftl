@@ -93,15 +93,15 @@ function inactive(clinicId) {
 		</td>
 	</tr>
 	<tr>
-		<td align="center"><@spring.messageText "admin.clinic.query.result.title.no", "No." /></td>
-		<td align="center"><@spring.messageText "admin.clinic.query.result.title.name", "Clinic Name" /></td>
-		<td align="center"><@spring.messageText "admin.clinic.query.result.title.grade", "Clinic Grade" /></td>
-		<td align="center"><@spring.messageText "admin.clinic.query.result.title.address", "Clinic Address" /></td>
-		<td align="center"><@spring.messageText "admin.clinic.query.result.title.telephone", "Clinic Telephone" /></td>
-		<td align="center"><@spring.messageText "admin.clinic.query.result.title.star", "Clinic Star" /></td>
-		<td align="center"><@spring.messageText "admin.clinic.query.result.title.createdDate", "Clinic Created Date" /></td>
-		<td align="center"><@spring.messageText "admin.clinic.query.result.title.status", "Clinic Status" /></td>
-		<td align="center"><@spring.messageText "admin.clinic.query.result.title.operation", "Operation" /></td>
+		<td align="center"><@spring.messageText "admin.clinic.query.result.no", "No." /></td>
+		<td align="center"><@spring.messageText "admin.clinic.query.result.name", "Clinic Name" /></td>
+		<td align="center"><@spring.messageText "admin.clinic.query.result.grade", "Clinic Grade" /></td>
+		<td align="center"><@spring.messageText "admin.clinic.query.result.address", "Clinic Address" /></td>
+		<td align="center"><@spring.messageText "admin.clinic.query.result.telephone", "Clinic Telephone" /></td>
+		<td align="center"><@spring.messageText "admin.clinic.query.result.star", "Clinic Star" /></td>
+		<td align="center"><@spring.messageText "admin.clinic.query.result.createdDate", "Clinic Created Date" /></td>
+		<td align="center"><@spring.messageText "admin.clinic.query.result.status", "Clinic Status" /></td>
+		<td align="center"><@spring.messageText "admin.clinic.query.result.operation", "Operation" /></td>
 	</tr>
 	<#list page.result as clinic>
 	<tr>
