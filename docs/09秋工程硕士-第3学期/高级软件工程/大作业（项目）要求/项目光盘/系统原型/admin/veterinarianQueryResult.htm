@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+	<title>宠物医院网站 - 后台管理系统</title>
+	<meta http-equiv="Content-Language" content="GBK">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/style.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="assets/jquery-ui.css" media="screen">
+	<script language="javascript" type="text/javascript" src="assets/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui-i18n.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery_002.js"></script>
+	<script language="javascript" type="text/javascript">
+		var ctx = "/petclinic";
+	</script>
+</head><body>
+	<div id="wrap">
+		<div id="header">
+<h1><a href="../index.htm">宠物医院网站</a></h1>
+<h2>后台管理系统</h2>		</div>
+		<div id="content">
+			<div class="right">
+<script>
+$(document).ready(function() {
+	$("input[name='workingDateFrom'], input[name='workingDateTo']").datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'yy-mm-dd',
+		yearRange: 'c-70:c+70'
+	});
+	$("a[id^=activeBtn_]").click(function() {
+		active($(this).attr("id").replace("activeBtn_", ""));
+	});
+	$("a[id^=inactiveBtn_]").click(function() {
+		inactive($(this).attr("id").replace("inactiveBtn_", ""));
+	});
+});
+
+function active(veterinarianId) {
+	$.post(ctx + "/admin/veterinarian/" + veterinarianId + "/active",
+		{},
+		function(data) {
+			location.href = "result?clinicName=&username=&name=&gender=&workingDateFrom=&workingDateTo=&specialityPetCategoryId=&page.pageNo=1";
+		},
+		"json"
+	);
+}
+
+function inactive(veterinarianId) {
+	$.post(ctx + "/admin/veterinarian/" + veterinarianId + "/inactive",
+		{},
+		function(data) {
+			location.href = "result?clinicName=&username=&name=&gender=&workingDateFrom=&workingDateTo=&specialityPetCategoryId=&page.pageNo=1";
+		},
+		"json"
+	);
+}
+</script>
+<h2><a href="###">医生查询</a></h2>
+<form id="veterinarianQueryForm" action="result" method="GET">
+<table width="100%">
+	<tbody><tr>
+		<td width="10%">医院名</td>
+		<td width="30%">
+			<input name="clinicName" type="text">
+		</td>
+		<td width="20%">用户名</td>
+		<td width="40%">
+			<input name="username" type="text">
+		</td>
+	</tr>
+	<tr>
+		<td>姓名</td>
+		<td>
+			<input name="name" type="text">
+		</td>
+		<td>性别</td>
+		<td>
+    <select id="gender" name="gender">
+            <option value="" selected="selected">-</option>
+            <option value="MALE">男</option>
+            <option value="FEMALE">女</option>
+    </select>
+		</td>
+	</tr>
+	<tr>
+		<td>擅长科目</td>
+		<td colspan="3">
+    <select id="specialityPetCategoryId" name="specialityPetCategoryId">
+            <option value="" selected="selected">-</option>
+            <option value="1">狗科</option>
+            <option value="2">猫科</option>
+            <option value="3">鸟类</option>
+            <option value="4">鱼类</option>
+            <option value="100">其它</option>
+    </select>
+		</td>
+	</tr>
+	<tr>
+		<td>工作日期</td>
+		<td colspan="3">
+			<input class="hasDatepicker" id="dp1297749999980" name="workingDateFrom" type="text">
+			-
+			<input class="hasDatepicker" id="dp1297749999981" name="workingDateTo" type="text">
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="3"><input value="重置" type="reset"><input value="查询" type="button"></td>
+	</tr>
+</tbody></table>
+</form>
+
+<!-- Query Results -->
+<table width="100%">
+	<tbody><tr>
+		<td colspan="11" align="right">
+上一页			&nbsp;
+			<a href="###">下一页</a>
+			&nbsp;
+共31条记录 - 第1页 / 共4页 		</td>
+	</tr>
+	<tr>
+		<td align="center">序号</td>
+		<td align="center">用户名</td>
+		<td align="center">姓名</td>
+		<td align="center">医院名</td>
+		<td align="center">性别</td>
+		<td align="center">电话</td>
+		<td align="center">邮箱</td>
+		<td align="center">注册日期</td>
+		<td align="center">擅长科目</td>
+		<td align="center">状态</td>
+		<td align="center">操作</td>
+	</tr>
+	<tr>
+		<td align="center">1</td>
+		<td>vet</td>
+		<td>医生</td>
+		<td>上海宠物医院</td>
+		<td align="center">男</td>
+		<td>61111111</td>
+		<td>vet@petclinic.com</td>
+		<td align="center">2011-01-18</td>
+		<td align="center">狗科</td>
+		<td align="center">已激活</td>
+		<td align="center">
+			<a href="veterinarianUpdate.htm">修改</a> /
+			激活 /
+			<a href="###" id="inactiveBtn_2">封锁</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">2</td>
+		<td>vet100</td>
+		<td>张三</td>
+		<td>上海宠物医院</td>
+		<td align="center">男</td>
+		<td>61001000</td>
+		<td>aaa@vet.com</td>
+		<td align="center">2011-02-15</td>
+		<td align="center">鸟类</td>
+		<td align="center">已激活</td>
+		<td align="center">
+			<a href="veterinarianUpdate.htm" target="_blank">修改</a> /
+			激活 /
+			<a href="###" id="inactiveBtn_41">封锁</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">3</td>
+		<td>vet10</td>
+		<td>医生10</td>
+		<td>上海宠物医院-10</td>
+		<td align="center">男</td>
+		<td>61111110</td>
+		<td>vet10@petclinic.com</td>
+		<td align="center">2011-01-18</td>
+		<td align="center">猫科</td>
+		<td align="center">已激活</td>
+		<td align="center">
+			<a href="veterinarianUpdate.htm" target="_blank">修改</a> /
+			激活 /
+			<a href="###" id="inactiveBtn_11">封锁</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">4</td>
+		<td>vet11</td>
+		<td>医生11</td>
+		<td>上海宠物医院-11</td>
+		<td align="center">女</td>
+		<td>61111111</td>
+		<td>vet11@petclinic.com</td>
+		<td align="center">2011-01-18</td>
+		<td align="center">鸟类</td>
+		<td align="center">已激活</td>
+		<td align="center">
+			<a href="veterinarianUpdate.htm" target="_blank">修改</a> /
+			激活 /
+			<a href="###" id="inactiveBtn_12">封锁</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">5</td>
+		<td>vet12</td>
+		<td>医生12</td>
+		<td>上海宠物医院-12</td>
+		<td align="center">女</td>
+		<td>61111112</td>
+		<td>vet12@petclinic.com</td>
+		<td align="center">2011-01-18</td>
+		<td align="center">鸟类</td>
+		<td align="center">已激活</td>
+		<td align="center">
+			<a href="veterinarianUpdate.htm" target="_blank">修改</a> /
+			激活 /
+			<a href="###" id="inactiveBtn_13">封锁</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">6</td>
+		<td>vet13</td>
+		<td>医生13</td>
+		<td>上海宠物医院-13</td>
+		<td align="center">女</td>
+		<td>61111113</td>
+		<td>vet13@petclinic.com</td>
+		<td align="center">2011-01-18</td>
+		<td align="center">鸟类</td>
+		<td align="center">已激活</td>
+		<td align="center">
+			<a href="veterinarianUpdate.htm" target="_blank">修改</a> /
+			激活 /
+			<a href="###" id="inactiveBtn_14">封锁</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">7</td>
+		<td>vet14</td>
+		<td>医生14</td>
+		<td>上海宠物医院-14</td>
+		<td align="center">女</td>
+		<td>61111114</td>
+		<td>vet14@petclinic.com</td>
+		<td align="center">2011-01-18</td>
+		<td align="center">鸟类</td>
+		<td align="center">已激活</td>
+		<td align="center">
+			<a href="veterinarianUpdate.htm" target="_blank">修改</a> /
+			激活 /
+			<a href="###" id="inactiveBtn_15">封锁</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">8</td>
+		<td>vet15</td>
+		<td>医生15</td>
+		<td>上海宠物医院-15</td>
+		<td align="center">女</td>
+		<td>61111115</td>
+		<td>vet15@petclinic.com</td>
+		<td align="center">2011-01-18</td>
+		<td align="center">鸟类</td>
+		<td align="center">已激活</td>
+		<td align="center">
+			<a href="veterinarianUpdate.htm" target="_blank">修改</a> /
+			激活 /
+			<a href="###" id="inactiveBtn_16">封锁</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">9</td>
+		<td>vet16</td>
+		<td>医生16</td>
+		<td>上海宠物医院-16</td>
+		<td align="center">女</td>
+		<td>61111116</td>
+		<td>vet16@petclinic.com</td>
+		<td align="center">2011-01-18</td>
+		<td align="center">鱼类</td>
+		<td align="center">已激活</td>
+		<td align="center">
+			<a href="veterinarianUpdate.htm" target="_blank">修改</a> /
+			激活 /
+			<a href="###" id="inactiveBtn_17">封锁</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">10</td>
+		<td>vet17</td>
+		<td>医生17</td>
+		<td>上海宠物医院-17</td>
+		<td align="center">女</td>
+		<td>61111117</td>
+		<td>vet17@petclinic.com</td>
+		<td align="center">2011-01-18</td>
+		<td align="center">鱼类</td>
+		<td align="center">已激活</td>
+		<td align="center">
+			<a href="veterinarianUpdate.htm" target="_blank">修改</a> /
+			激活 /
+			<a href="###" id="inactiveBtn_18">封锁</a>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="11" align="right">
+上一页			&nbsp;
+			<a href="###">下一页</a>
+			&nbsp;
+共31条记录 - 第1页 / 共4页 		</td>
+	</tr>
+</tbody></table>
+			</div>
+			<div class="left">
+<h2>系统信息</h2>
+<p class="welcome">欢迎您！管理员1</p>
+<ul class="top">
+<li><a href="password.htm">修改密码</a></li>
+<li><a href="adminLogin.htm">退出系统</a></li>
+</ul>
+<h2>医院管理</h2>
+<ul>
+<li><a href="clinic.htm">医院注册</a></li>
+<li><a href="clinicQueryResult.htm">医院查询和修改</a></li>
+</ul>
+<h2>医生管理</h2>
+<ul>
+<li><a href="veterinarian.htm">医生注册</a></li>
+<li><a href="veterinarianQueryResult.htm">医生查询和修改</a></li>
+</ul>			</div>
+		</div>
+		<div style="clear: both;"> </div>
+		<div id="footer">
+Powered by <a href="http://www.gs.sjtu.edu.cn/" target="_blank">SJTU</a>.		</div>
+	</div>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

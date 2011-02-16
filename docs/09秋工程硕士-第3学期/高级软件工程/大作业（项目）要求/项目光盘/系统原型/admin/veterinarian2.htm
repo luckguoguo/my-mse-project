@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+	<title>宠物医院网站 - 后台管理系统</title>
+	<meta http-equiv="Content-Language" content="GBK">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/style.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="assets/jquery-ui.css" media="screen">
+	<script language="javascript" type="text/javascript" src="assets/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui-i18n.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery_002.js"></script>
+	<script language="javascript" type="text/javascript">
+		var ctx = "/petclinic";
+	</script>
+</head><body>
+	<div id="wrap">
+		<div id="header">
+<h1><a href="../index.htm">宠物医院网站</a></h1>
+<h2>后台管理系统</h2>		</div>
+		<div id="content">
+			<div class="right">
+<script>
+$(document).ready(function() {
+});
+function goPrev() {
+	$("#step").val("0");
+	location.href = "veterinarian.htm";
+}
+</script>
+<h2><a href="###">
+医生注册</a></h2>
+<p style="color: red;">注意：为了保证医院信息的正确性和安全性，请医院人事负责人审核所输入的内容（医生默认密码为“111111”），并配合输入医院管理密码。</p>
+<form id="veterinarianForm" action="veterinarian3.htm" method="POST">
+<input id="step" name="step" value="2" type="hidden">
+<input name="id" value="" type="hidden">
+<input name="password" value="111111" type="hidden">
+<table width="80%">
+	<tbody><tr>
+		<td width="22%">医院名</td>
+		<td width="78%">
+			上海宠物医院
+			<input name="clinic.id" value="1" type="hidden">
+		</td>
+	</tr>
+	<tr>
+		<td>用户名</td>
+		<td>
+			vet100
+			<input name="username" value="vet100" type="hidden">
+		</td>
+	</tr>
+	<tr>
+		<td>职务</td>
+		<td>
+			主治医师
+			<input name="title" value="主治医师" type="hidden">
+		</td>
+	</tr>
+	<tr>
+		<td>姓名</td>
+		<td>
+			张三
+			<input name="name" value="张三" type="hidden">
+		</td>
+	</tr>
+	<tr>
+		<td>性别</td>
+		<td>
+			男
+			<input name="gender" value="MALE" type="hidden">
+		</td>
+	</tr>
+	<tr>
+		<td>出生日期</td>
+		<td>
+			1963-02-01
+			<input name="birthdate" value="1963-02-01" type="hidden">
+		</td>
+	</tr>
+	<tr>
+		<td>工作日期</td>
+		<td>
+			1986-02-05
+			<input name="workingdate" value="1986-02-05" type="hidden">
+		</td>
+	</tr>
+	<tr>
+		<td>电话</td>
+		<td>
+			61001000
+			<input name="telephone" value="61001000" type="hidden">
+		</td>
+	</tr>
+	<tr>
+		<td>邮箱</td>
+		<td>
+			aaa@vet.com
+			<input name="email" value="aaa@vet.com" type="hidden">
+		</td>
+	</tr>
+	<tr>
+		<td>擅长科目</td>
+		<td>
+			鸟类
+			<input name="specialityPetCategory.id" value="3" type="hidden">
+		</td>
+	</tr>
+	<tr>
+		<td>个人简介</td>
+		<td>
+			<p>
+	很有经验。</p>
+
+			<textarea cols="80" name="introduction" rows="10" style="display: none;">&lt;p&gt;
+	很有经验。&lt;/p&gt;
+</textarea>
+		</td>
+	</tr>
+	<tr>
+		<td><span class="required">*</span> 请输入医院管理密码</td>
+		<td>
+			<input name="clinic.confirmMgrPassword" value="" type="password">
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input value="上一步" onclick="javascript:goPrev();" type="button"><input value="提交" type="submit"></td>
+	</tr>
+</tbody></table>
+</form>
+			</div>
+			<div class="left">
+<h2>系统信息</h2>
+<p class="welcome">欢迎您！管理员1</p>
+<ul class="top">
+<li><a href="password.htm">修改密码</a></li>
+<li><a href="adminLogin.htm">退出系统</a></li>
+</ul>
+<h2>医院管理</h2>
+<ul>
+<li><a href="clinic.htm">医院注册</a></li>
+<li><a href="clinicQueryResult.htm">医院查询和修改</a></li>
+</ul>
+<h2>医生管理</h2>
+<ul>
+<li><a href="veterinarian.htm">医生注册</a></li>
+<li><a href="veterinarianQueryResult.htm">医生查询和修改</a></li>
+</ul>			</div>
+		</div>
+		<div style="clear: both;"> </div>
+		<div id="footer">
+Powered by <a href="http://www.gs.sjtu.edu.cn/" target="_blank">SJTU</a>.		</div>
+	</div>
+</body></html>
