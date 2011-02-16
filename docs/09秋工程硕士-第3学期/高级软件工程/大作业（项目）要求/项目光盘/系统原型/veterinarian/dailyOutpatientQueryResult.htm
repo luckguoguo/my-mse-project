@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+	<title>宠物医院网站</title>
+	<meta http-equiv="Content-Language" content="GBK">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/style.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="assets/jquery-ui.css" media="screen">
+	<script language="javascript" type="text/javascript" src="assets/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui-i18n.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery_002.js"></script>
+	<script language="javascript" type="text/javascript">
+		var ctx = "/petclinic";
+	</script>
+</head><body>
+	<div id="wrap">
+		<div id="header">
+<h1><a href="../index.htm">宠物医院网站</a></h1>		</div>
+		<div class="right">
+<script>
+$(document).ready(function() {
+	$("input[name='dayFrom'], input[name='dayTo']").datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'yy-mm-dd',
+		yearRange: 'c-70:c+70'
+	});
+});
+</script>
+<h2><a href="###">门诊预约查询</a></h2>
+<form id="dailyOutpatientQueryForm" action="result" method="GET">
+<table width="100%">
+	<tbody><tr>
+		<td>门诊日期</td>
+		<td colspan="3">
+			<input class="hasDatepicker" id="dp1297751160993" name="dayFrom" type="text">
+			-
+			<input class="hasDatepicker" id="dp1297751160994" name="dayTo" type="text">
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="3"><input value="重置" type="reset"><input value="查询" type="button"></td>
+	</tr>
+</tbody></table>
+</form>
+
+<!-- Query Results -->
+<table width="100%">
+	<tbody><tr>
+		<td colspan="8" align="right">
+上一页			&nbsp;
+下一页			&nbsp;
+共8条记录 - 第1页 / 共1页 		</td>
+	</tr>
+	<tr>
+		<td align="center">序号</td>
+		<td align="center">门诊日期</td>
+		<td align="center">门诊预约人数</td>
+		<td align="center">操作</td>
+	</tr>
+	<tr>
+		<td align="center">1</td>
+		<td align="center">2011-02-14</td>
+		<td align="center">
+			<span style="color: red;">1/1</span>
+		</td>
+		<td align="center">
+			<a href="appointmentResult.htm" target="_blank">查看预约详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">2</td>
+		<td align="center">2011-02-15</td>
+		<td align="center">
+			1/10
+		</td>
+		<td align="center">
+			<a href="appointmentResult.htm" target="_blank">查看预约详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">3</td>
+		<td align="center">2011-02-16</td>
+		<td align="center">
+			1/30
+		</td>
+		<td align="center">
+			<a href="appointmentResult.htm" target="_blank">查看预约详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">4</td>
+		<td align="center">2011-02-25</td>
+		<td align="center">
+			0/30
+		</td>
+		<td align="center">
+			<a href="appointmentResult.htm" target="_blank">查看预约详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">5</td>
+		<td align="center">2011-02-26</td>
+		<td align="center">
+			1/10
+		</td>
+		<td align="center">
+			<a href="appointmentResult.htm" target="_blank">查看预约详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">6</td>
+		<td align="center">2011-02-27</td>
+		<td align="center">
+			0/10
+		</td>
+		<td align="center">
+			<a href="appointmentResult.htm" target="_blank">查看预约详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">7</td>
+		<td align="center">2011-02-28</td>
+		<td align="center">
+			0/20
+		</td>
+		<td align="center">
+			<a href="appointmentResult.htm" target="_blank">查看预约详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">8</td>
+		<td align="center">2011-03-01</td>
+		<td align="center">
+			0/20
+		</td>
+		<td align="center">
+			<a href="appointmentResult.htm" target="_blank">查看预约详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="8" align="right">
+上一页			&nbsp;
+下一页			&nbsp;
+共8条记录 - 第1页 / 共1页 		</td>
+	</tr>
+</tbody></table>
+		</div>
+		<div class="left">
+<h2>个人信息管理</h2>
+<p class="welcome">欢迎您！医生</p>
+<ul class="top">
+<li><a href="profile.htm">查看个人信息</a></li>
+<li><a href="password.htm">修改密码</a></li>
+<li><a href="../index.htm">退出系统</a></li>
+</ul>
+<h2>问诊管理</h2>
+<ul>
+<li><a href="interrogationQueryResult.htm">未诊断问诊查询</a></li>
+<li><a href="diagnosisQueryResult.htm">历史诊断查询</a></li>
+</ul>
+<h2>预约管理</h2>
+<ul>
+<li><a href="dailyoutpatient.htm">门诊预约设置</a></li>
+<li><a href="dailyOutpatientQueryResult.htm">门诊预约查询</a></li>
+</ul>		</div>
+		<div style="clear: both;"> </div>
+		<div id="footer">
+Powered by <a href="http://www.gs.sjtu.edu.cn/" target="_blank">SJTU</a>.		</div>
+	</div>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
