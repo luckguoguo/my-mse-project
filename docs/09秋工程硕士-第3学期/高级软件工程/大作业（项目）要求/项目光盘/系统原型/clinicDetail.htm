@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+	<title>宠物医院网站</title>
+	<meta http-equiv="Content-Language" content="GBK">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/style.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="assets/jquery-ui.css" media="screen">
+	<script language="javascript" type="text/javascript" src="assets/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui-i18n.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery_002.js"></script>
+	<script language="javascript" type="text/javascript">
+		var ctx = "/petclinic";
+	</script>
+</head><body>
+	<div id="wrap">
+		<div id="header">
+<h1><a href="index.htm">宠物医院网站</a></h1>		</div>
+		<div class="right">
+<script>
+$(document).ready(function() {
+	$("#clinicStarWidget").raty({
+		path: "/petclinic/image/raty",
+		start: 5,
+		readOnly: true
+	});
+});
+</script>
+<h2><a href="###">医院详情</a></h2>
+<table width="80%">
+	<tbody><tr>
+		<td>医院名</td>
+		<td>
+			上海宠物医院
+		</td>
+	</tr>
+	<tr>
+		<td>医院级别</td>
+		<td>
+			三级
+		</td>
+	</tr>
+	<tr>
+		<td>地址</td>
+		<td>
+			上海市
+		</td>
+	</tr>
+	<tr>
+		<td>联系电话</td>
+		<td>
+			60000001
+			<input name="telephone" value="60000001" type="hidden">
+		</td>
+	</tr>
+	<tr>
+		<td>邮箱</td>
+		<td>
+			service@shcwyy.com
+		</td>
+	</tr>
+	<tr>
+		<td>医院简介</td>
+		<td>
+			<p>
+	上海宠物医院坐落于上海。</p>
+
+		</td>
+	</tr>
+	<tr>
+		<td>宠物医院网站评级</td>
+		<td>
+			<div title="gorgeous" style="cursor: default;" id="clinicStarWidget"><img id="clinicStarWidget-1" src="assets/star-on.png" alt="1" title="gorgeous" class="clinicStarWidget">&nbsp;<img id="clinicStarWidget-2" src="assets/star-on.png" alt="2" title="gorgeous" class="clinicStarWidget">&nbsp;<img id="clinicStarWidget-3" src="assets/star-on.png" alt="3" title="gorgeous" class="clinicStarWidget">&nbsp;<img id="clinicStarWidget-4" src="assets/star-on.png" alt="4" title="gorgeous" class="clinicStarWidget">&nbsp;<img id="clinicStarWidget-5" src="assets/star-on.png" alt="5" title="gorgeous" class="clinicStarWidget"><input value="5" name="score" id="clinicStarWidget-score" type="hidden"></div>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input value="关闭" onclick="javascript:window.close();" type="button"></td>
+	</tr>
+</tbody></table>
+
+<h2><a href="###">医生列表</a></h2>
+<table width="100%">
+	<tbody><tr>
+		<td align="center">序号</td>
+		<td align="center">用户名</td>
+		<td align="center">姓名</td>
+		<td align="center">医院名</td>
+		<td align="center">医院地址</td>
+		<td align="center">性别</td>
+		<td align="center">电话</td>
+		<td align="center">邮箱</td>
+		<td align="center">擅长科目</td>
+		<td align="center">操作</td>
+	</tr>
+	<tr>
+		<td align="center">1</td>
+		<td>vet</td>
+		<td>医生</td>
+		<td>上海宠物医院</td>
+		<td>上海市</td>
+		<td align="center">男</td>
+		<td>61111111</td>
+		<td>vet@petclinic.com</td>
+		<td align="center">狗科</td>
+		<td align="center">
+			<a href="veterinarianDetail.htm" target="_blank">查看详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">2</td>
+		<td>vet100</td>
+		<td>张三</td>
+		<td>上海宠物医院</td>
+		<td>上海市</td>
+		<td align="center">男</td>
+		<td>61001000</td>
+		<td>aaa@vet.com</td>
+		<td align="center">鸟类</td>
+		<td align="center">
+			<a href="veterinarianDetail.htm" target="_blank">查看详情</a>
+		</td>
+	</tr>
+</tbody></table>
+		</div>
+		<div class="left">
+<h2>信息</h2>
+<p class="welcome">欢迎光临宠物医院网站</p>
+<ul class="top">
+<li><a href="login.htm">登录</a></li>
+<li><a href="register.htm">注册</a></li>
+</ul>
+<h2>信息查询</h2>
+<ul>
+<li><a href="clinicQueryResult.htm">医院查询</a></li>
+<li><a href="veterinarianQueryResult.htm">医生查询</a></li>
+</ul>
+<h2>广告</h2>
+<ul>
+</ul>
+		</div>
+		<div style="clear: both;"> </div>
+		<div id="footer">
+Powered by <a href="http://www.gs.sjtu.edu.cn/" target="_blank">SJTU</a>.		</div>
+	</div>
+</body></html>
