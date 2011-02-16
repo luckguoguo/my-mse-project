@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+	<title>宠物医院网站</title>
+	<meta http-equiv="Content-Language" content="GBK">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/style.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="assets/jquery-ui.css" media="screen">
+	<script language="javascript" type="text/javascript" src="assets/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui-i18n.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery_002.js"></script>
+	<script language="javascript" type="text/javascript">
+		var ctx = "/petclinic";
+	</script>
+</head><body>
+	<div id="wrap">
+		<div id="header">
+<h1><a href="../index.htm">宠物医院网站</a></h1>		</div>
+		<div class="right">
+<script>
+$(document).ready(function() {
+	$("input[name='createdDateFrom'], input[name='createdDateTo']").datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'yy-mm-dd',
+		yearRange: 'c-70:c+70'
+	});
+});
+</script>
+<h2><a href="###">问诊查询</a></h2>
+<form id="interrogationQueryForm" action="result" method="GET">
+<table width="100%">
+	<tbody><tr>
+		<td width="10%">宠物名字</td>
+		<td width="30%">
+    <select id="petId" name="petId">
+            <option value="" selected="selected">-</option>
+            <option value="1">小强</option>
+            <option value="2">小花</option>
+            <option value="3">小猫</option>
+    </select>
+		</td>
+		<td width="20%">问诊状态</td>
+		<td width="40%">
+    <select id="status" name="status">
+            <option value="" selected="selected">-</option>
+            <option value="NEW">未诊断</option>
+            <option value="DIAGNOSED">已诊断</option>
+    </select>
+		</td>
+	</tr>
+	<tr>
+		<td>症状简称</td>
+		<td>
+			<input name="name" type="text">
+		</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>问诊日期</td>
+		<td colspan="3">
+			<input class="hasDatepicker" id="dp1297750789459" name="createdDateFrom" type="text">
+			-
+			<input class="hasDatepicker" id="dp1297750789460" name="createdDateTo" type="text">
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="3"><input value="重置" type="reset"><input value="查询" type="button"></td>
+	</tr>
+</tbody></table>
+</form>
+
+<!-- Query Results -->
+<table width="100%">
+	<tbody><tr>
+		<td colspan="6" align="right">
+上一页			&nbsp;
+下一页			&nbsp;
+共3条记录 - 第1页 / 共1页 		</td>
+	</tr>
+	<tr>
+		<td align="center">序号</td>
+		<td align="center">宠物名字</td>
+		<td align="center">症状简称</td>
+		<td align="center">问诊日期</td>
+		<td align="center">问诊状态</td>
+		<td align="center">操作</td>
+	</tr>
+	<tr>
+		<td align="center">1</td>
+		<td>小强</td>
+		<td>肚子痛</td>
+		<td align="center">2011-02-12</td>
+		<td align="center">已诊断</td>
+		<td align="center">
+			<a href="interrogationDetail.htm" target="_blank">查看详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">2</td>
+		<td>小花</td>
+		<td>肚子疼</td>
+		<td align="center">2011-02-13</td>
+		<td align="center">已诊断</td>
+		<td align="center">
+			<a href="interrogationDetail.htm" target="_blank">查看详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">3</td>
+		<td>小猫</td>
+		<td>肚子痛</td>
+		<td align="center">2011-02-15</td>
+		<td align="center">未诊断</td>
+		<td align="center">
+			<a href="interrogationDetail.htm" target="_blank">查看详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="6" align="right">
+上一页			&nbsp;
+下一页			&nbsp;
+共3条记录 - 第1页 / 共1页 		</td>
+	</tr>
+</tbody></table>
+		</div>
+		<div class="left">
+<h2>个人信息管理</h2>
+<p class="welcome">欢迎您！宠物主人</p>
+<ul class="top">
+<li><a href="profile.htm">修改个人信息</a></li>
+<li><a href="password.htm">修改密码</a></li>
+<li><a href="../index.htm">退出系统</a></li>
+</ul>
+<h2>宠物管理</h2>
+<ul>
+<li><a href="pet.htm">宠物注册</a></li>
+<li><a href="petResult.htm">宠物查询和修改</a></li>
+</ul>
+<h2>问诊管理</h2>
+<ul>
+<li><a href="interrogationQueryVeterinarianResult.htm">在线问诊</a></li>
+<li><a href="interrogationQueryResult.htm">问诊查询</a></li>
+<!--<li><a href="#">诊断查询</a></li>-->
+</ul>
+<h2>预约管理</h2>
+<ul>
+<li><a href="dailyOutpatientQueryResult.htm">在线预约</a></li>
+<li><a href="appointmentQueryResult.htm">历史预约查询</a></li>
+</ul>		</div>
+		<div style="clear: both;"> </div>
+		<div id="footer">
+Powered by <a href="http://www.gs.sjtu.edu.cn/" target="_blank">SJTU</a>.		</div>
+	</div>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

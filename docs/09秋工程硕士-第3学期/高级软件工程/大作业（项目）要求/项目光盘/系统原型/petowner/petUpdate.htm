@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+	<title>宠物医院网站</title>
+	<meta http-equiv="Content-Language" content="GBK">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/style.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="assets/jquery-ui.css" media="screen">
+	<script language="javascript" type="text/javascript" src="assets/jquery_002.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui-i18n.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery_003.js"></script>
+	<script language="javascript" type="text/javascript">
+		var ctx = "/petclinic";
+	</script>
+<script src="assets/config.js" type="text/javascript"></script><link href="assets/editor.css" type="text/css" rel="stylesheet"><script src="assets/zh-cn.js" type="text/javascript"></script><script src="assets/default.js" type="text/javascript"></script></head><body onpageshow='event.persisted &amp;&amp; (function(){var allInstances = CKEDITOR.instances, editor, doc;for ( var i in allInstances ){	editor = allInstances[ i ];	doc = editor.document;	if ( doc )	{		doc.$.designMode = "off";		doc.$.designMode = "on";	}}})();'>
+	<div id="wrap">
+		<div id="header">
+<h1><a href="../index.htm">宠物医院网站</a></h1>		</div>
+		<div class="right">
+<script type="text/javascript" src="assets/ckeditor.js"></script>
+<script type="text/javascript" src="assets/jquery.js"></script>
+<script>
+$(document).ready(function() {
+	$("input[name='birthdate']").datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'yy-mm-dd',
+		yearRange: 'c-70:c+70'
+	});
+	$("textarea[name='introduction']").ckeditor({
+		toolbar: [
+			['Source','-','Bold','Italic','Underline','Strike','-','NumberedList','BulletedList','-','Link','Unlink','-','Smiley','SpecialChar'],'/',
+			['Styles','Format','Font','FontSize'],
+			['TextColor','BGColor'],
+			['Maximize']
+		]
+		/* toolbar_Full=[['Source','-','Save','NewPage','Preview','-','Templates'],['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print','SpellChecker','Scayt'],['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],['Form','Checkbox','Radio','TextField','Textarea','Select','Button','ImageButton','HiddenField'],'/',['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],['BidiLtr','BidiRtl'],['Link','Unlink','Anchor'],['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe'],'/',['Styles','Format','Font','FontSize'],['TextColor','BGColor'],['Maximize','ShowBlocks','-','About']] */
+	});
+});
+</script>
+<h2><a href="###">
+宠物信息修改</a></h2>
+<form id="petForm" action="petUpdate2.htm" method="POST">
+<input name="id" value="1" type="hidden">
+<table width="80%">
+	<tbody><tr>
+		<td width="20%"><span class="required">*</span> 名字</td>
+		<td width="80%">
+			<input name="name" value="小强" type="text">
+		</td>
+	</tr>
+	<tr>
+		<td>种类</td>
+		<td>
+    <select id="category.id" name="category.id">
+            <option value="">-</option>
+            <option value="1" selected="selected">狗科</option>
+            <option value="2">猫科</option>
+            <option value="3">鸟类</option>
+            <option value="4">鱼类</option>
+            <option value="100">其它</option>
+    </select>
+		</td>
+	</tr>
+	<tr>
+		<td><span class="required">*</span> 性别</td>
+		<td>
+    <select id="gender" name="gender">
+            <option value="">-</option>
+            <option value="MALE" selected="selected">雄</option>
+            <option value="FEMALE">雌</option>
+    </select>
+		</td>
+	</tr>
+	<tr>
+		<td><span class="required">*</span> 出生日期</td>
+		<td>
+			<input class="hasDatepicker" id="dp1297750684579" name="birthdate" value="2010-11-01" type="text">
+		</td>
+	</tr>
+	<tr>
+		<td><span class="required">*</span> 宠物体征描述</td>
+		<td>
+			<textarea style="display: none;" cols="80" name="introduction" rows="10">&lt;p&gt;
+	身长1米，体重20公斤，黑色。&lt;/p&gt;
+</textarea><span id="cke_introduction" class="cke_skin_kama cke_1 cke_editor_introduction" dir="ltr" title=" " role="application" aria-labelledby="cke_introduction_arialbl" lang="zh-cn"><span id="cke_introduction_arialbl" class="cke_voice_label">所见即所得编辑器</span><span class="cke_browser_gecko" role="presentation"><span class="cke_wrapper cke_ltr" role="presentation"><table class="cke_editor" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr style="-moz-user-select: none;" role="presentation"><td id="cke_top_introduction" class="cke_top" role="presentation"><div class="cke_toolbox" role="toolbar" aria-labelledby="cke_6" onmousedown="return false;"><span id="cke_6" class="cke_voice_label">工具栏</span><span id="cke_7" class="cke_toolbar" role="presentation"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><span class="cke_button"><a id="cke_8" class="cke_off cke_button_source" title="源码" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_8_label" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 0, event);" onfocus="return CKEDITOR.tools.callFunction(1, 0, event);" onclick="CKEDITOR.tools.callFunction(6, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_8_label" class="cke_label">源码</span></a></span></span><span class="cke_separator" role="separator"></span><span class="cke_toolgroup" role="presentation"><span class="cke_button"><a id="cke_9" class="cke_off cke_button_bold" title="加粗" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_9_label" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 1, event);" onfocus="return CKEDITOR.tools.callFunction(1, 1, event);" onclick="CKEDITOR.tools.callFunction(7, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_9_label" class="cke_label">加粗</span></a></span><span class="cke_button"><a id="cke_10" class="cke_off cke_button_italic" title="倾斜" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_10_label" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 2, event);" onfocus="return CKEDITOR.tools.callFunction(1, 2, event);" onclick="CKEDITOR.tools.callFunction(8, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_10_label" class="cke_label">倾斜</span></a></span><span class="cke_button"><a id="cke_11" class="cke_off cke_button_underline" title="下划线" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_11_label" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 3, event);" onfocus="return CKEDITOR.tools.callFunction(1, 3, event);" onclick="CKEDITOR.tools.callFunction(9, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_11_label" class="cke_label">下划线</span></a></span><span class="cke_button"><a id="cke_12" class="cke_off cke_button_strike" title="删除线" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_12_label" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 4, event);" onfocus="return CKEDITOR.tools.callFunction(1, 4, event);" onclick="CKEDITOR.tools.callFunction(10, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_12_label" class="cke_label">删除线</span></a></span></span><span class="cke_separator" role="separator"></span><span class="cke_toolgroup" role="presentation"><span class="cke_button"><a id="cke_13" class="cke_off cke_button_numberedlist" title="编号列表" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_13_label" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 5, event);" onfocus="return CKEDITOR.tools.callFunction(1, 5, event);" onclick="CKEDITOR.tools.callFunction(11, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_13_label" class="cke_label">编号列表</span></a></span><span class="cke_button"><a id="cke_14" class="cke_off cke_button_bulletedlist" title="项目列表" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_14_label" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 6, event);" onfocus="return CKEDITOR.tools.callFunction(1, 6, event);" onclick="CKEDITOR.tools.callFunction(12, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_14_label" class="cke_label">项目列表</span></a></span></span><span class="cke_separator" role="separator"></span><span class="cke_toolgroup" role="presentation"><span class="cke_button"><a id="cke_15" class="cke_off cke_button_link" title="插入/编辑超链接" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_15_label" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 7, event);" onfocus="return CKEDITOR.tools.callFunction(1, 7, event);" onclick="CKEDITOR.tools.callFunction(13, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_15_label" class="cke_label">插入/编辑超链接</span></a></span><span class="cke_button"><a aria-disabled="true" id="cke_16" class="cke_button_unlink cke_disabled" title="取消超链接" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_16_label" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 8, event);" onfocus="return CKEDITOR.tools.callFunction(1, 8, event);" onclick="CKEDITOR.tools.callFunction(14, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_16_label" class="cke_label">取消超链接</span></a></span></span><span class="cke_separator" role="separator"></span><span class="cke_toolgroup" role="presentation"><span class="cke_button"><a id="cke_17" class="cke_off cke_button_smiley" title="表情符" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_17_label" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 9, event);" onfocus="return CKEDITOR.tools.callFunction(1, 9, event);" onclick="CKEDITOR.tools.callFunction(15, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_17_label" class="cke_label">表情符</span></a></span><span class="cke_button"><a id="cke_18" class="cke_off cke_button_specialchar" title="插入特殊符号" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_18_label" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 10, event);" onfocus="return CKEDITOR.tools.callFunction(1, 10, event);" onclick="CKEDITOR.tools.callFunction(16, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_18_label" class="cke_label">插入特殊符号</span></a></span></span><span class="cke_toolbar_end"></span></span><div class="cke_break"></div><span id="cke_20" class="cke_toolbar" role="presentation"><span class="cke_toolbar_start"></span><span class="cke_rcombo"><span id="cke_21" class="cke_styles cke_off"><span id="cke_21_label" class="cke_label">样式</span><a hidefocus="true" title="样式" tabindex="-1" role="button" aria-labelledby="cke_21_label" aria-describedby="cke_21_text" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="CKEDITOR.tools.callFunction( 18, event, this );" onclick="CKEDITOR.tools.callFunction(17, this); return false;"><span><span id="cke_21_text" class="cke_text cke_inline_label">样式</span></span><span class="cke_openbutton"></span></a></span></span><span class="cke_rcombo"><span id="cke_22" class="cke_format cke_off"><span id="cke_22_label" class="cke_label">格式</span><a hidefocus="true" title="格式" tabindex="-1" role="button" aria-labelledby="cke_22_label" aria-describedby="cke_22_text" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="CKEDITOR.tools.callFunction( 20, event, this );" onclick="CKEDITOR.tools.callFunction(19, this); return false;"><span><span id="cke_22_text" class="cke_text cke_inline_label">格式</span></span><span class="cke_openbutton"></span></a></span></span><span class="cke_rcombo"><span id="cke_23" class="cke_font cke_off"><span id="cke_23_label" class="cke_label">字体</span><a hidefocus="true" title="字体" tabindex="-1" role="button" aria-labelledby="cke_23_label" aria-describedby="cke_23_text" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="CKEDITOR.tools.callFunction( 22, event, this );" onclick="CKEDITOR.tools.callFunction(21, this); return false;"><span><span id="cke_23_text" class="cke_text cke_inline_label">字体</span></span><span class="cke_openbutton"></span></a></span></span><span class="cke_rcombo"><span id="cke_24" class="cke_fontSize cke_off"><span id="cke_24_label" class="cke_label">大小</span><a hidefocus="true" title="大小" tabindex="-1" role="button" aria-labelledby="cke_24_label" aria-describedby="cke_24_text" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="CKEDITOR.tools.callFunction( 24, event, this );" onclick="CKEDITOR.tools.callFunction(23, this); return false;"><span><span id="cke_24_text" class="cke_text cke_inline_label">大小</span></span><span class="cke_openbutton"></span></a></span></span><span class="cke_toolbar_end"></span></span><span id="cke_25" class="cke_toolbar" role="presentation"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><span class="cke_button"><a id="cke_26" class="cke_off cke_button_textcolor" title="文本颜色" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_26_label" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 11, event);" onfocus="return CKEDITOR.tools.callFunction(1, 11, event);" onclick="CKEDITOR.tools.callFunction(25, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_26_label" class="cke_label">文本颜色</span><span class="cke_buttonarrow">&nbsp;</span></a></span><span class="cke_button"><a id="cke_27" class="cke_off cke_button_bgcolor" title="背景颜色" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_27_label" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 12, event);" onfocus="return CKEDITOR.tools.callFunction(1, 12, event);" onclick="CKEDITOR.tools.callFunction(26, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_27_label" class="cke_label">背景颜色</span><span class="cke_buttonarrow">&nbsp;</span></a></span></span><span class="cke_toolbar_end"></span></span><span id="cke_28" class="cke_toolbar" role="presentation"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><span class="cke_button"><a id="cke_29" class="cke_off cke_button_maximize" title="全屏" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_29_label" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(0, 13, event);" onfocus="return CKEDITOR.tools.callFunction(1, 13, event);" onclick="CKEDITOR.tools.callFunction(27, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_29_label" class="cke_label">全屏</span></a></span></span><span class="cke_toolbar_end"></span></span></div><a title="折叠工具栏" id="cke_30" tabindex="-1" class="cke_toolbox_collapser" onclick="CKEDITOR.tools.callFunction(28)"><span>▲</span></a></td></tr><tr role="presentation"><td id="cke_contents_introduction" class="cke_contents" style="height: 200px;" role="presentation"><iframe style="width: 100%; height: 100%;" title="所见即所得编辑器, introduction, 按 ALT+0 查看帮助。" src="" tabindex="0" allowtransparency="true" frameborder="0"></iframe></td></tr><tr style="-moz-user-select: none;" role="presentation"><td id="cke_bottom_introduction" class="cke_bottom" role="presentation"><span id="cke_path_introduction_label" class="cke_voice_label">元素路径</span><div id="cke_path_introduction" class="cke_path" role="group" aria-labelledby="cke_path_introduction_label"><span class="cke_empty">&nbsp;</span></div><div class="cke_resizer" title="拖拽以改变尺寸" onmousedown="CKEDITOR.tools.callFunction(5, event)"></div></td></tr></tbody></table><style>.cke_skin_kama{visibility:hidden;}</style></span></span><span tabindex="-1" style="position: absolute;" role="presentation"></span></span>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input value="重置" type="reset"><input value="提交" type="submit"></td>
+	</tr>
+</tbody></table>
+</form>
+		</div>
+		<div class="left">
+<h2>个人信息管理</h2>
+<p class="welcome">欢迎您！宠物主人</p>
+<ul class="top">
+<li><a href="profile.htm">修改个人信息</a></li>
+<li><a href="password.htm">修改密码</a></li>
+<li><a href="../index.htm">退出系统</a></li>
+</ul>
+<h2>宠物管理</h2>
+<ul>
+<li><a href="pet.htm">宠物注册</a></li>
+<li><a href="petResult.htm">宠物查询和修改</a></li>
+</ul>
+<h2>问诊管理</h2>
+<ul>
+<li><a href="interrogationQueryVeterinarianResult.htm">在线问诊</a></li>
+<li><a href="interrogationQueryResult.htm">问诊查询</a></li>
+<!--<li><a href="#">诊断查询</a></li>-->
+</ul>
+<h2>预约管理</h2>
+<ul>
+<li><a href="dailyOutpatientQueryResult.htm">在线预约</a></li>
+<li><a href="appointmentQueryResult.htm">历史预约查询</a></li>
+</ul>		</div>
+		<div style="clear: both;"> </div>
+		<div id="footer">
+Powered by <a href="http://www.gs.sjtu.edu.cn/" target="_blank">SJTU</a>.		</div>
+	</div>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

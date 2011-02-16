@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+	<title>宠物医院网站</title>
+	<meta http-equiv="Content-Language" content="GBK">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/style.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="assets/jquery-ui.css" media="screen">
+	<script language="javascript" type="text/javascript" src="assets/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery-ui-i18n.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/jquery_002.js"></script>
+	<script language="javascript" type="text/javascript">
+		var ctx = "/petclinic";
+	</script>
+</head><body>
+	<div id="wrap">
+		<div id="header">
+<h1><a href="../index.htm">宠物医院网站</a></h1>		</div>
+		<div class="right">
+<script>
+$(document).ready(function() {
+	$("input[name='dayFrom'], input[name='dayTo']").datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'yy-mm-dd',
+		yearRange: 'c-70:c+70',
+		minDate: +1,
+		maxDate: "+14D"
+	});
+});
+</script>
+<h2><a href="###">在线预约</a></h2>
+<form id="dailyOutpatientQueryForm" action="result" method="GET">
+<table width="100%">
+	<tbody><tr>
+		<td width="10%">医院名</td>
+		<td width="30%">
+			<input name="clinicName" type="text">
+		</td>
+		<td width="20%">医院地址</td>
+		<td width="40%">
+			<input name="clinicAddress" type="text">
+		</td>
+	</tr>
+	<tr>
+		<td>医生名</td>
+		<td>
+			<input name="veterinarianName" type="text">
+		</td>
+		<td>擅长科目</td>
+		<td>
+    <select id="specialityPetCategoryId" name="specialityPetCategoryId">
+            <option value="" selected="selected">-</option>
+            <option value="1">狗科</option>
+            <option value="2">猫科</option>
+            <option value="3">鸟类</option>
+            <option value="4">鱼类</option>
+            <option value="100">其它</option>
+    </select>
+		</td>
+	</tr>
+	<tr>
+		<td>门诊日期</td>
+		<td colspan="3">
+			<input class="hasDatepicker" id="dp1297750858261" name="dayFrom" value="2011-02-16" type="text">
+			-
+			<input class="hasDatepicker" id="dp1297750858262" name="dayTo" value="2011-03-01" type="text">
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="3"><input value="重置" type="reset"><input value="查询" type="button"></td>
+	</tr>
+</tbody></table>
+</form>
+
+<!-- Query Results -->
+<table width="100%">
+	<tbody><tr>
+		<td colspan="8" align="right">
+上一页			&nbsp;
+下一页			&nbsp;
+共5条记录 - 第1页 / 共1页 		</td>
+	</tr>
+	<tr>
+		<td align="center">序号</td>
+		<td align="center">医生名</td>
+		<td align="center">医院名</td>
+		<td align="center">医院地址</td>
+		<td align="center">擅长科目</td>
+		<td align="center">门诊日期</td>
+		<td align="center">预约人数</td>
+		<td align="center">操作</td>
+	</tr>
+	<tr>
+		<td align="center">1</td>
+		<td>医生</td>
+		<td>上海宠物医院</td>
+		<td>上海市</td>
+		<td align="center">狗科</td>
+		<td align="center">2011-02-16</td>
+		<td align="center">
+			1/30
+		</td>
+		<td align="center">
+			<a href="dailyOutpatientDetail.htm" target="_blank">查看详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">2</td>
+		<td>医生</td>
+		<td>上海宠物医院</td>
+		<td>上海市</td>
+		<td align="center">狗科</td>
+		<td align="center">2011-02-26</td>
+		<td align="center">
+			0/10
+		</td>
+		<td align="center">
+			<a href="dailyOutpatientDetail.htm" target="_blank">查看详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">3</td>
+		<td>医生</td>
+		<td>上海宠物医院</td>
+		<td>上海市</td>
+		<td align="center">狗科</td>
+		<td align="center">2011-02-27</td>
+		<td align="center">
+			0/10
+		</td>
+		<td align="center">
+			<a href="dailyOutpatientDetail.htm" target="_blank">查看详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">4</td>
+		<td>医生</td>
+		<td>上海宠物医院</td>
+		<td>上海市</td>
+		<td align="center">狗科</td>
+		<td align="center">2011-02-28</td>
+		<td align="center">
+			0/20
+		</td>
+		<td align="center">
+			<a href="dailyOutpatientDetail.htm" target="_blank">查看详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">5</td>
+		<td>医生</td>
+		<td>上海宠物医院</td>
+		<td>上海市</td>
+		<td align="center">狗科</td>
+		<td align="center">2011-03-01</td>
+		<td align="center">
+			0/20
+		</td>
+		<td align="center">
+			<a href="dailyOutpatientDetail.htm" target="_blank">查看详情</a>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="8" align="right">
+上一页			&nbsp;
+下一页			&nbsp;
+共5条记录 - 第1页 / 共1页 		</td>
+	</tr>
+</tbody></table>
+		</div>
+		<div class="left">
+<h2>个人信息管理</h2>
+<p class="welcome">欢迎您！宠物主人</p>
+<ul class="top">
+<li><a href="profile.htm">修改个人信息</a></li>
+<li><a href="password.htm">修改密码</a></li>
+<li><a href="../index.htm">退出系统</a></li>
+</ul>
+<h2>宠物管理</h2>
+<ul>
+<li><a href="pet.htm">宠物注册</a></li>
+<li><a href="petResult.htm">宠物查询和修改</a></li>
+</ul>
+<h2>问诊管理</h2>
+<ul>
+<li><a href="interrogationQueryVeterinarianResult.htm">在线问诊</a></li>
+<li><a href="interrogationQueryResult.htm">问诊查询</a></li>
+<!--<li><a href="#">诊断查询</a></li>-->
+</ul>
+<h2>预约管理</h2>
+<ul>
+<li><a href="dailyOutpatientQueryResult.htm">在线预约</a></li>
+<li><a href="appointmentQueryResult.htm">历史预约查询</a></li>
+</ul>		</div>
+		<div style="clear: both;"> </div>
+		<div id="footer">
+Powered by <a href="http://www.gs.sjtu.edu.cn/" target="_blank">SJTU</a>.		</div>
+	</div>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
