@@ -13,7 +13,6 @@ import cn.edu.sjtu.common.orm.jpa.AbstractJpaDaoSupport;
 import cn.edu.sjtu.common.utils.DateUtils;
 import cn.edu.sjtu.petclinic.dao.DailyOutpatientDao;
 import cn.edu.sjtu.petclinic.dto.DailyOutpatientQuery;
-import cn.edu.sjtu.petclinic.entity.Appointment;
 import cn.edu.sjtu.petclinic.entity.DailyOutpatient;
 
 @Repository("dailyOutpatientDao")
